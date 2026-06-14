@@ -1,0 +1,71 @@
+<div class="container">
+  <header class="module-hero dashboard-hero">
+    <div>
+      <p class="module-kicker">Centro operativo</p>
+      <h2>Panel de gestión</h2>
+      <p>Vista rápida de atención estudiantil, agenda, solicitudes críticas y acciones pendientes.</p>
+    </div>
+    <a class="btn btn-primary" routerLink="/admin/solicitudes">Abrir bandeja de solicitudes</a>
+  </header>
+
+  <section class="metric-strip">
+    @for (metric of metrics(); track metric.label) {
+      <a class="metric-tile metric-tile--link" [routerLink]="metric.link">
+        <span>{{ metric.label }}</span>
+        <strong>{{ metric.value }}</strong>
+        <small>{{ metric.action }}</small>
+      </a>
+    }
+  </section>
+
+  <section class="dashboard-grid-modern">
+    <article class="operations-panel">
+      <div class="panel-heading">
+        <div>
+          <p class="module-kicker">Triage</p>
+          <h3>Solicitudes que requieren atención</h3>
+        </div>
+        <a routerLink="/admin/solicitudes">Ver todas</a>
+      </div>
+      <div class="stack-list">
+        @for (item of criticalRequests(); track item.id) {
+          <a class="stack-item" routerLink="/admin/solicitudes">
+            <span class="status-dot" [class.status-dot--high]="item.priority === 'Alta'"></span>
+            <div>
+              <strong>{{ item.subject }}</strong>
+              <span>{{ item.studentName }} · {{ item.priority }} · {{ item.status }}</span>
+            </div>
+          </a>
+        }
+      </div>
+    </article>
+
+    <article class="operations-panel">
+      <div class="panel-heading">
+        <div>
+          <p class="module-kicker">Agenda</p>
+          <h3>Próximas citas</h3>
+        </div>
+        <a routerLink="/admin/citas">Gestionar agenda</a>
+      </div>
+      <div class="stack-list">
+        @for (item of upcomingCitas(); track item.id) {
+          <div class="stack-item">
+            <span class="calendar-pill">{{ item.date }}</span>
+            <div>
+              <strong>{{ item.studentName }}</strong>
+              <span>{{ item.time }} · {{ item.professionalName }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </article>
+
+    <article class="operations-panel operations-panel--accent">
+      <p class="module-kicker">Ruta sugerida</p>
+      <h3>Trabaje desde la solicitud, no desde la tabla</h3>
+      <p>Abra la bandeja, revise la ficha del estudiante, asigne cita, registre observación y abra caso cuando corresponda.</p>
+      <a class="btn btn-outline" routerLink="/admin/solicitudes">Ir a triage</a>
+    </article>
+  </section>
+</div>

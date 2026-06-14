@@ -1,0 +1,22 @@
+<div class="container">
+	<header class="module-hero">
+		<div>
+			<p class="module-kicker">Ayudas asignadas</p>
+			<h2>Mis becas</h2>
+			<p>Consulte el estado de sus becas y ayudas económicas registradas.</p>
+		</div>
+	</header>
+
+	<section class="request-list request-list--cards">
+		@for (item of becas(); track item.id) {
+			<article class="student-request-card">
+				<span class="request-card__top"><strong>{{ item.name }}</strong><span class="badge" [ngClass]="statusClass(item)">{{ item.status }}</span></span>
+				<div class="detail-grid">
+					<div><span>Tipo</span><strong>{{ item.type }}</strong></div>
+					<div><span>Monto</span><strong>${{ item.amount }}</strong></div>
+					<div><span>Ruta</span><strong>{{ item.status === 'Activa' ? 'Beneficio vigente' : 'Revisión pendiente' }}</strong></div>
+				</div>
+			</article>
+		}
+	</section>
+</div>

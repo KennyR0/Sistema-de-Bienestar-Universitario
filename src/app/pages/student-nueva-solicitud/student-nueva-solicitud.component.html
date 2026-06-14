@@ -1,0 +1,112 @@
+<div class="container student-flow">
+	<header class="module-hero">
+		<div>
+			<p class="module-kicker">Portal estudiantil</p>
+			<h2>Nueva solicitud de bienestar</h2>
+			<p>Complete la ficha para que el equipo pueda priorizar, contactar y dar seguimiento a su caso.</p>
+		</div>
+		<a class="btn btn-outline" routerLink="/estudiante/solicitudes">Volver a mis solicitudes</a>
+	</header>
+
+	<section class="guided-form">
+		<div class="form-section">
+			<h3>1. Datos del estudiante</h3>
+			<div class="form-grid">
+				<div class="form-group">
+					<label for="student-name">Nombre completo</label>
+					<input id="student-name" class="form-control" [value]="studentName()" (input)="onTextInput('studentName', $any($event.target).value)" />
+				</div>
+				<div class="form-group">
+					<label for="student-code">Código estudiantil</label>
+					<input id="student-code" class="form-control" [value]="studentCode()" (input)="onTextInput('studentCode', $any($event.target).value)" />
+				</div>
+				<div class="form-group">
+					<label for="student-program">Carrera</label>
+					<input id="student-program" class="form-control" [value]="program()" (input)="onTextInput('program', $any($event.target).value)" />
+				</div>
+			</div>
+		</div>
+
+		<div class="form-section">
+			<h3>2. Motivo de atención</h3>
+			<div class="form-grid">
+				<div class="form-group">
+					<label for="solicitud-type">Tipo de atención</label>
+					<select id="solicitud-type" class="form-control" (change)="onTypeChange($any($event.target).value)">
+						<option value="">Seleccione...</option>
+						@for (option of typeOptions; track option) {
+							<option [value]="option">{{ option }}</option>
+						}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="priority">Urgencia percibida</label>
+					<select id="priority" class="form-control" [value]="priority()" (change)="onPriorityChange($any($event.target).value)">
+						@for (option of priorityOptions; track option) {
+							<option [value]="option">{{ option }}</option>
+						}
+					</select>
+				</div>
+				<div class="form-group form-group--wide">
+					<label for="subject">Asunto</label>
+					<input id="subject" class="form-control" placeholder="Ej. Necesito orientación psicológica" [value]="subject()" (input)="onTextInput('subject', $any($event.target).value)" />
+				</div>
+				<div class="form-group form-group--wide">
+					<label for="description">Descripción detallada</label>
+					<textarea id="description" class="form-control" rows="5" placeholder="Explique qué ocurre, desde cuándo y qué apoyo espera recibir." [value]="description()" (input)="onTextInput('description', $any($event.target).value)"></textarea>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-section">
+			<h3>3. Contacto y disponibilidad</h3>
+			<div class="form-grid">
+				<div class="form-group">
+					<label for="contact-channel">Canal preferido</label>
+					<select id="contact-channel" class="form-control" [value]="contactChannel()" (change)="onContactChange($any($event.target).value)">
+						@for (option of contactOptions; track option) {
+							<option [value]="option">{{ option }}</option>
+						}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="contact-value">Dato de contacto</label>
+					<input id="contact-value" class="form-control" placeholder="Correo, teléfono o WhatsApp" [value]="contactValue()" (input)="onTextInput('contactValue', $any($event.target).value)" />
+				</div>
+				<div class="form-group form-group--wide">
+					<label for="availability">Disponibilidad horaria</label>
+					<input id="availability" class="form-control" placeholder="Ej. Lunes y miércoles después de las 14:00" [value]="availability()" (input)="onTextInput('availability', $any($event.target).value)" />
+				</div>
+			</div>
+		</div>
+
+		<div class="form-section">
+			<h3>4. Adjuntos y consentimiento</h3>
+			<div class="form-grid">
+				<div class="form-group">
+					<label for="attachment">Archivo simulado</label>
+					<input id="attachment" class="form-control" placeholder="Ej. certificado_medico.pdf" [value]="attachmentName()" (input)="onTextInput('attachmentName', $any($event.target).value)" />
+					<small>Se guarda solo el nombre del archivo en localStorage.</small>
+				</div>
+				<label class="consent-box">
+					<input type="checkbox" [checked]="consent()" (change)="onConsentChange($any($event.target).checked)" />
+					<span>Acepto que Bienestar Universitario revise esta información para gestionar mi atención.</span>
+				</label>
+			</div>
+		</div>
+
+		@if (attemptedSubmit() && errors().length > 0) {
+			<div class="validation-panel">
+				<strong>Revise la solicitud antes de enviarla</strong>
+				@for (error of errors(); track error) {
+					<p>{{ error }}</p>
+				}
+			</div>
+		}
+
+		<div class="form-actions">
+			<a class="btn btn-outline" routerLink="/estudiante/solicitudes">Cancelar</a>
+			<button class="btn btn-primary" type="button" (click)="onSubmit()">Enviar solicitud</button>
+		</div>
+	</section>
+</div>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes | Bienestar Universitario</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <span class="brand">Bienestar Universitario</span>
+        <a href="admin_dashboard.html">Dashboard</a>
+        <a href="admin_estudiantes.html" class="active">Estudiantes</a>
+        <a href="admin_solicitudes.html">Solicitudes</a>
+        <a href="admin_citas.html">Citas</a>
+        <a href="admin_becas.html">Becas</a>
+        <a href="admin_casos.html">Casos</a>
+        <a href="admin_reportes.html">Reportes</a>
+        <a href="admin_usuarios.html">Usuarios</a>
+    </nav>
+
+    <div class="container">
+        <div class="header-action">
+            <div>
+                <h2>Gestión de Estudiantes</h2>
+                <p>Permite registrar, buscar y actualizar la información de estudiantes.</p>
+            </div>
+            <button class="btn btn-primary">+ Registrar Nuevo Estudiante</button>
+        </div>
+
+        <div class="filters-bar">
+            <input type="text" class="form-control" placeholder="Buscar estudiante por nombre o código...">
+            <button class="btn btn-outline">Buscar</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre Completo</th>
+                    <th>Código</th>
+                    <th>Carrera</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Juan Pérez García</td>
+                    <td>20210001</td>
+                    <td>Ingeniería de Sistemas</td>
+                    <td><span class="badge badge-active">Activo</span></td>
+                    <td>
+                        <button class="btn btn-outline">Ver</button>
+                        <button class="btn btn-outline">Editar</button>
+                        <button class="btn btn-danger" onclick="confirmarEliminacion()">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>María López Díaz</td>
+                    <td>20200015</td>
+                    <td>Psicología</td>
+                    <td><span class="badge badge-active">Activo</span></td>
+                    <td>
+                        <button class="btn btn-outline">Ver</button>
+                        <button class="btn btn-outline">Editar</button>
+                        <button class="btn btn-danger" onclick="confirmarEliminacion()">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Carlos Ruiz Soto</td>
+                    <td>20220003</td>
+                    <td>Derecho</td>
+                    <td><span class="badge badge-active">Activo</span></td>
+                    <td>
+                        <button class="btn btn-outline">Ver</button>
+                        <button class="btn btn-outline">Editar</button>
+                        <button class="btn btn-danger" onclick="confirmarEliminacion()">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

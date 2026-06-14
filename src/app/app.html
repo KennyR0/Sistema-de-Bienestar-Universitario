@@ -1,0 +1,42 @@
+@if (isAdmin() || isStudent()) {
+  <div class="app-shell" [class.app-shell--student]="isStudent()">
+    <aside class="side-rail">
+      <div class="brand-block">
+        <span class="brand-mark"></span>
+        <div>
+          <strong>{{ isAdmin() ? 'Bienestar Universitario' : 'Bienestar Estudiantil' }}</strong>
+          <small>ULEAM</small>
+        </div>
+      </div>
+
+      <nav class="rail-nav" aria-label="Navegación principal">
+        @for (link of isAdmin() ? adminLinks : studentLinks; track link.path) {
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            {{ link.label }}
+          </a>
+        }
+      </nav>
+
+      <button class="btn btn-outline nav-logout" type="button" (click)="logout()" routerLink="/">
+        Salir
+      </button>
+    </aside>
+
+    <main class="app-main">
+      <div class="top-context">
+        <div>
+          <span>{{ isAdmin() ? 'Panel administrativo' : 'Portal estudiantil' }}</span>
+          <strong>Gestión de Bienestar ULEAM</strong>
+        </div>
+        <span class="signal-chip">{{ isAdmin() ? 'Equipo Bienestar' : 'Estudiante' }}</span>
+      </div>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+} @else {
+  <router-outlet></router-outlet>
+}

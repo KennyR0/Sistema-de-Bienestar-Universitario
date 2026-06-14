@@ -1,0 +1,135 @@
+<div class="container student-dashboard">
+	<header class="module-hero">
+		<div>
+			<p class="module-kicker">Portal estudiantil</p>
+			<h2>Mis solicitudes de bienestar</h2>
+			<p>Consulte el avance de sus trámites, la respuesta del equipo y el historial de atención.</p>
+		</div>
+		<a class="btn btn-primary" routerLink="/estudiante/nueva-solicitud">Nueva solicitud</a>
+	</header>
+
+	<section class="metric-strip">
+		<article class="metric-tile">
+			<span>Total</span>
+			<strong>{{ summary().total }}</strong>
+		</article>
+		<article class="metric-tile">
+			<span>Pendientes</span>
+			<strong>{{ summary().pending }}</strong>
+		</article>
+		<article class="metric-tile">
+			<span>En proceso</span>
+			<strong>{{ summary().process }}</strong>
+		</article>
+		<article class="metric-tile">
+			<span>Cerradas</span>
+			<strong>{{ summary().closed }}</strong>
+		</article>
+	</section>
+
+	<section class="student-request-layout">
+		<div class="request-list request-list--cards">
+			@for (item of solicitudes(); track item.id) {
+				<button
+					class="student-request-card"
+					type="button"
+					[class.active]="activeSolicitud().id === item.id"
+					(click)="onSelect(item)"
+				>
+					<span class="request-card__top">
+						<strong>{{ item.subject }}</strong>
+						<span class="priority-badge" [class.priority-badge--high]="item.priority === 'Alta'">{{ item.priority }}</span>
+					</span>
+					<span>{{ item.type }} · {{ item.date }}</span>
+					<span class="progress-line">
+						<span [class.complete]="item.status !== 'Pendiente'"></span>
+						<span [class.complete]="item.status === 'En Proceso' || item.status === 'Completada' || item.status === 'Aprobada'"></span>
+						<span [class.complete]="item.status === 'Completada' || item.status === 'Aprobada'"></span>
+					</span>
+					<span class="badge" [class.badge-pending]="item.status === 'Pendiente'" [class.badge-process]="item.status === 'En Proceso'" [class.badge-completed]="item.status === 'Completada' || item.status === 'Aprobada'" [class.badge-rejected]="item.status === 'Rechazada'">
+						{{ item.status }}
+					</span>
+				</button>
+			}
+			@if (solicitudes().length === 0) {
+				<p class="empty-state">Todavía no ha registrado solicitudes.</p>
+			}
+		</div>
+
+		@if (activeSolicitud(); as solicitud) {
+			<article class="detail-panel">
+				<div class="student-profile">
+					<div>
+						<p class="module-kicker">Detalle del trámite</p>
+						<h3>{{ solicitud.subject }}</h3>
+						<p>{{ solicitud.type }} · {{ solicitud.contactChannel }} · {{ solicitud.contactValue }}</p>
+					</div>
+					<span class="badge" [class.badge-pending]="solicitud.status === 'Pendiente'" [class.badge-process]="solicitud.status === 'En Proceso'" [class.badge-completed]="solicitud.status === 'Completada' || solicitud.status === 'Aprobada'" [class.badge-rejected]="solicitud.status === 'Rechazada'">{{ solicitud.status }}</span>
+				</div>
+
+				<div class="detail-grid">
+					<div>
+						<span>Carrera</span>
+						<strong>{{ solicitud.program }}</strong>
+					</div>
+					<div>
+						<span>Disponibilidad</span>
+						<strong>{{ solicitud.availability }}</strong>
+					</div>
+					<div>
+						<span>Próxima acción</span>
+						<strong>{{ solicitud.nextAction }}</strong>
+					</div>
+					<div>
+						<span>Consentimiento</span>
+						<strong>{{ solicitud.consent ? 'Aceptado' : 'Pendiente' }}</strong>
+					</div>
+				</div>
+
+				<p class="request-description">{{ solicitud.description }}</p>
+
+				@if (isEditable(solicitud)) {
+					<div class="form-actions">
+						<button class="btn btn-outline" type="button" (click)="onEdit(solicitud)">
+							Editar antes de revisión
+						</button>
+					</div>
+				}
+
+				@if (editingSolicitud()?.id === solicitud.id) {
+					<div class="form-section">
+						<h3>Actualizar solicitud pendiente</h3>
+						<div class="form-group">
+							<label>Asunto</label>
+							<input class="form-control" [value]="draftSubject()" (input)="onDraftSubject($any($event.target).value)" />
+						</div>
+						<div class="form-group">
+							<label>Descripción</label>
+							<textarea class="form-control" rows="4" [value]="draftDescription()" (input)="onDraftDescription($any($event.target).value)"></textarea>
+						</div>
+						<div class="form-group">
+							<label>Disponibilidad</label>
+							<input class="form-control" [value]="draftAvailability()" (input)="onDraftAvailability($any($event.target).value)" />
+						</div>
+						<div class="form-actions">
+							<button class="btn btn-outline" type="button" (click)="onCancelEdit()">Cancelar</button>
+							<button class="btn btn-primary" type="button" (click)="onSaveEdit()">Guardar cambios</button>
+						</div>
+					</div>
+				}
+
+				<div class="timeline">
+					<h3>Historial</h3>
+					@for (event of solicitud.history; track event.id) {
+						<div class="timeline-item">
+							<span>{{ event.date }}</span>
+							<strong>{{ event.title }}</strong>
+							<p>{{ event.detail }}</p>
+							<small>{{ event.author }}</small>
+						</div>
+					}
+				</div>
+			</article>
+		}
+	</section>
+</div>

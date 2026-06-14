@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienestar Universitario - Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        .login-btn {
+            display: block;
+            margin: 15px 0;
+            padding: 15px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 8px;
+            color: white;
+            transition: opacity 0.3s;
+        }
+        .login-btn:hover {
+            opacity: 0.9;
+        }
+        .admin-entry {
+            background-color: var(--primary-color);
+        }
+        .student-entry {
+            background-color: #00796b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container login-container">
+        <h2>Sistema de Gestión</h2>
+        <h1>Bienestar Universitario (ULEAM)</h1>
+        <p style="margin-top: 20px; margin-bottom: 30px; color: #555;">Seleccione su perfil de acceso para visualizar las interfaces desarrolladas.</p>
+        
+        <a href="admin_dashboard.html" class="login-btn admin-entry">Ingresar como <strong>Administrador</strong></a>
+        <a href="estudiante_solicitudes.html" class="login-btn student-entry">Ingresar como <strong>Estudiante</strong></a>
+    </div>
+</body>
+</html>

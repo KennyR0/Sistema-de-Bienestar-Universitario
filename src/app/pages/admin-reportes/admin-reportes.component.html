@@ -1,0 +1,49 @@
+<div class="container">
+	<header class="module-hero">
+		<div>
+			<p class="module-kicker">Inteligencia operativa</p>
+			<h2>Reportes y estadísticas</h2>
+			<p>Genere cortes de información y revise indicadores rápidos del departamento.</p>
+		</div>
+		<button class="btn btn-primary" type="button" (click)="onGenerate()">Generar reporte</button>
+	</header>
+
+	<section class="metric-strip">
+		@for (stat of stats(); track stat.label) {
+			<article class="metric-tile"><span>{{ stat.label }}</span><strong>{{ stat.value }}</strong></article>
+		}
+	</section>
+
+	<section class="workbench">
+		<div class="form-section">
+			<h3>Nuevo reporte</h3>
+			<div class="form-grid">
+				<div class="form-group"><label>Tipo</label><select class="form-control" [value]="selectedType()" (change)="onTypeChange($any($event.target).value)">@for (type of reportTypes; track type) { <option [value]="type">{{ type }}</option> }</select></div>
+				<div class="form-group"><label>Inicio</label><input class="form-control" type="date" [value]="startDate()" (change)="onStartDateChange($any($event.target).value)" /></div>
+				<div class="form-group"><label>Fin</label><input class="form-control" type="date" [value]="endDate()" (change)="onEndDateChange($any($event.target).value)" /></div>
+			</div>
+			<div class="form-actions"><button class="btn btn-outline" type="button" (click)="onClear()">Limpiar</button><button class="btn btn-primary" type="button" (click)="onGenerate()">Generar</button></div>
+		</div>
+		<div class="request-list">
+			@for (report of reportes(); track report.id) {
+				<button class="request-card" type="button" (click)="onView(report)">
+					<span class="request-card__top"><strong>{{ report.name }}</strong><span>{{ report.date }}</span></span>
+					<span>{{ report.type }} · {{ report.generatedBy }}</span>
+				</button>
+			}
+		</div>
+	</section>
+
+	@if (viewingReporte(); as report) {
+		<section class="detail-panel">
+			<p class="module-kicker">Reporte guardado</p>
+			<h3>{{ report.name }}</h3>
+			<div class="detail-grid">
+				<div><span>Tipo</span><strong>{{ report.type }}</strong></div>
+				<div><span>Generado por</span><strong>{{ report.generatedBy }}</strong></div>
+				<div><span>Fecha</span><strong>{{ report.date }}</strong></div>
+			</div>
+			<button class="btn btn-outline" type="button" (click)="onCloseView()">Cerrar</button>
+		</section>
+	}
+</div>

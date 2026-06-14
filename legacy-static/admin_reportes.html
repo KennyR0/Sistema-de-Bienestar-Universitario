@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes | Bienestar Universitario</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <span class="brand">Bienestar Universitario</span>
+        <a href="admin_dashboard.html">Dashboard</a>
+        <a href="admin_estudiantes.html">Estudiantes</a>
+        <a href="admin_solicitudes.html">Solicitudes</a>
+        <a href="admin_citas.html">Citas</a>
+        <a href="admin_becas.html">Becas</a>
+        <a href="admin_casos.html">Casos</a>
+        <a href="admin_reportes.html" class="active">Reportes</a>
+        <a href="admin_usuarios.html">Usuarios</a>
+    </nav>
+
+    <div class="container">
+        <h2>Reportes y Estadísticas</h2>
+        <br>
+        <div class="card" style="text-align:left; margin-bottom:20px;">
+            <h3>Generar Reporte</h3>
+            <div style="display:flex; gap:15px; align-items:flex-end;">
+                <div class="form-group" style="flex:1; margin:0;">
+                    <label>Tipo de Reporte:</label>
+                    <select class="form-control">
+                        <option>Solicitudes</option>
+                        <option>Becas</option>
+                        <option>Casos</option>
+                        <option>Estudiantes</option>
+                    </select>
+                </div>
+                <div class="form-group" style="flex:1; margin:0;">
+                    <label>Desde:</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="form-group" style="flex:1; margin:0;">
+                    <label>Hasta:</label>
+                    <input type="date" class="form-control">
+                </div>
+                <button class="btn btn-primary">Generar</button>
+            </div>
+        </div>
+
+        <h3>Reportes Guardados</h3><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre del Reporte</th>
+                    <th>Tipo</th>
+                    <th>Generado Por</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Reporte Anual de Solicitudes 2025</td>
+                    <td>Solicitudes</td>
+                    <td>Admin Uno</td>
+                    <td>2026-05-12</td>
+                    <td>
+                        <button class="btn btn-outline">Ver</button>
+                        <button class="btn btn-success">Descargar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Estudiantes con Becas Activas</td>
+                    <td>Becas</td>
+                    <td>Admin Dos</td>
+                    <td>2026-05-12</td>
+                    <td>
+                        <button class="btn btn-outline">Ver</button>
+                        <button class="btn btn-success">Descargar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Casos Cerrados 2025-2</td>
+                    <td>Casos</td>
+                    <td>Admin Uno</td>
+                    <td>2026-05-12</td>
+                    <td>
+                        <button class="btn btn-outline">Ver</button>
+                        <button class="btn btn-success">Descargar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

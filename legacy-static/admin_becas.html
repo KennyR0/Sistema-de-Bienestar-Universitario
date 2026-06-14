@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Becas | Bienestar Universitario</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <span class="brand">Bienestar Universitario</span>
+        <a href="admin_dashboard.html">Dashboard</a>
+        <a href="admin_estudiantes.html">Estudiantes</a>
+        <a href="admin_solicitudes.html">Solicitudes</a>
+        <a href="admin_citas.html">Citas</a>
+        <a href="admin_becas.html" class="active">Becas</a>
+        <a href="admin_casos.html">Casos</a>
+        <a href="admin_reportes.html">Reportes</a>
+        <a href="admin_usuarios.html">Usuarios</a>
+    </nav>
+
+    <div class="container">
+        <div class="header-action">
+            <div>
+                <h2>Gestión de Becas</h2>
+                <p>Administra el proceso de solicitud, aprobación y seguimiento de becas.</p>
+            </div>
+            <a href="#nueva-beca" class="btn btn-primary">+ Nueva Beca</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de la Beca</th>
+                    <th>Tipo</th>
+                    <th>Monto</th>
+                    <th>Criterios</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="becas-table-body">
+                <tr>
+                    <td>Beca de Excelencia Académica</td>
+                    <td>Mérito</td>
+                    <td>$150</td>
+                    <td>Promedio = 9.8</td>
+                    <td>
+                        <button class="btn btn-outline">Editar</button>
+                        <button class="btn btn-danger" onclick="confirmarEliminacion()">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Beca de Apoyo Socioeconómico</td>
+                    <td>Necesidad</td>
+                    <td>$80</td>
+                    <td>Ingresos bajos</td>
+                    <td>
+                        <button class="btn btn-outline">Editar</button>
+                        <button class="btn btn-danger" onclick="confirmarEliminacion()">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Formulario para nueva beca -->
+        <br><br>
+        <div class="card" style="text-align:left;" id="nueva-beca">
+            <h3>Registrar Nueva Beca</h3>
+            <form id="form-nueva-beca" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="beca_nombre">Nombre de la Beca:</label>
+                        <input type="text" id="beca_nombre" class="form-control" placeholder="Ej: Beca de Excelencia">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="beca_tipo">Tipo:</label>
+                        <select id="beca_tipo" class="form-control">
+                            <option value="">Seleccionar...</option>
+                            <option>Mérito</option>
+                            <option>Necesidad</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="beca_monto">Monto:</label>
+                        <input type="text" id="beca_monto" class="form-control" placeholder="Ej: 150">
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="beca_criterios">Criterios:</label>
+                        <input type="text" id="beca_criterios" class="form-control" placeholder="Ej: Promedio > 9.0">
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+                <div class="form-group" style="max-width: 240px;">
+                    <label for="beca_estado">Estado:</label>
+                    <select id="beca_estado" class="form-control">
+                        <option value="">Seleccionar...</option>
+                        <option>Activa</option>
+                        <option>Inactiva</option>
+                    </select>
+                    <div class="error-message"></div>
+                </div>
+                <div style="text-align:right;">
+                    <button type="reset" class="btn btn-outline">Limpiar</button>
+                    <button type="submit" class="btn btn-primary">Guardar Beca</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

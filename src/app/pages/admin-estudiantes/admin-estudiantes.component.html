@@ -1,0 +1,71 @@
+<div class="container page-workspace">
+	<header class="module-hero">
+		<div>
+			<p class="module-kicker">Directorio estudiantil</p>
+			<h2>Gestión de estudiantes</h2>
+			<p>Consulte datos académicos, estado y ficha rápida para derivación de bienestar.</p>
+		</div>
+		<button class="btn btn-primary" type="button" (click)="onCreate()">+ Registrar estudiante</button>
+	</header>
+
+	<section class="workbench">
+		<aside class="work-queue">
+			<div class="form-group">
+				<label for="student-search">Buscar estudiante</label>
+				<input id="student-search" class="form-control" type="text" placeholder="Nombre, código o carrera" [value]="searchTerm()" (input)="onSearchInput($any($event.target).value)" />
+			</div>
+			<div class="request-list">
+				@for (student of filteredStudents(); track student.id) {
+					<button class="request-card" type="button" [class.active]="activeStudent().id === student.id" (click)="onView(student)">
+						<span class="request-card__top">
+							<strong>{{ student.fullName }}</strong>
+							<span class="badge" [class.badge-active]="student.status === 'Activo'" [class.badge-inactive]="student.status !== 'Activo'">{{ student.status }}</span>
+						</span>
+						<span>{{ student.code }} · {{ student.program }}</span>
+					</button>
+				}
+			</div>
+		</aside>
+
+		<section class="detail-panel">
+			@if (activeStudent(); as student) {
+				<div class="student-profile">
+					<div>
+						<p class="module-kicker">Ficha del estudiante</p>
+						<h3>{{ student.fullName }}</h3>
+						<p>{{ student.code }} · {{ student.program }}</p>
+					</div>
+					<button class="btn btn-primary" type="button" (click)="onEdit(student)">Editar ficha</button>
+				</div>
+				<div class="detail-grid">
+					<div><span>ID</span><strong>{{ student.id }}</strong></div>
+					<div><span>Estado</span><strong>{{ student.status }}</strong></div>
+					<div><span>Ruta sugerida</span><strong>{{ student.status === 'Activo' ? 'Disponible para atención' : 'Verificar matrícula' }}</strong></div>
+					<div><span>Indicador</span><strong>Seguimiento regular</strong></div>
+				</div>
+				<div class="action-grid">
+					<button class="btn btn-outline" type="button">Ver historial</button>
+					<button class="btn btn-outline" type="button">Crear solicitud</button>
+					<button class="btn btn-danger" type="button" (click)="onDelete(student)">Eliminar registro</button>
+				</div>
+			}
+
+			@if (draftStudent(); as draft) {
+				<div class="form-section">
+					<h3>{{ editingStudent() ? 'Editar estudiante' : 'Registrar estudiante' }}</h3>
+					<div class="form-grid">
+						<div class="form-group"><label>ID</label><input class="form-control" type="number" [value]="draft.id" (input)="onDraftIdInput($any($event.target).value)" /></div>
+						<div class="form-group"><label>Nombre completo</label><input class="form-control" [value]="draft.fullName" (input)="onDraftNameInput($any($event.target).value)" /></div>
+						<div class="form-group"><label>Código</label><input class="form-control" [value]="draft.code" (input)="onDraftCodeInput($any($event.target).value)" /></div>
+						<div class="form-group"><label>Carrera</label><input class="form-control" [value]="draft.program" (input)="onDraftProgramInput($any($event.target).value)" /></div>
+						<div class="form-group"><label>Estado</label><select class="form-control" [value]="draft.status" (change)="onDraftStatusChange($any($event.target).value)">@for (status of statusOptions; track status) { <option [value]="status">{{ status }}</option> }</select></div>
+					</div>
+					<div class="form-actions">
+						<button class="btn btn-outline" type="button" (click)="onCancelEdit()">Cancelar</button>
+						<button class="btn btn-primary" type="button" [disabled]="!isDraftValid()" (click)="onSaveEdit()">Guardar cambios</button>
+					</div>
+				</div>
+			}
+		</section>
+	</section>
+</div>

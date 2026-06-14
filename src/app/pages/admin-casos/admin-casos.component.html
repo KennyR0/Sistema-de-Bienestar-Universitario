@@ -1,0 +1,46 @@
+<div class="container">
+	<header class="module-hero">
+		<div>
+			<p class="module-kicker">Seguimiento especializado</p>
+			<h2>Casos de bienestar</h2>
+			<p>Monitoree riesgo, estado y próxima revisión de casos estudiantiles.</p>
+		</div>
+		<button class="btn btn-primary" type="button" (click)="onCreate()">Nuevo caso</button>
+	</header>
+
+	<section class="filters-bar">
+		<div class="form-group"><label>Buscar</label><input class="form-control" placeholder="Estudiante" [value]="searchTerm()" (input)="onSearchInput($any($event.target).value)" /></div>
+		<div class="form-group"><label>Riesgo</label><select class="form-control" (change)="onRiskChange($any($event.target).value)">@for (option of riskOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
+		<div class="form-group"><label>Estado</label><select class="form-control" (change)="onStatusChange($any($event.target).value)">@for (option of statusOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
+	</section>
+
+	<section class="request-list request-list--cards">
+		@for (item of filteredCasos(); track item.id) {
+			<article class="student-request-card">
+				<span class="request-card__top"><strong>{{ item.studentName }}</strong><span class="badge" [class.badge-active]="item.status === 'Activo'" [class.badge-inactive]="item.status !== 'Activo'">{{ item.status }}</span></span>
+				<div class="detail-grid">
+					<div><span>Caso</span><strong>{{ item.id }}</strong></div>
+					<div><span>Riesgo</span><strong>{{ item.riskType }}</strong></div>
+					<div><span>Inicio</span><strong>{{ item.startDate }}</strong></div>
+					<div><span>Última actualización</span><strong>{{ item.lastUpdate }}</strong></div>
+				</div>
+				<div class="form-actions"><button class="btn btn-outline" type="button" (click)="onView(item)">Ver</button><button class="btn btn-primary" type="button" (click)="onEdit(item)">Editar</button></div>
+			</article>
+		}
+	</section>
+
+	@if (draftCaso(); as draft) {
+		<section class="form-section">
+			<h3>{{ editingCaso() ? 'Editar caso' : 'Nuevo caso' }}</h3>
+			<div class="form-grid">
+				<div class="form-group"><label>ID</label><input class="form-control" [value]="draft.id" readonly /></div>
+				<div class="form-group"><label>Estudiante</label><input class="form-control" [value]="draft.studentName" (input)="onDraftStudentInput($any($event.target).value)" /></div>
+				<div class="form-group"><label>Riesgo</label><select class="form-control" [value]="draft.riskType" (change)="onDraftRiskChange($any($event.target).value)">@for (option of editRiskOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
+				<div class="form-group"><label>Estado</label><select class="form-control" [value]="draft.status" (change)="onDraftStatusChange($any($event.target).value)">@for (option of editStatusOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
+				<div class="form-group"><label>Inicio</label><input class="form-control" type="date" [value]="draft.startDate" (change)="onDraftStartDateChange($any($event.target).value)" /></div>
+				<div class="form-group"><label>Actualización</label><input class="form-control" type="date" [value]="draft.lastUpdate" (change)="onDraftLastUpdateChange($any($event.target).value)" /></div>
+			</div>
+			<div class="form-actions"><button class="btn btn-outline" type="button" (click)="onCancelEdit()">Cancelar</button><button class="btn btn-primary" type="button" [disabled]="!isDraftValid()" (click)="onSaveEdit()">Guardar</button></div>
+		</section>
+	}
+</div>

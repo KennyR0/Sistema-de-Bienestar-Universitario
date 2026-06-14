@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Solicitud | Bienestar Estudiantil</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        nav { background-color: #00796b; } 
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="brand">Bienestar Estudiantil</span>
+        <a href="estudiante_solicitudes.html">Mis Solicitudes</a>
+        <a href="#">Mis Citas</a>
+        <a href="#">Mis Becas</a>
+        <a href="estudiante_nueva_solicitud.html" class="active">Nueva Solicitud</a>
+    </nav>
+
+    <div class="container">
+        <div class="card" style="max-width: 600px; margin: 0 auto; text-align: left;">
+            <h2 style="margin-bottom: 20px;">Formulario de Solicitud de Atención</h2>
+            
+            <form id="form-nueva-solicitud" novalidate>
+                <div class="form-group">
+                    <label for="tipo_atencion">Tipo de Atención:</label>
+                    <select id="tipo_atencion" class="form-control">
+                        <option value="">Seleccionar...</option>
+                        <option value="Psicologica">Psicológica</option>
+                        <option value="Medica">Médica</option>
+                        <option value="Social">Social</option>
+                        <option value="Academica">Académica</option>
+                    </select>
+                    <div class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" class="form-control" placeholder="Ej: Problemas de rendimiento">
+                    <div class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción Detallada (mín. 20 caracteres):</label>
+                    <textarea id="descripcion" class="form-control" rows="5" placeholder="Explique su situación..."></textarea>
+                    <div class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="archivo">Añadir archivos (opcional)</label>
+                    <input type="file" id="archivo" class="form-control" accept=".pdf, .png, .docx">
+                    <small style="color:#666;">Formatos permitidos: pdf, png, docx</small>
+                    <div class="error-message"></div>
+                </div>
+
+                <div style="text-align: right; margin-top:20px;">
+                    <button type="button" class="btn btn-outline" onclick="window.location.href='estudiante_solicitudes.html'">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<div class="container page-workspace">
+	<header class="module-hero">
+		<div>
+			<p class="module-kicker">Centro de atención</p>
+			<h2>Bandeja de solicitudes</h2>
+			<p>Priorice, revise y dé seguimiento a las solicitudes recibidas por Bienestar Universitario.</p>
+		</div>
+		<div class="hero-actions">
+			<span class="signal-chip signal-chip--urgent">{{ summary().high }} prioridad alta</span>
+			<span class="signal-chip">{{ summary().pending }} pendientes</span>
+		</div>
+	</header>
+
+	<section class="metric-strip">
+		<article class="metric-tile">
+			<span>Pendientes</span>
+			<strong>{{ summary().pending }}</strong>
+		</article>
+		<article class="metric-tile">
+			<span>En proceso</span>
+			<strong>{{ summary().process }}</strong>
+		</article>
+		<article class="metric-tile">
+			<span>Críticas</span>
+			<strong>{{ summary().high }}</strong>
+		</article>
+		<article class="metric-tile">
+			<span>Completadas</span>
+			<strong>{{ summary().closed }}</strong>
+		</article>
+	</section>
+
+	<section class="workbench">
+		<aside class="work-queue">
+			<div class="queue-toolbar">
+				<div class="form-group">
+					<label for="solicitud-search">Buscar</label>
+					<input
+						id="solicitud-search"
+						class="form-control"
+						type="text"
+						placeholder="Nombre, código, carrera o asunto"
+						[value]="searchTerm()"
+						(input)="onSearchInput($any($event.target).value)"
+					/>
+				</div>
+				<div class="compact-filters">
+					<select class="form-control" (change)="onPriorityChange($any($event.target).value)">
+						@for (option of priorityOptions; track option) {
+							<option [value]="option">{{ option }}</option>
+						}
+					</select>
+					<select class="form-control" (change)="onStatusChange($any($event.target).value)">
+						@for (option of statusOptions; track option) {
+							<option [value]="option">{{ option }}</option>
+						}
+					</select>
+					<select class="form-control" (change)="onTypeChange($any($event.target).value)">
+						@for (option of typeOptions; track option) {
+							<option [value]="option">{{ option }}</option>
+						}
+					</select>
+				</div>
+			</div>
+
+			<div class="request-list">
+				@for (item of filteredSolicitudes(); track item.id) {
+					<button
+						class="request-card"
+						type="button"
+						[class.active]="activeSolicitud().id === item.id"
+						(click)="onSelect(item)"
+					>
+						<span class="request-card__top">
+							<span class="status-dot" [class.status-dot--high]="item.priority === 'Alta'"></span>
+							<strong>{{ item.subject }}</strong>
+						</span>
+						<span>{{ item.studentName }} · {{ item.program }}</span>
+						<span class="request-card__meta">
+							<span class="badge" [class.badge-pending]="item.status === 'Pendiente'" [class.badge-process]="item.status === 'En Proceso'" [class.badge-completed]="item.status === 'Completada' || item.status === 'Aprobada'" [class.badge-rejected]="item.status === 'Rechazada'">
+								{{ item.status }}
+							</span>
+							<span>{{ item.priority }}</span>
+							<span>{{ item.date }}</span>
+						</span>
+					</button>
+				}
+				@if (filteredSolicitudes().length === 0) {
+					<p class="empty-state">No hay solicitudes con los filtros seleccionados.</p>
+				}
+			</div>
+		</aside>
+
+		@if (activeSolicitud(); as solicitud) {
+			<section class="detail-panel">
+				<div class="student-profile">
+					<div>
+						<p class="module-kicker">Ficha del estudiante</p>
+						<h3>{{ solicitud.studentName }}</h3>
+						<p>{{ solicitud.studentCode }} · {{ solicitud.program }}</p>
+					</div>
+					<span class="priority-badge" [class.priority-badge--high]="solicitud.priority === 'Alta'">
+						{{ solicitud.priority }}
+					</span>
+				</div>
+
+				<div class="detail-grid">
+					<div>
+						<span>Tipo</span>
+						<strong>{{ solicitud.type }}</strong>
+					</div>
+					<div>
+						<span>Canal</span>
+						<strong>{{ solicitud.contactChannel }}</strong>
+					</div>
+					<div>
+						<span>Contacto</span>
+						<strong>{{ solicitud.contactValue }}</strong>
+					</div>
+					<div>
+						<span>Disponibilidad</span>
+						<strong>{{ solicitud.availability }}</strong>
+					</div>
+				</div>
+
+				<article class="narrative-panel">
+					<h3>{{ solicitud.subject }}</h3>
+					<p>{{ solicitud.description }}</p>
+					@if (solicitud.attachments.length > 0) {
+						<div class="attachment-row">
+							@for (file of solicitud.attachments; track file.id) {
+								<span>{{ file.name }} · {{ file.size }}</span>
+							}
+						</div>
+					}
+				</article>
+
+				<div class="action-grid">
+					<button class="btn btn-primary" type="button" (click)="onSetStatus(solicitud, 'En Proceso')">
+						Marcar en proceso
+					</button>
+					<button class="btn btn-success" type="button" (click)="onSetStatus(solicitud, 'Completada')">
+						Completar
+					</button>
+					<button class="btn btn-danger" type="button" (click)="onSetStatus(solicitud, 'Rechazada')">
+						Rechazar
+					</button>
+					<button class="btn btn-outline" type="button" (click)="onOpenCase(solicitud)">
+						Abrir caso
+					</button>
+				</div>
+
+				<div class="form-section">
+					<h3>Asignar cita</h3>
+					<div class="form-grid">
+						<div class="form-group">
+							<label for="appointment-date">Fecha</label>
+							<input id="appointment-date" class="form-control" type="date" [value]="appointmentDate()" (change)="onAppointmentDateChange($any($event.target).value)" />
+						</div>
+						<div class="form-group">
+							<label for="appointment-time">Hora</label>
+							<input id="appointment-time" class="form-control" type="time" [value]="appointmentTime()" (change)="onAppointmentTimeChange($any($event.target).value)" />
+						</div>
+					</div>
+					<button class="btn btn-primary" type="button" (click)="onAssignAppointment(solicitud)">
+						Programar atención
+					</button>
+				</div>
+
+				<div class="form-section">
+					<h3>Observación interna</h3>
+					<textarea class="form-control" rows="3" placeholder="Registrar acuerdo, llamada o derivación" [value]="noteText()" (input)="onNoteInput($any($event.target).value)"></textarea>
+					<div class="form-actions">
+						<button class="btn btn-outline" type="button" (click)="onAddNote(solicitud)">Agregar al historial</button>
+					</div>
+				</div>
+
+				<div class="timeline">
+					<h3>Historial de atención</h3>
+					@for (event of solicitud.history; track event.id) {
+						<div class="timeline-item">
+							<span>{{ event.date }}</span>
+							<strong>{{ event.title }}</strong>
+							<p>{{ event.detail }}</p>
+							<small>{{ event.author }}</small>
+						</div>
+					}
+				</div>
+			</section>
+		}
+	</section>
+</div>

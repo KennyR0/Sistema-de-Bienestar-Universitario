@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Casos | Bienestar Universitario</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <span class="brand">Bienestar Universitario</span>
+        <a href="admin_dashboard.html">Dashboard</a>
+        <a href="admin_estudiantes.html">Estudiantes</a>
+        <a href="admin_solicitudes.html">Solicitudes</a>
+        <a href="admin_citas.html">Citas</a>
+        <a href="admin_becas.html">Becas</a>
+        <a href="admin_casos.html" class="active">Casos</a>
+        <a href="admin_reportes.html">Reportes</a>
+        <a href="admin_usuarios.html">Usuarios</a>
+    </nav>
+
+    <div class="container">
+        <div class="header-action">
+            <h2>Seguimiento de Casos</h2>
+            <button class="btn btn-primary">+ Nuevo Caso</button>
+        </div>
+
+        <div class="filters-bar">
+            <input type="text" class="form-control" placeholder="Buscar caso por estudiante o ID...">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Caso</th>
+                    <th>Estudiante</th>
+                    <th>Tipo de Riesgo</th>
+                    <th>Estado</th>
+                    <th>F. Inicio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Juan Pérez</td>
+                    <td>Académico</td>
+                    <td><span class="badge badge-active">Activo</span></td>
+                    <td>2026-05-01</td>
+                    <td>
+                        <button class="btn btn-outline">Ver</button>
+                        <button class="btn btn-outline">Editar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>María García</td>
+                    <td>Personal</td>
+                    <td><span class="badge badge-inactive">Cerrado</span></td>
+                    <td>2026-05-10</td>
+                    <td>
+                        <button class="btn btn-outline">Ver</button>
+                        <button class="btn btn-outline">Editar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Carlos López</td>
+                    <td>Académico</td>
+                    <td><span class="badge badge-active">Activo</span></td>
+                    <td>2026-05-12</td>
+                    <td>
+                        <button class="btn btn-outline">Ver</button>
+                        <button class="btn btn-outline">Editar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
