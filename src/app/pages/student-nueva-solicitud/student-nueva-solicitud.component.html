@@ -84,9 +84,9 @@
 			<h3>4. Adjuntos y consentimiento</h3>
 			<div class="form-grid">
 				<div class="form-group">
-					<label for="attachment">Archivo simulado</label>
-					<input id="attachment" class="form-control" placeholder="Ej. certificado_medico.pdf" [value]="attachmentName()" (input)="onTextInput('attachmentName', $any($event.target).value)" />
-					<small>Se guarda solo el nombre del archivo en localStorage.</small>
+					<label for="attachment">Documento de respaldo</label>
+					<input id="attachment" class="form-control" placeholder="Nombre del archivo" [value]="attachmentName()" (input)="onTextInput('attachmentName', $any($event.target).value)" />
+					<small>Adjunte certificados, informes o documentos relevantes cuando corresponda.</small>
 				</div>
 				<label class="consent-box">
 					<input type="checkbox" [checked]="consent()" (change)="onConsentChange($any($event.target).checked)" />

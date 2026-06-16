@@ -1,19 +1,19 @@
 :root {
-  --navy: #12324a;
-  --navy-2: #0b2436;
-  --teal: #0f766e;
-  --green: #2e7d32;
-  --gold: #c9972b;
-  --danger: #c93535;
-  --warning: #d87917;
+  --navy: #173955;
+  --navy-2: #163247;
+  --teal: #237f78;
+  --green: #3f8f58;
+  --gold: #b99342;
+  --danger: #b94b4b;
+  --warning: #bd7a2d;
   --surface: #ffffff;
-  --surface-muted: #edf4f6;
-  --bg: #f3f6f8;
-  --text: #17212b;
-  --muted: #65717d;
-  --border: #dce5ea;
-  --shadow: 0 18px 44px rgba(18, 50, 74, 0.12);
-  --radius: 10px;
+  --surface-muted: #f2f7f8;
+  --bg: #f7fafb;
+  --text: #1f2f3d;
+  --muted: #6d7b86;
+  --border: #e2eaee;
+  --shadow: 0 14px 34px rgba(23, 57, 85, 0.08);
+  --radius: 9px;
 }
 
 * {
@@ -56,9 +56,9 @@ a {
   padding: 22px 18px;
   color: white;
   background:
-    linear-gradient(180deg, rgba(15, 118, 110, 0.18), transparent 260px),
+    linear-gradient(180deg, rgba(35, 127, 120, 0.12), transparent 260px),
     var(--navy-2);
-  border-right: 4px solid var(--gold);
+  border-right: 1px solid rgba(185, 147, 66, 0.5);
 }
 
 .brand-block {
@@ -71,7 +71,7 @@ a {
 .brand-mark {
   width: 18px;
   height: 40px;
-  border-radius: 7px;
+  border-radius: 6px;
   background: linear-gradient(180deg, var(--gold), var(--teal));
 }
 
@@ -87,7 +87,7 @@ a {
 
 .brand-block small {
   color: rgba(255, 255, 255, 0.64);
-  font-weight: 800;
+  font-weight: 680;
 }
 
 .rail-nav {
@@ -100,13 +100,13 @@ a {
   color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
   border-radius: 8px;
-  font-weight: 850;
+  font-weight: 750;
 }
 
 .rail-nav a:hover,
 .rail-nav a.active {
   color: white;
-  background: rgba(15, 118, 110, 0.55);
+  background: rgba(35, 127, 120, 0.42);
 }
 
 .nav-logout {
@@ -116,8 +116,8 @@ a {
 .app-main {
   min-width: 0;
   background:
-    radial-gradient(circle at 12% 0%, rgba(15, 118, 110, 0.12), transparent 260px),
-    linear-gradient(180deg, #ffffff 0, var(--bg) 220px);
+    radial-gradient(circle at 12% 0%, rgba(35, 127, 120, 0.08), transparent 260px),
+    linear-gradient(180deg, #ffffff 0, var(--bg) 240px);
 }
 
 .top-context {
@@ -127,7 +127,7 @@ a {
   gap: 14px;
   padding: 18px clamp(18px, 4vw, 42px);
   border-bottom: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.76);
+  background: rgba(255, 255, 255, 0.84);
   backdrop-filter: blur(12px);
 }
 
@@ -135,8 +135,8 @@ a {
 .module-kicker {
   color: var(--teal);
   font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0.04em;
+  font-weight: 760;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
@@ -166,8 +166,8 @@ h3 {
 }
 
 h2 {
-  font-size: clamp(1.8rem, 4vw, 2.75rem);
-  line-height: 1.05;
+  font-size: clamp(1.75rem, 3.4vw, 2.55rem);
+  line-height: 1.08;
 }
 
 h3 {
@@ -186,17 +186,17 @@ p {
   padding: 5px 10px;
   border-radius: 999px;
   color: var(--navy);
-  background: #eef6f4;
-  border: 1px solid rgba(15, 118, 110, 0.18);
+  background: #edf7f5;
+  border: 1px solid rgba(35, 127, 120, 0.16);
   font-size: 0.8rem;
-  font-weight: 900;
+  font-weight: 760;
 }
 
 .signal-chip--urgent,
 .priority-badge--high {
-  color: white;
-  background: var(--danger);
-  border-color: var(--danger);
+  color: #7c2727;
+  background: #f8eaea;
+  border-color: rgba(185, 75, 75, 0.25);
 }
 
 .metric-strip {
@@ -214,7 +214,7 @@ p {
   text-decoration: none;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--teal);
+  border-left: 3px solid rgba(35, 127, 120, 0.65);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
@@ -223,7 +223,7 @@ p {
 .metric-tile small {
   color: var(--muted);
   font-size: 0.82rem;
-  font-weight: 800;
+  font-weight: 680;
 }
 
 .metric-tile strong {
@@ -236,7 +236,7 @@ p {
 .request-card:hover,
 .student-request-card:hover {
   transform: translateY(-1px);
-  border-color: rgba(15, 118, 110, 0.45);
+  border-color: rgba(35, 127, 120, 0.34);
 }
 
 .workbench,
@@ -298,7 +298,7 @@ p {
   color: var(--text);
   text-align: left;
   text-decoration: none;
-  background: #fbfdfe;
+  background: #fcfefe;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   cursor: pointer;
@@ -308,7 +308,7 @@ p {
 .request-card.active,
 .student-request-card.active {
   border-color: var(--teal);
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+  box-shadow: 0 0 0 3px rgba(35, 127, 120, 0.1);
 }
 
 .request-card__top,
@@ -327,7 +327,7 @@ p {
   flex-wrap: wrap;
   color: var(--muted);
   font-size: 0.82rem;
-  font-weight: 800;
+  font-weight: 680;
 }
 
 .status-dot {
@@ -365,7 +365,7 @@ p {
   display: block;
   color: var(--muted);
   font-size: 0.78rem;
-  font-weight: 850;
+  font-weight: 720;
   text-transform: uppercase;
 }
 
@@ -377,7 +377,7 @@ p {
 .validation-panel {
   padding: 16px;
   margin: 14px 0;
-  background: #fbfdfe;
+  background: #fcfefe;
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
@@ -392,10 +392,10 @@ p {
 .attachment-row span {
   padding: 6px 9px;
   border-radius: 999px;
-  background: #eef6f4;
+  background: #edf7f5;
   color: var(--teal);
   font-size: 0.82rem;
-  font-weight: 850;
+  font-weight: 720;
 }
 
 .action-grid {
@@ -427,7 +427,7 @@ p {
   margin-bottom: 6px;
   color: var(--navy);
   font-size: 0.84rem;
-  font-weight: 900;
+  font-weight: 720;
 }
 
 .form-control {
@@ -443,7 +443,7 @@ p {
 
 .form-control:focus {
   border-color: var(--teal);
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.16);
+  box-shadow: 0 0 0 3px rgba(35, 127, 120, 0.14);
 }
 
 .form-actions {
@@ -463,14 +463,14 @@ p {
   border-radius: 8px;
   cursor: pointer;
   font-size: 0.9rem;
-  font-weight: 900;
+  font-weight: 760;
   text-decoration: none;
 }
 
 .btn-primary {
   color: white;
   background: var(--teal);
-  box-shadow: 0 10px 20px rgba(15, 118, 110, 0.2);
+  box-shadow: 0 8px 18px rgba(35, 127, 120, 0.16);
 }
 
 .btn-success {
@@ -502,7 +502,7 @@ p {
   border-radius: 999px;
   color: white;
   font-size: 0.78rem;
-  font-weight: 900;
+  font-weight: 760;
 }
 
 .badge-active,
@@ -530,8 +530,8 @@ p {
 .timeline-item {
   position: relative;
   padding: 12px 12px 12px 22px;
-  border-left: 3px solid rgba(15, 118, 110, 0.25);
-  background: #fbfdfe;
+  border-left: 3px solid rgba(35, 127, 120, 0.22);
+  background: #fcfefe;
   border-radius: 0 8px 8px 0;
 }
 
@@ -550,7 +550,7 @@ p {
 .timeline-item small {
   color: var(--muted);
   font-size: 0.78rem;
-  font-weight: 850;
+  font-weight: 680;
 }
 
 .calendar-pill {
@@ -558,13 +558,13 @@ p {
   padding: 7px 9px;
   text-align: center;
   color: var(--navy);
-  background: #fff7e3;
+  background: #fff8e8;
   border-radius: 8px;
-  font-weight: 900;
+  font-weight: 760;
 }
 
 .operations-panel--accent {
-  border-top: 5px solid var(--gold);
+  border-top: 3px solid var(--gold);
 }
 
 .consent-box {
@@ -575,7 +575,7 @@ p {
   color: var(--navy);
   background: var(--surface-muted);
   border-radius: 8px;
-  font-weight: 800;
+  font-weight: 680;
 }
 
 .validation-panel {
@@ -610,7 +610,7 @@ p {
 .empty-state {
   padding: 18px;
   color: var(--muted);
-  background: #fbfdfe;
+  background: #fcfefe;
   border: 1px dashed var(--border);
   border-radius: var(--radius);
 }
@@ -634,9 +634,9 @@ td {
 
 th {
   color: var(--navy);
-  background: #eaf1f4;
+  background: #f0f6f7;
   font-size: 0.78rem;
-  font-weight: 900;
+  font-weight: 760;
   text-transform: uppercase;
 }
 
@@ -651,7 +651,7 @@ th {
   margin: 86px auto;
   padding: 34px;
   text-align: left;
-  border-top: 5px solid var(--gold);
+  border-top: 3px solid var(--gold);
 }
 
 .login-subtitle {
@@ -668,7 +668,7 @@ th {
   color: white;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 850;
+  font-weight: 760;
 }
 
 .admin-entry {

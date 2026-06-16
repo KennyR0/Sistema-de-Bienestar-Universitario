@@ -94,7 +94,7 @@ export class StudentNuevaSolicitudComponent {
 						id: `att-${Date.now()}`,
 						name: this.attachmentName().trim(),
 						type: this.attachmentName().split('.').pop()?.toUpperCase() || 'Archivo',
-						size: 'Simulado'
+						size: 'Pendiente de revisión'
 					}
 				]
 			: [];
