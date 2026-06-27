@@ -1,4 +1,5 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, computed, inject } from '@angular/core';
+import { AuthService } from './auth.service';
 
 export type UserRole = 'admin' | 'student' | null;
 
@@ -6,23 +7,25 @@ export type UserRole = 'admin' | 'student' | null;
   providedIn: 'root'
 })
 export class RoleService {
-  private readonly roleSignal = signal<UserRole>(null);
+  private readonly authService = inject(AuthService);
 
-  readonly role = this.roleSignal.asReadonly();
+  readonly role = computed<UserRole>(() => this.authService.currentUser()?.role ?? null);
 
   setRole(role: UserRole): void {
-    this.roleSignal.set(role);
+    if (role === null) {
+      this.clearRole();
+    }
   }
 
   clearRole(): void {
-    this.roleSignal.set(null);
+    this.authService.logout();
   }
 
   isAdmin(): boolean {
-    return this.roleSignal() === 'admin';
+    return this.role() === 'admin';
   }
 
   isStudent(): boolean {
-    return this.roleSignal() === 'student';
+    return this.role() === 'student';
   }
 }

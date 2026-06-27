@@ -21,7 +21,7 @@
         }
       </nav>
 
-      <button class="btn btn-outline nav-logout" type="button" (click)="logout()" routerLink="/">
+      <button class="btn btn-outline nav-logout" type="button" (click)="logout()">
         Salir
       </button>
     </aside>
@@ -32,7 +32,7 @@
           <span>{{ isAdmin() ? 'Panel administrativo' : 'Portal estudiantil' }}</span>
           <strong>Gestión de Bienestar ULEAM</strong>
         </div>
-        <span class="signal-chip">{{ isAdmin() ? 'Equipo Bienestar' : 'Estudiante' }}</span>
+        <span class="signal-chip">{{ currentUser()?.fullName ?? (isAdmin() ? 'Equipo Bienestar' : 'Estudiante') }}</span>
       </div>
       <router-outlet></router-outlet>
     </main>

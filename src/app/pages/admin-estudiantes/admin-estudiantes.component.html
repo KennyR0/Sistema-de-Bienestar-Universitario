@@ -21,7 +21,7 @@
 							<strong>{{ student.fullName }}</strong>
 							<span class="badge" [class.badge-active]="student.status === 'Activo'" [class.badge-inactive]="student.status !== 'Activo'">{{ student.status }}</span>
 						</span>
-						<span>{{ student.code }} · {{ student.program }}</span>
+						<span>{{ student.code }} | {{ student.program }}</span>
 					</button>
 				}
 			</div>
@@ -33,12 +33,14 @@
 					<div>
 						<p class="module-kicker">Ficha del estudiante</p>
 						<h3>{{ student.fullName }}</h3>
-						<p>{{ student.code }} · {{ student.program }}</p>
+						<p>{{ student.code }} | {{ student.faculty || 'Facultad por registrar' }}</p>
 					</div>
 					<button class="btn btn-primary" type="button" (click)="onEdit(student)">Editar ficha</button>
 				</div>
 				<div class="detail-grid">
 					<div><span>ID</span><strong>{{ student.id }}</strong></div>
+					<div><span>Carrera</span><strong>{{ student.program }}</strong></div>
+					<div><span>Semestre</span><strong>{{ student.semester || 'Primer semestre' }}</strong></div>
 					<div><span>Estado</span><strong>{{ student.status }}</strong></div>
 					<div><span>Ruta sugerida</span><strong>{{ student.status === 'Activo' ? 'Disponible para atención' : 'Verificar matrícula' }}</strong></div>
 					<div><span>Indicador</span><strong>Seguimiento regular</strong></div>
@@ -49,23 +51,33 @@
 					<button class="btn btn-danger" type="button" (click)="onDelete(student)">Eliminar registro</button>
 				</div>
 			}
-
-			@if (draftStudent(); as draft) {
-				<div class="form-section">
-					<h3>{{ editingStudent() ? 'Editar estudiante' : 'Registrar estudiante' }}</h3>
-					<div class="form-grid">
-						<div class="form-group"><label>ID</label><input class="form-control" type="number" [value]="draft.id" (input)="onDraftIdInput($any($event.target).value)" /></div>
-						<div class="form-group"><label>Nombre completo</label><input class="form-control" [value]="draft.fullName" (input)="onDraftNameInput($any($event.target).value)" /></div>
-						<div class="form-group"><label>Código</label><input class="form-control" [value]="draft.code" (input)="onDraftCodeInput($any($event.target).value)" /></div>
-						<div class="form-group"><label>Carrera</label><input class="form-control" [value]="draft.program" (input)="onDraftProgramInput($any($event.target).value)" /></div>
-						<div class="form-group"><label>Estado</label><select class="form-control" [value]="draft.status" (change)="onDraftStatusChange($any($event.target).value)">@for (status of statusOptions; track status) { <option [value]="status">{{ status }}</option> }</select></div>
-					</div>
-					<div class="form-actions">
-						<button class="btn btn-outline" type="button" (click)="onCancelEdit()">Cancelar</button>
-						<button class="btn btn-primary" type="button" [disabled]="!isDraftValid()" (click)="onSaveEdit()">Guardar cambios</button>
-					</div>
-				</div>
-			}
 		</section>
 	</section>
+
+	@if (draftStudent(); as draft) {
+		<div class="drawer-backdrop" role="presentation" (click)="onCancelEdit()">
+			<section class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="student-drawer-title" (click)="$event.stopPropagation()">
+				<div class="drawer-heading">
+					<div>
+						<p class="module-kicker">Ficha estudiantil</p>
+						<h3 id="student-drawer-title">{{ editingStudent() ? 'Editar estudiante' : 'Registrar estudiante' }}</h3>
+					</div>
+					<button class="drawer-close" type="button" aria-label="Cerrar" (click)="onCancelEdit()">×</button>
+				</div>
+				<div class="form-grid">
+					<div class="form-group"><label>ID</label><input class="form-control" type="number" [value]="draft.id" (input)="onDraftIdInput($any($event.target).value)" /></div>
+					<div class="form-group"><label>Nombre completo</label><input class="form-control" [value]="draft.fullName" (input)="onDraftNameInput($any($event.target).value)" /></div>
+					<div class="form-group"><label>Código</label><input class="form-control" [value]="draft.code" (input)="onDraftCodeInput($any($event.target).value)" /></div>
+					<div class="form-group"><label>Facultad</label><input class="form-control" [value]="draft.faculty || ''" (input)="onDraftFacultyInput($any($event.target).value)" /></div>
+					<div class="form-group"><label>Carrera</label><input class="form-control" [value]="draft.program" (input)="onDraftProgramInput($any($event.target).value)" /></div>
+					<div class="form-group"><label>Semestre</label><select class="form-control" [value]="draft.semester || 'Primer semestre'" (change)="onDraftSemesterChange($any($event.target).value)">@for (semester of semesterOptions; track semester) { <option [value]="semester">{{ semester }}</option> }</select></div>
+					<div class="form-group"><label>Estado</label><select class="form-control" [value]="draft.status" (change)="onDraftStatusChange($any($event.target).value)">@for (status of statusOptions; track status) { <option [value]="status">{{ status }}</option> }</select></div>
+				</div>
+				<div class="form-actions">
+					<button class="btn btn-outline" type="button" (click)="onCancelEdit()">Cancelar</button>
+					<button class="btn btn-primary" type="button" [disabled]="!isDraftValid()" (click)="onSaveEdit()">Guardar cambios</button>
+				</div>
+			</section>
+		</div>
+	}
 </div>

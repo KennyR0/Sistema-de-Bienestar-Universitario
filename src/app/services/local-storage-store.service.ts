@@ -18,12 +18,14 @@ export class LocalStorageStoreService {
 
 	private readCollection<T>(key: string, seed: T[]): T[] {
 		if (!this.canUseStorage()) {
+			// En entornos sin navegador se usa una copia para no mutar los datos semilla.
 			return [...seed];
 		}
 
 		const raw = localStorage.getItem(key);
 
 		if (!raw) {
+			// La primera carga inicializa localStorage con la coleccion base del modulo.
 			this.saveCollection(key, seed);
 			return [...seed];
 		}
@@ -32,6 +34,7 @@ export class LocalStorageStoreService {
 			const parsed: unknown = JSON.parse(raw);
 			return Array.isArray(parsed) ? (parsed as T[]) : [...seed];
 		} catch {
+			// Si el contenido guardado esta corrupto, se restaura la coleccion base.
 			this.saveCollection(key, seed);
 			return [...seed];
 		}

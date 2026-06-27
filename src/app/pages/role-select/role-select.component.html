@@ -1,14 +1,111 @@
-<div class="container login-container">
-  <h2>Sistema de Gestión</h2>
-  <h1>Bienestar Universitario (ULEAM)</h1>
-  <p class="login-subtitle">
-    Seleccione su perfil para acceder al sistema de bienestar universitario.
-  </p>
+<div class="auth-page">
+  <section class="container login-container auth-card">
+    <p class="module-kicker">Acceso institucional</p>
+    <h1>Bienestar Universitario ULEAM</h1>
+    <p class="login-subtitle">
+      Ingrese con su correo institucional para continuar al panel correspondiente.
+    </p>
 
-  <button class="login-btn admin-entry" type="button" (click)="enterAsAdmin()">
-    Ingresar como Administrador
-  </button>
-  <button class="login-btn student-entry" type="button" (click)="enterAsStudent()">
-    Ingresar como Estudiante 
-  </button>
+    <div class="auth-seed-box">
+      <strong>Cuentas de prueba</strong>
+      <span>Admin@live.uleam.edu.ec / Admin123</span>
+      <span>prueba123@live.uleam.edu.ec / prueba123</span>
+    </div>
+
+    <form class="auth-form" (submit)="$event.preventDefault(); onSubmit()">
+      @if (isRegisterMode()) {
+        <div class="form-group">
+          <label for="full-name">Nombre completo</label>
+          <input
+            id="full-name"
+            class="form-control"
+            type="text"
+            autocomplete="name"
+            [value]="fullName()"
+            (input)="onInput('fullName', $any($event.target).value)"
+          />
+        </div>
+      }
+
+      <div class="form-group">
+        <label for="email">Correo institucional</label>
+        <input
+          id="email"
+          class="form-control"
+          type="email"
+          autocomplete="email"
+          [value]="email()"
+          (input)="onInput('email', $any($event.target).value)"
+        />
+        @if (isRegisterMode()) {
+          <small>Use su correo estudiantil: debe iniciar con e y terminar en &#64;live.uleam.edu.ec.</small>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input
+          id="password"
+          class="form-control"
+          type="password"
+          autocomplete="current-password"
+          [value]="password()"
+          (input)="onInput('password', $any($event.target).value)"
+        />
+      </div>
+
+      @if (isRegisterMode()) {
+        <div class="form-row">
+          <div class="form-group">
+            <label for="faculty">Facultad</label>
+            <select
+              id="faculty"
+              class="form-control"
+              [value]="faculty()"
+              (change)="onFacultyChange($any($event.target).value)"
+            >
+              <option value="">Seleccione facultad</option>
+              @for (offer of facultyOffers; track offer.name) {
+                <option [value]="offer.name">{{ offer.name }}</option>
+              }
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="program">Carrera</label>
+            <select
+              id="program"
+              class="form-control"
+              [disabled]="availableCareers().length === 0"
+              [value]="program()"
+              (change)="onInput('program', $any($event.target).value)"
+            >
+              <option value="">Seleccione carrera</option>
+              @for (career of availableCareers(); track career) {
+                <option [value]="career">{{ career }}</option>
+              }
+            </select>
+          </div>
+        </div>
+      }
+
+      @if (message()) {
+        <p class="auth-message">{{ message() }}</p>
+      }
+
+      <button class="btn btn-primary auth-submit" type="submit">
+        {{ isRegisterMode() ? 'Crear cuenta de estudiante' : 'Ingresar' }}
+      </button>
+    </form>
+
+    <div class="auth-switch">
+      @if (isRegisterMode()) {
+        <span>Ya tienes cuenta?</span>
+        <button class="link-button" type="button" (click)="showLogin()">Ingresar</button>
+      } @else {
+        <span>No tienes cuenta?</span>
+        <button class="link-button" type="button" (click)="showRegister()">Crear cuenta</button>
+      }
+    </div>
+  </section>
 </div>

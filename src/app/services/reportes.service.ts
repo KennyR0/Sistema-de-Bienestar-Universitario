@@ -83,6 +83,19 @@ export class ReportesService {
 		});
 	}
 
+	deleteReporte(target: ReporteGuardado) {
+		this.reportes.update((list) => {
+			const next = list.filter((item) => item.id !== target.id);
+			this.store.saveCollection(STORAGE_KEY, next);
+			return next;
+		});
+	}
+
+	clearReportes() {
+		this.reportes.set([]);
+		this.store.saveCollection(STORAGE_KEY, []);
+	}
+
 	getNextId(): string {
 		return `reporte-${Date.now()}`;
 	}

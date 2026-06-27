@@ -566,7 +566,7 @@ Formulario mediante el cual los estudiantes pueden **crear una nueva solicitud d
 | Tipo de Atención | Dropdown | Psicológica / Médica / Social / Académica |
 | Asunto | Texto corto | Título breve del motivo de la solicitud |
 | Descripción Detallada | Texto largo | Explicación completa de la situación |
-| Documento de respaldo (opcional) | Carga de archivo | Formatos: pdf, png, docx |
+| Añadir Archivos (opcional) | Carga de archivo | Formatos: pdf, png, docx |
 
 ### Botones de Acción
 - **[Cancelar]** — Descarta el formulario y regresa al listado
@@ -576,7 +576,7 @@ Formulario mediante el cual los estudiantes pueden **crear una nueva solicitud d
 - El tipo de atención es obligatorio
 - El asunto es obligatorio
 - La descripción debe tener un mínimo de caracteres
-- Los documentos de respaldo son opcionales (formatos: .pdf, .png, .docx)
+- Los archivos adjuntos son opcionales (formatos: .pdf, .png, .docx)
 
 ### Diseño de la Interfaz
 
@@ -599,7 +599,7 @@ Formulario mediante el cual los estudiantes pueden **crear una nueva solicitud d
 │              │  [                                   ] │                 │
 │              │  [                                   ] │                 │
 │              │                                        │                 │
-│              │  Documento de respaldo (opcional)      │                 │
+│              │       Añadir archivos (opcional)       │                 │
 │              │              [📎 +]                    │                 │
 │              │       Formatos: pdf, png, docx         │                 │
 │              │                                        │                 │
@@ -661,4 +661,4 @@ Las interfaces diseñadas siguen principios de usabilidad clara, con navegación
 
 ---
 
-*Documento elaborado para la materia de Programación Orientada a Objetos — ULEAM 2026*
+*Documento elaborado para la materia de Aplicaciones Web — ULEAM 2026*

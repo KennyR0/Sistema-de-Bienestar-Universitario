@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { Caso } from '../models/caso';
+import { Caso, CasoRiesgo } from '../models/caso';
 import { LocalStorageStoreService } from './local-storage-store.service';
 
 const STORAGE_KEY = 'bienestar:v1:casos';
@@ -43,6 +43,10 @@ export class CasosService {
 	private readonly store = inject(LocalStorageStoreService);
 	private readonly casos = this.store.createCollection<Caso>(STORAGE_KEY, SEED_CASOS);
 
+	constructor() {
+		this.normalizeCasos();
+	}
+
 	getCasos() {
 		return this.casos.asReadonly();
 	}
@@ -78,5 +82,32 @@ export class CasosService {
 
 	private persist(value: Caso[]) {
 		this.store.saveCollection(STORAGE_KEY, value);
+	}
+
+	private normalizeCasos() {
+		this.casos.update((list) => {
+			let changed = false;
+			const next = list.map((item) => {
+				const riskType = this.normalizeRisk(item.riskType);
+
+				if (riskType !== item.riskType) {
+					changed = true;
+				}
+
+				return { ...item, riskType };
+			});
+
+			if (changed) {
+				this.persist(next);
+			}
+
+			return next;
+		});
+	}
+
+	private normalizeRisk(value: string): CasoRiesgo {
+		if (value === 'Personal' || value === 'Social') return value;
+		if (value === 'Económico') return 'Económico';
+		return 'Académico';
 	}
 }

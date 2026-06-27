@@ -3,7 +3,7 @@
 		<div>
 			<p class="module-kicker">Centro de atención</p>
 			<h2>Bandeja de solicitudes</h2>
-			<p>Priorice, revise y dé seguimiento a las solicitudes recibidas por Bienestar Universitario.</p>
+			<p>Priorice, revise y dé seguimiento a los requerimientos recibidos por Bienestar Universitario.</p>
 		</div>
 		<div class="hero-actions">
 			<span class="signal-chip signal-chip--urgent">{{ summary().high }} prioridad alta</span>
@@ -30,7 +30,7 @@
 		</article>
 	</section>
 
-	<section class="workbench">
+	<section class="workbench admin-case-workbench">
 		<aside class="work-queue">
 			<div class="queue-toolbar">
 				<div class="form-group">
@@ -39,23 +39,23 @@
 						id="solicitud-search"
 						class="form-control"
 						type="text"
-						placeholder="Nombre, código, carrera o asunto"
+						placeholder="Nombre, código, facultad, carrera o asunto"
 						[value]="searchTerm()"
 						(input)="onSearchInput($any($event.target).value)"
 					/>
 				</div>
 				<div class="compact-filters">
-					<select class="form-control" (change)="onPriorityChange($any($event.target).value)">
+					<select class="form-control" aria-label="Prioridad" [value]="priorityFilter()" (change)="onPriorityChange($any($event.target).value)">
 						@for (option of priorityOptions; track option) {
 							<option [value]="option">{{ option }}</option>
 						}
 					</select>
-					<select class="form-control" (change)="onStatusChange($any($event.target).value)">
+					<select class="form-control" aria-label="Estado" [value]="statusFilter()" (change)="onStatusChange($any($event.target).value)">
 						@for (option of statusOptions; track option) {
 							<option [value]="option">{{ option }}</option>
 						}
 					</select>
-					<select class="form-control" (change)="onTypeChange($any($event.target).value)">
+					<select class="form-control" aria-label="Tipo" [value]="typeFilter()" (change)="onTypeChange($any($event.target).value)">
 						@for (option of typeOptions; track option) {
 							<option [value]="option">{{ option }}</option>
 						}
@@ -75,12 +75,13 @@
 							<span class="status-dot" [class.status-dot--high]="item.priority === 'Alta'"></span>
 							<strong>{{ item.subject }}</strong>
 						</span>
-						<span>{{ item.studentName }} · {{ item.program }}</span>
+						<span>{{ item.studentName }} | {{ item.program }}</span>
 						<span class="request-card__meta">
 							<span class="badge" [class.badge-pending]="item.status === 'Pendiente'" [class.badge-process]="item.status === 'En Proceso'" [class.badge-completed]="item.status === 'Completada' || item.status === 'Aprobada'" [class.badge-rejected]="item.status === 'Rechazada'">
 								{{ item.status }}
 							</span>
 							<span>{{ item.priority }}</span>
+							<span>{{ item.semester }}</span>
 							<span>{{ item.date }}</span>
 						</span>
 					</button>
@@ -92,22 +93,34 @@
 		</aside>
 
 		@if (activeSolicitud(); as solicitud) {
-			<section class="detail-panel">
+			<section class="detail-panel case-file-panel">
 				<div class="student-profile">
 					<div>
-						<p class="module-kicker">Ficha del estudiante</p>
+						<p class="module-kicker">Expediente activo</p>
 						<h3>{{ solicitud.studentName }}</h3>
-						<p>{{ solicitud.studentCode }} · {{ solicitud.program }}</p>
+						<p>{{ solicitud.studentCode }} | {{ solicitud.faculty }} | {{ solicitud.program }}</p>
 					</div>
 					<span class="priority-badge" [class.priority-badge--high]="solicitud.priority === 'Alta'">
 						{{ solicitud.priority }}
 					</span>
 				</div>
 
+				@if (operationMessage()) {
+					<p class="inline-status">{{ operationMessage() }}</p>
+				}
+
 				<div class="detail-grid">
 					<div>
 						<span>Tipo</span>
 						<strong>{{ solicitud.type }}</strong>
+					</div>
+					<div>
+						<span>Estado</span>
+						<strong>{{ solicitud.status }}</strong>
+					</div>
+					<div>
+						<span>Semestre</span>
+						<strong>{{ solicitud.semester }}</strong>
 					</div>
 					<div>
 						<span>Canal</span>
@@ -124,54 +137,63 @@
 				</div>
 
 				<article class="narrative-panel">
+					<p class="module-kicker">Solicitud</p>
 					<h3>{{ solicitud.subject }}</h3>
 					<p>{{ solicitud.description }}</p>
 					@if (solicitud.attachments.length > 0) {
 						<div class="attachment-row">
 							@for (file of solicitud.attachments; track file.id) {
-								<span>{{ file.name }} · {{ file.size }}</span>
+								<span>{{ file.name }} | {{ file.size }}</span>
 							}
 						</div>
 					}
 				</article>
 
-				<div class="action-grid">
-					<button class="btn btn-primary" type="button" (click)="onSetStatus(solicitud, 'En Proceso')">
-						Marcar en proceso
-					</button>
-					<button class="btn btn-success" type="button" (click)="onSetStatus(solicitud, 'Completada')">
-						Completar
-					</button>
-					<button class="btn btn-danger" type="button" (click)="onSetStatus(solicitud, 'Rechazada')">
-						Rechazar
-					</button>
-					<button class="btn btn-outline" type="button" (click)="onOpenCase(solicitud)">
-						Abrir caso
-					</button>
-				</div>
-
-				<div class="form-section">
-					<h3>Asignar cita</h3>
-					<div class="form-grid">
-						<div class="form-group">
-							<label for="appointment-date">Fecha</label>
-							<input id="appointment-date" class="form-control" type="date" [value]="appointmentDate()" (change)="onAppointmentDateChange($any($event.target).value)" />
-						</div>
-						<div class="form-group">
-							<label for="appointment-time">Hora</label>
-							<input id="appointment-time" class="form-control" type="time" [value]="appointmentTime()" (change)="onAppointmentTimeChange($any($event.target).value)" />
-						</div>
+				<div class="case-command-panel">
+					<div>
+						<h3>Resolución administrativa</h3>
+						<p>Cambie el estado solo cuando exista una decisión o una acción documentada.</p>
 					</div>
-					<button class="btn btn-primary" type="button" (click)="onAssignAppointment(solicitud)">
-						Programar atención
-					</button>
+					<div class="action-grid">
+						<button class="btn btn-primary" type="button" (click)="onSetStatus(solicitud, 'En Proceso')">
+							Marcar en proceso
+						</button>
+						<button class="btn btn-success" type="button" (click)="onSetStatus(solicitud, 'Completada')">
+							Completar
+						</button>
+						<button class="btn btn-danger" type="button" (click)="onSetStatus(solicitud, 'Rechazada')">
+							Rechazar
+						</button>
+						<button class="btn btn-outline" type="button" (click)="onOpenCase(solicitud)">
+							Abrir caso
+						</button>
+					</div>
 				</div>
 
-				<div class="form-section">
-					<h3>Observación interna</h3>
-					<textarea class="form-control" rows="3" placeholder="Registrar acuerdo, llamada o derivación" [value]="noteText()" (input)="onNoteInput($any($event.target).value)"></textarea>
-					<div class="form-actions">
-						<button class="btn btn-outline" type="button" (click)="onAddNote(solicitud)">Agregar al historial</button>
+				<div class="case-forms-grid">
+					<div class="form-section">
+						<h3>Asignar cita</h3>
+						<div class="form-grid">
+							<div class="form-group">
+								<label for="appointment-date">Fecha</label>
+								<input id="appointment-date" class="form-control" type="date" [value]="appointmentDate()" (change)="onAppointmentDateChange($any($event.target).value)" />
+							</div>
+							<div class="form-group">
+								<label for="appointment-time">Hora</label>
+								<input id="appointment-time" class="form-control" type="time" [value]="appointmentTime()" (change)="onAppointmentTimeChange($any($event.target).value)" />
+							</div>
+						</div>
+						<button class="btn btn-primary" type="button" (click)="onAssignAppointment(solicitud)">
+							Programar atención
+						</button>
+					</div>
+
+					<div class="form-section">
+						<h3>Observación interna</h3>
+						<textarea class="form-control" rows="5" placeholder="Registrar acuerdo, llamada o derivación" [value]="noteText()" (input)="onNoteInput($any($event.target).value)"></textarea>
+						<div class="form-actions">
+							<button class="btn btn-outline" type="button" (click)="onAddNote(solicitud)">Agregar al historial</button>
+						</div>
 					</div>
 				</div>
 
@@ -189,4 +211,52 @@
 			</section>
 		}
 	</section>
+
+	@if (caseDialogSolicitud(); as solicitud) {
+		<div class="modal-backdrop" role="presentation" (click)="onCancelOpenCase()">
+			<section class="modal-panel case-modal-panel" role="dialog" aria-modal="true" aria-labelledby="case-dialog-title" (click)="$event.stopPropagation()">
+				<p class="module-kicker">Derivación institucional</p>
+				<h3 id="case-dialog-title">Abrir caso de seguimiento</h3>
+				<p>
+					Esta acción crea un caso activo para seguimiento especializado y agrega una entrada al historial de la solicitud.
+				</p>
+				<div class="detail-grid">
+					<div>
+						<span>Estudiante</span>
+						<strong>{{ solicitud.studentName }}</strong>
+					</div>
+					<div>
+						<span>Solicitud</span>
+						<strong>{{ solicitud.subject }}</strong>
+					</div>
+					<div>
+						<span>Prioridad percibida</span>
+						<strong>{{ solicitud.priority }}</strong>
+					</div>
+					<div>
+						<span>Tipo de atención</span>
+						<strong>{{ solicitud.type }}</strong>
+					</div>
+				</div>
+				<div class="form-grid">
+					<div class="form-group">
+						<label for="case-risk">Tipo de riesgo</label>
+						<select id="case-risk" class="form-control" [value]="caseRisk()" (change)="onCaseRiskChange($any($event.target).value)">
+							@for (option of caseRiskOptions; track option) {
+								<option [value]="option">{{ option }}</option>
+							}
+						</select>
+					</div>
+					<div class="form-group form-group--wide">
+						<label for="case-note">Nota inicial</label>
+						<textarea id="case-note" class="form-control" rows="4" placeholder="Ej. Derivar a trabajo social y contactar al estudiante esta semana." [value]="caseNote()" (input)="onCaseNoteInput($any($event.target).value)"></textarea>
+					</div>
+				</div>
+				<div class="form-actions">
+					<button class="btn btn-outline" type="button" (click)="onCancelOpenCase()">Cancelar</button>
+					<button class="btn btn-primary" type="button" (click)="onConfirmOpenCase()">Abrir caso</button>
+				</div>
+			</section>
+		</div>
+	}
 </div>

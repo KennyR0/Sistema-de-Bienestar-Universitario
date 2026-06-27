@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import {
 	CanalContacto,
+	SemestreAcademico,
 	Solicitud,
 	SolicitudEstado,
 	SolicitudHistorial,
@@ -9,13 +10,32 @@ import {
 import { LocalStorageStoreService } from './local-storage-store.service';
 
 const STORAGE_KEY = 'bienestar:v2:solicitudes';
+const DEFAULT_FACULTY = 'Facultad por registrar';
+const DEFAULT_SEMESTER: SemestreAcademico = 'Primer semestre';
+const TEST_STUDENT = {
+	id: 105,
+	name: 'Estudiante de Prueba',
+	code: '20240001',
+	email: 'prueba123@live.uleam.edu.ec',
+	faculty: 'Facultad Ciencias de la Vida y Tecnologías',
+	program: 'Ingeniería en Software',
+	semester: 'Segundo semestre' as SemestreAcademico
+};
+const LEGACY_SEED_IDS = new Set(['SOL-001', 'SOL-002', 'SOL-003']);
+const SEED_SEMESTERS: Record<string, SemestreAcademico> = {
+	'SOL-001': 'Primer semestre',
+	'SOL-002': 'Segundo semestre',
+	'SOL-003': 'Tercer semestre'
+};
 
 const SEED_SOLICITUDES: Solicitud[] = [
 	{
 		id: 'SOL-001',
 		studentName: 'Juan Pérez García',
 		studentCode: '20210001',
+		faculty: 'Facultad Ciencias de la Vida y Tecnologías',
 		program: 'Ingeniería de Sistemas',
+		semester: 'Primer semestre',
 		type: 'Psicológica',
 		subject: 'Ansiedad antes de exámenes finales',
 		description:
@@ -47,7 +67,9 @@ const SEED_SOLICITUDES: Solicitud[] = [
 		id: 'SOL-002',
 		studentName: 'María García López',
 		studentCode: '20200015',
+		faculty: 'Facultad de Trabajo Social',
 		program: 'Psicología',
+		semester: 'Segundo semestre',
 		type: 'Social',
 		subject: 'Evaluación para apoyo socioeconómico',
 		description:
@@ -86,7 +108,9 @@ const SEED_SOLICITUDES: Solicitud[] = [
 		id: 'SOL-003',
 		studentName: 'Carlos López Soto',
 		studentCode: '20220003',
+		faculty: 'Facultad de Jurisprudencia',
 		program: 'Derecho',
+		semester: 'Tercer semestre',
 		type: 'Académica',
 		subject: 'Orientación por riesgo de pérdida de asignatura',
 		description:
@@ -128,6 +152,11 @@ export class SolicitudesService {
 		STORAGE_KEY,
 		SEED_SOLICITUDES
 	);
+
+	constructor() {
+		// Ajusta solicitudes ya guardadas cuando el modelo gana campos nuevos.
+		this.normalizeStoredSolicitudes();
+	}
 
 	getSolicitudes() {
 		return this.solicitudes.asReadonly();
@@ -178,9 +207,13 @@ export class SolicitudesService {
 	}
 
 	createSolicitud(input: {
+		studentId?: number;
 		studentName: string;
 		studentCode: string;
+		studentEmail?: string;
+		faculty: string;
 		program: string;
+		semester: SemestreAcademico;
 		type: Solicitud['type'];
 		subject: string;
 		description: string;
@@ -191,9 +224,12 @@ export class SolicitudesService {
 		attachments: Solicitud['attachments'];
 		consent: boolean;
 	}): Solicitud {
+		// Centraliza los valores administrativos que toda solicitud nueva debe traer.
 		return {
 			id: this.getNextId(),
 			...input,
+			faculty: input.faculty.trim() || DEFAULT_FACULTY,
+			semester: input.semester || DEFAULT_SEMESTER,
 			date: new Date().toISOString().slice(0, 10),
 			status: 'Pendiente',
 			assignedProfessional: 'Sin asignar',
@@ -229,5 +265,59 @@ export class SolicitudesService {
 
 	private persist(value: Solicitud[]) {
 		this.store.saveCollection(STORAGE_KEY, value);
+	}
+
+	private normalizeStoredSolicitudes(): void {
+		// Conserva compatibilidad con datos antiguos sin borrar solicitudes creadas por el usuario.
+		this.solicitudes.update((list) => {
+			let changed = false;
+			const next = list.map((item) => {
+				const seededSemester = SEED_SEMESTERS[item.id];
+				const normalized = {
+					...item,
+					faculty: item.faculty?.trim() || this.getFallbackFaculty(item),
+					semester: item.semester || seededSemester || DEFAULT_SEMESTER
+				};
+
+				if (LEGACY_SEED_IDS.has(item.id)) {
+					// Las solicitudes semilla se reasignan al estudiante de prueba para poblar su portal.
+					normalized.studentId = TEST_STUDENT.id;
+					normalized.studentName = TEST_STUDENT.name;
+					normalized.studentCode = TEST_STUDENT.code;
+					normalized.studentEmail = TEST_STUDENT.email;
+					normalized.faculty = TEST_STUDENT.faculty;
+					normalized.program = TEST_STUDENT.program;
+					normalized.semester = seededSemester ?? TEST_STUDENT.semester;
+				}
+
+				if (
+					normalized.studentId !== item.studentId ||
+					normalized.studentName !== item.studentName ||
+					normalized.studentCode !== item.studentCode ||
+					normalized.studentEmail !== item.studentEmail ||
+					normalized.faculty !== item.faculty ||
+					normalized.program !== item.program ||
+					normalized.semester !== item.semester
+				) {
+					changed = true;
+				}
+
+				return normalized;
+			});
+
+			if (changed) {
+				this.persist(next);
+			}
+
+			return next;
+		});
+	}
+
+	private getFallbackFaculty(item: Solicitud): string {
+		if (item.studentCode === TEST_STUDENT.code || item.studentId === TEST_STUDENT.id) {
+			return TEST_STUDENT.faculty;
+		}
+
+		return DEFAULT_FACULTY;
 	}
 }

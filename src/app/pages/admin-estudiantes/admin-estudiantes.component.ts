@@ -14,6 +14,18 @@ export class AdminEstudiantesComponent {
 	private readonly students = this.studentsService.getStudents();
 	searchTerm = signal('');
 	readonly statusOptions = ['Activo', 'Inactivo'];
+	readonly semesterOptions = [
+		'Primer semestre',
+		'Segundo semestre',
+		'Tercer semestre',
+		'Cuarto semestre',
+		'Quinto semestre',
+		'Sexto semestre',
+		'Séptimo semestre',
+		'Octavo semestre',
+		'Noveno semestre',
+		'Décimo semestre'
+	];
 
 	editingStudent = signal<Student | null>(null);
 	viewingStudent = signal<Student | null>(null);
@@ -47,7 +59,9 @@ export class AdminEstudiantesComponent {
 			String(draft.id).trim().length > 0 &&
 			draft.fullName.trim().length > 0 &&
 			draft.code.trim().length > 0 &&
+			(draft.faculty?.trim().length ?? 0) > 0 &&
 			draft.program.trim().length > 0 &&
+			(draft.semester?.trim().length ?? 0) > 0 &&
 			draft.status.trim().length > 0
 		);
 	});
@@ -63,7 +77,9 @@ export class AdminEstudiantesComponent {
 			id: this.studentsService.getNextId(),
 			fullName: '',
 			code: '',
+			faculty: '',
 			program: '',
+			semester: 'Primer semestre',
 			status: 'Activo'
 		});
 	}
@@ -106,6 +122,18 @@ export class AdminEstudiantesComponent {
 	onDraftProgramInput(value: string) {
 		this.draftStudent.update((draft) =>
 			draft ? { ...draft, program: value } : draft
+		);
+	}
+
+	onDraftFacultyInput(value: string) {
+		this.draftStudent.update((draft) =>
+			draft ? { ...draft, faculty: value } : draft
+		);
+	}
+
+	onDraftSemesterChange(value: string) {
+		this.draftStudent.update((draft) =>
+			draft ? { ...draft, semester: value } : draft
 		);
 	}
 

@@ -24,7 +24,7 @@
 				</span>
 				<div class="detail-grid">
 					<div><span>Profesional</span><strong>{{ item.professionalName }}</strong></div>
-					<div><span>Fecha</span><strong>{{ item.date }} · {{ item.time }}</strong></div>
+					<div><span>Fecha</span><strong>{{ item.date }} | {{ item.time }}</strong></div>
 					<div><span>Tipo</span><strong>{{ item.type }}</strong></div>
 				</div>
 				<div class="form-actions">
@@ -36,17 +36,25 @@
 	</section>
 
 	@if (draftCita(); as draft) {
-		<section class="form-section">
-			<h3>{{ editingCita() ? 'Editar cita' : 'Nueva cita' }}</h3>
-			<div class="form-grid">
-				<div class="form-group"><label>Estudiante</label><input class="form-control" [value]="draft.studentName" (input)="onDraftStudentInput($any($event.target).value)" /></div>
-				<div class="form-group"><label>Profesional</label><input class="form-control" [value]="draft.professionalName" (input)="onDraftProfessionalChange($any($event.target).value)" /></div>
-				<div class="form-group"><label>Fecha</label><input class="form-control" type="date" [value]="draft.date" (change)="onDraftDateChange($any($event.target).value)" /></div>
-				<div class="form-group"><label>Hora</label><input class="form-control" type="time" [value]="draft.time" (input)="onDraftTimeInput($any($event.target).value)" /></div>
-				<div class="form-group"><label>Tipo</label><select class="form-control" [value]="draft.type" (change)="onDraftTypeChange($any($event.target).value)">@for (option of typeOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
-				<div class="form-group"><label>Estado</label><select class="form-control" [value]="draft.status" (change)="onDraftStatusChange($any($event.target).value)">@for (option of editStatusOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
-			</div>
-			<div class="form-actions"><button class="btn btn-outline" type="button" (click)="onCancelEdit()">Cancelar</button><button class="btn btn-primary" type="button" [disabled]="!isDraftValid()" (click)="onSaveEdit()">Guardar</button></div>
-		</section>
+		<div class="drawer-backdrop" role="presentation" (click)="onCancelEdit()">
+			<section class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cita-drawer-title" (click)="$event.stopPropagation()">
+				<div class="drawer-heading">
+					<div>
+						<p class="module-kicker">Agenda</p>
+						<h3 id="cita-drawer-title">{{ editingCita() ? 'Editar cita' : 'Nueva cita' }}</h3>
+					</div>
+					<button class="drawer-close" type="button" aria-label="Cerrar" (click)="onCancelEdit()">×</button>
+				</div>
+				<div class="form-grid">
+					<div class="form-group"><label>Estudiante</label><input class="form-control" [value]="draft.studentName" (input)="onDraftStudentInput($any($event.target).value)" /></div>
+					<div class="form-group"><label>Profesional</label><input class="form-control" [value]="draft.professionalName" (input)="onDraftProfessionalChange($any($event.target).value)" /></div>
+					<div class="form-group"><label>Fecha</label><input class="form-control" type="date" [value]="draft.date" (change)="onDraftDateChange($any($event.target).value)" /></div>
+					<div class="form-group"><label>Hora</label><input class="form-control" type="time" [value]="draft.time" (input)="onDraftTimeInput($any($event.target).value)" /></div>
+					<div class="form-group"><label>Tipo</label><select class="form-control" [value]="draft.type" (change)="onDraftTypeChange($any($event.target).value)">@for (option of typeOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
+					<div class="form-group"><label>Estado</label><select class="form-control" [value]="draft.status" (change)="onDraftStatusChange($any($event.target).value)">@for (option of editStatusOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
+				</div>
+				<div class="form-actions"><button class="btn btn-outline" type="button" (click)="onCancelEdit()">Cancelar</button><button class="btn btn-primary" type="button" [disabled]="!isDraftValid()" (click)="onSaveEdit()">Guardar</button></div>
+			</section>
+		</div>
 	}
 </div>

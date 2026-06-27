@@ -29,18 +29,51 @@
 		}
 	</section>
 
+	@if (viewingCaso(); as caso) {
+		<div class="drawer-backdrop" role="presentation" (click)="onCloseView()">
+			<section class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="case-view-title" (click)="$event.stopPropagation()">
+				<div class="drawer-heading">
+					<div>
+						<p class="module-kicker">Caso de seguimiento</p>
+						<h3 id="case-view-title">{{ caso.studentName }}</h3>
+					</div>
+					<button class="drawer-close" type="button" aria-label="Cerrar" (click)="onCloseView()">×</button>
+				</div>
+				<div class="detail-grid">
+					<div><span>ID</span><strong>{{ caso.id }}</strong></div>
+					<div><span>Riesgo</span><strong>{{ caso.riskType }}</strong></div>
+					<div><span>Estado</span><strong>{{ caso.status }}</strong></div>
+					<div><span>Inicio</span><strong>{{ caso.startDate }}</strong></div>
+					<div><span>Última actualización</span><strong>{{ caso.lastUpdate }}</strong></div>
+				</div>
+				<div class="form-actions">
+					<button class="btn btn-outline" type="button" (click)="onCloseView()">Cerrar</button>
+					<button class="btn btn-primary" type="button" (click)="onEdit(caso)">Editar caso</button>
+				</div>
+			</section>
+		</div>
+	}
+
 	@if (draftCaso(); as draft) {
-		<section class="form-section">
-			<h3>{{ editingCaso() ? 'Editar caso' : 'Nuevo caso' }}</h3>
-			<div class="form-grid">
-				<div class="form-group"><label>ID</label><input class="form-control" [value]="draft.id" readonly /></div>
-				<div class="form-group"><label>Estudiante</label><input class="form-control" [value]="draft.studentName" (input)="onDraftStudentInput($any($event.target).value)" /></div>
-				<div class="form-group"><label>Riesgo</label><select class="form-control" [value]="draft.riskType" (change)="onDraftRiskChange($any($event.target).value)">@for (option of editRiskOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
-				<div class="form-group"><label>Estado</label><select class="form-control" [value]="draft.status" (change)="onDraftStatusChange($any($event.target).value)">@for (option of editStatusOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
-				<div class="form-group"><label>Inicio</label><input class="form-control" type="date" [value]="draft.startDate" (change)="onDraftStartDateChange($any($event.target).value)" /></div>
-				<div class="form-group"><label>Actualización</label><input class="form-control" type="date" [value]="draft.lastUpdate" (change)="onDraftLastUpdateChange($any($event.target).value)" /></div>
-			</div>
-			<div class="form-actions"><button class="btn btn-outline" type="button" (click)="onCancelEdit()">Cancelar</button><button class="btn btn-primary" type="button" [disabled]="!isDraftValid()" (click)="onSaveEdit()">Guardar</button></div>
-		</section>
+		<div class="drawer-backdrop" role="presentation" (click)="onCancelEdit()">
+			<section class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="case-drawer-title" (click)="$event.stopPropagation()">
+				<div class="drawer-heading">
+					<div>
+						<p class="module-kicker">Seguimiento</p>
+						<h3 id="case-drawer-title">{{ editingCaso() ? 'Editar caso' : 'Nuevo caso' }}</h3>
+					</div>
+					<button class="drawer-close" type="button" aria-label="Cerrar" (click)="onCancelEdit()">×</button>
+				</div>
+				<div class="form-grid">
+					<div class="form-group"><label>ID</label><input class="form-control" [value]="draft.id" readonly /></div>
+					<div class="form-group"><label>Estudiante</label><input class="form-control" [value]="draft.studentName" (input)="onDraftStudentInput($any($event.target).value)" /></div>
+					<div class="form-group"><label>Riesgo</label><select class="form-control" [value]="draft.riskType" (change)="onDraftRiskChange($any($event.target).value)">@for (option of editRiskOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
+					<div class="form-group"><label>Estado</label><select class="form-control" [value]="draft.status" (change)="onDraftStatusChange($any($event.target).value)">@for (option of editStatusOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
+					<div class="form-group"><label>Inicio</label><input class="form-control" type="date" [value]="draft.startDate" (change)="onDraftStartDateChange($any($event.target).value)" /></div>
+					<div class="form-group"><label>Actualización</label><input class="form-control" type="date" [value]="draft.lastUpdate" (change)="onDraftLastUpdateChange($any($event.target).value)" /></div>
+				</div>
+				<div class="form-actions"><button class="btn btn-outline" type="button" (click)="onCancelEdit()">Cancelar</button><button class="btn btn-primary" type="button" [disabled]="!isDraftValid()" (click)="onSaveEdit()">Guardar</button></div>
+			</section>
+		</div>
 	}
 </div>

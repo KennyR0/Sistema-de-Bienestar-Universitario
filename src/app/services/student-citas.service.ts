@@ -1,33 +1,34 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, computed, inject } from '@angular/core';
 import { StudentCita } from '../models/student-cita';
-import { LocalStorageStoreService } from './local-storage-store.service';
-
-const STORAGE_KEY = 'bienestar:v1:student-citas';
-const SEED_CITAS: StudentCita[] = [
-	{
-		id: 'student-cita-001',
-		professionalName: 'Dr. Juan Pérez',
-		date: '2026-10-26',
-		time: '10:00',
-		type: 'Médica',
-		status: 'Programada'
-	},
-	{
-		id: 'student-cita-002',
-		professionalName: 'Lic. Ana García',
-		date: '2026-10-27',
-		time: '14:30',
-		type: 'Psicológica',
-		status: 'Completada'
-	}
-];
+import { AuthService } from './auth.service';
+import { CitasService } from './citas.service';
 
 @Injectable({ providedIn: 'root' })
 export class StudentCitasService {
-	private readonly store = inject(LocalStorageStoreService);
-	private readonly citas = this.store.createCollection<StudentCita>(STORAGE_KEY, SEED_CITAS);
+	private readonly authService = inject(AuthService);
+	private readonly citas = inject(CitasService).getCitas();
+	private readonly currentCitas = computed<StudentCita[]>(() => {
+		const user = this.authService.currentUser();
+
+		if (!user || user.role !== 'student' || !user.studentCode) {
+			return [];
+		}
+
+		return this.citas()
+			.filter((item) => item.studentCode === user.studentCode)
+			.map((item) => ({
+				id: item.id,
+				studentCode: item.studentCode,
+				studentEmail: item.studentEmail,
+				professionalName: item.professionalName,
+				date: item.date,
+				time: item.time,
+				type: item.type,
+				status: item.status
+			}));
+	});
 
 	getCitas() {
-		return this.citas.asReadonly();
+		return this.currentCitas;
 	}
 }

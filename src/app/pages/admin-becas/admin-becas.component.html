@@ -23,16 +23,24 @@
 	</section>
 
 	@if (draftBeca(); as draft) {
-		<section class="form-section">
-			<h3>{{ editingBeca() ? 'Editar beca' : 'Nueva beca' }}</h3>
-			<div class="form-grid">
-				<div class="form-group"><label>Nombre</label><input class="form-control" [value]="draft.name" (input)="onDraftNameInput($any($event.target).value)" /></div>
-				<div class="form-group"><label>Tipo</label><select class="form-control" [value]="draft.type" (change)="onDraftTypeChange($any($event.target).value)">@for (option of typeOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
-				<div class="form-group"><label>Monto</label><input class="form-control" type="number" [value]="draft.amount" (input)="onDraftAmountInput($any($event.target).value)" /></div>
-				<div class="form-group"><label>Criterios</label><input class="form-control" [value]="draft.criteria" (input)="onDraftCriteriaInput($any($event.target).value)" /></div>
-				<div class="form-group"><label>Estado</label><select class="form-control" [value]="draft.status" (change)="onDraftStatusChange($any($event.target).value)">@for (option of statusOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
-			</div>
-			<div class="form-actions"><button class="btn btn-outline" type="button" (click)="onCancelEdit()">Cancelar</button><button class="btn btn-primary" type="button" [disabled]="!isDraftValid()" (click)="onSaveEdit()">Guardar</button></div>
-		</section>
+		<div class="drawer-backdrop" role="presentation" (click)="onCancelEdit()">
+			<section class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="beca-drawer-title" (click)="$event.stopPropagation()">
+				<div class="drawer-heading">
+					<div>
+						<p class="module-kicker">Ayuda estudiantil</p>
+						<h3 id="beca-drawer-title">{{ editingBeca() ? 'Editar beca' : 'Nueva beca' }}</h3>
+					</div>
+					<button class="drawer-close" type="button" aria-label="Cerrar" (click)="onCancelEdit()">×</button>
+				</div>
+				<div class="form-grid">
+					<div class="form-group"><label>Nombre</label><input class="form-control" [value]="draft.name" (input)="onDraftNameInput($any($event.target).value)" /></div>
+					<div class="form-group"><label>Tipo</label><select class="form-control" [value]="draft.type" (change)="onDraftTypeChange($any($event.target).value)">@for (option of typeOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
+					<div class="form-group"><label>Monto</label><input class="form-control" type="number" [value]="draft.amount" (input)="onDraftAmountInput($any($event.target).value)" /></div>
+					<div class="form-group"><label>Criterios</label><input class="form-control" [value]="draft.criteria" (input)="onDraftCriteriaInput($any($event.target).value)" /></div>
+					<div class="form-group"><label>Estado</label><select class="form-control" [value]="draft.status" (change)="onDraftStatusChange($any($event.target).value)">@for (option of statusOptions; track option) { <option [value]="option">{{ option }}</option> }</select></div>
+				</div>
+				<div class="form-actions"><button class="btn btn-outline" type="button" (click)="onCancelEdit()">Cancelar</button><button class="btn btn-primary" type="button" [disabled]="!isDraftValid()" (click)="onSaveEdit()">Guardar</button></div>
+			</section>
+		</div>
 	}
 </div>

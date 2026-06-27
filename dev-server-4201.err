@@ -1,0 +1,2972 @@
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './solicitud' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/models/solicitud-estudiante.ts:1:26:
+[37m      1 │ import { Solicitud } from [32m'./solicitud'[37m;
+        ╵                           [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/solicitud' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:8:7:
+[37m      8 │ } from [32m'../../models/solicitud'[37m;
+        ╵        [32m~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7053: Element implicitly has an 'any' type because expression of type 'SolicitudPrioridad' can't be used to index type '{ Alta: number; Media: number; Baja: number; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:230:9:
+[37m      230 │     return [32m{ Alta: 0, Media: 1, Baja: 2 }[priority][37m;
+          ╵            [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/solicitud' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:9:7:
+[37m      9 │ } from [32m'../../models/solicitud'[37m;
+        ╵        [32m~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../models/solicitud' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/solicitudes.service.ts:8:7:
+[37m      8 │ } from [32m'../models/solicitud'[37m;
+        ╵        [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './solicitud' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/models/solicitud-estudiante.ts:1:26:
+[37m      1 │ import { Solicitud } from [32m'./solicitud'[37m;
+        ╵                           [32m~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/solicitud' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:8:7:
+[37m      8 │ } from [32m'../../models/solicitud'[37m;
+        ╵        [32m~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7053: Element implicitly has an 'any' type because expression of type 'SolicitudPrioridad' can't be used to index type '{ Alta: number; Media: number; Baja: number; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:230:9:
+[37m      230 │     return [32m{ Alta: 0, Media: 1, Baja: 2 }[priority][37m;
+          ╵            [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/solicitud' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:9:7:
+[37m      9 │ } from [32m'../../models/solicitud'[37m;
+        ╵        [32m~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../models/solicitud' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/solicitudes.service.ts:8:7:
+[37m      8 │ } from [32m'../models/solicitud'[37m;
+        ╵        [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2739: Type '{ id: string; studentName: string; studentCode: string; program: string; type: "Psicológica"; subject: string; description: string; date: string; status: "Pendiente"; priority: "Alta"; contactChannel: "WhatsApp"; ... 7 more ...; history: { ...; }[]; }' is missing the following properties from type 'Solicitud': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/solicitudes.service.ts:22:1:
+[37m      22 │   [32m{[37m
+         ╵   [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2739: Type '{ id: string; studentName: string; studentCode: string; program: string; type: "Social"; subject: string; description: string; date: string; status: "En Proceso"; priority: "Media"; contactChannel: "Correo institucional"; ... 7 more ...; history: { ...; }[]; }' is missing the following properties from type 'Solicitud': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/solicitudes.service.ts:54:1:
+[37m      54 │   [32m{[37m
+         ╵   [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2739: Type '{ id: string; studentName: string; studentCode: string; program: string; type: "Académica"; subject: string; description: string; date: string; status: "Completada"; priority: "Baja"; contactChannel: "Teléfono"; ... 7 more ...; history: { ...; }[]; }' is missing the following properties from type 'Solicitud': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/solicitudes.service.ts:93:1:
+[37m      93 │   [32m{[37m
+         ╵   [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2739: Type '{ date: string; status: "Pendiente"; assignedProfessional: string; nextAction: string; observations: string; history: SolicitudHistorial[]; studentId?: number | undefined; ... 13 more ...; id: string; }' is missing the following properties from type 'Solicitud': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/solicitudes.service.ts:208:2:
+[37m      208 │     [32mreturn[37m {
+          ╵     [32m~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2739: Type '{ id: string; studentName: string; studentCode: string; program: string; type: "Psicológica"; subject: string; description: string; date: string; status: "Pendiente"; priority: "Alta"; contactChannel: "WhatsApp"; ... 7 more ...; history: { ...; }[]; }' is missing the following properties from type 'Solicitud': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/solicitudes.service.ts:22:1:
+[37m      22 │   [32m{[37m
+         ╵   [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2739: Type '{ id: string; studentName: string; studentCode: string; program: string; type: "Social"; subject: string; description: string; date: string; status: "En Proceso"; priority: "Media"; contactChannel: "Correo institucional"; ... 7 more ...; history: { ...; }[]; }' is missing the following properties from type 'Solicitud': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/solicitudes.service.ts:54:1:
+[37m      54 │   [32m{[37m
+         ╵   [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2739: Type '{ id: string; studentName: string; studentCode: string; program: string; type: "Académica"; subject: string; description: string; date: string; status: "Completada"; priority: "Baja"; contactChannel: "Teléfono"; ... 7 more ...; history: { ...; }[]; }' is missing the following properties from type 'Solicitud': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/solicitudes.service.ts:93:1:
+[37m      93 │   [32m{[37m
+         ╵   [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2739: Type '{ date: string; status: "Pendiente"; assignedProfessional: string; nextAction: string; observations: string; history: SolicitudHistorial[]; studentId?: number | undefined; ... 13 more ...; id: string; }' is missing the following properties from type 'Solicitud': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/solicitudes.service.ts:208:2:
+[37m      208 │     [32mreturn[37m {
+          ╵     [32m~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/solicitudes.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:6:35:
+[37m      6 │ ...t { SolicitudesService } from [32m'../../services/solicitudes.service'[37m;
+        ╵                                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:16:33:
+[37m      16 │ ...eadonly solicitudes = [32minject(SolicitudesService)[37m.getSolicitudes();
+         ╵                          [32m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:22:15:
+[37m      22 │       .filter(([32mitem[37m) => item.priority === 'Alta' || item.status ==...
+         ╵                [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/solicitudes.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:13:35:
+[37m      13 │ ... { SolicitudesService } from [32m'../../services/solicitudes.service'[37m;
+         ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:27:32:
+[37m      27 │ ...e readonly solicitudes = [32mthis.solicitudesService[37m.getSolicitudes();
+         ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:69:12:
+[37m      69 │       .filter(([32mitem[37m) => {
+         ╵                [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'a' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:80:10:
+[37m      80 │       .sort(([32ma[37m, b) => this.priorityRank(a.priority) - this.priorit...
+         ╵              [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'b' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:80:13:
+[37m      80 │       .sort((a, [32mb[37m) => this.priorityRank(a.priority) - this.priorit...
+         ╵                 [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:88:35:
+[37m      88 │ ...turn this.solicitudes().find(([32mitem[37m) => item.id === selected.id)...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:97:25:
+[37m      97 │       pending: list.filter(([32mitem[37m) => item.status === 'Pendiente')....
+         ╵                             [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:98:22:
+[37m      98 │       high: list.filter(([32mitem[37m) => item.priority === 'Alta').length,
+         ╵                          [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:99:25:
+[37m      99 │       process: list.filter(([32mitem[37m) => item.status === 'En Proceso')...
+         ╵                             [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:100:24:
+[37m      100 │       closed: list.filter(([32mitem[37m) => item.status === 'Completada')...
+          ╵                            [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:139:2:
+[37m      139 │     [32mthis.solicitudesService[37m.transitionSolicitud(
+          ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:154:2:
+[37m      154 │     [32mthis.solicitudesService[37m.addHistory(item, 'Observación regist...
+          ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:176:2:
+[37m      176 │     [32mthis.solicitudesService[37m.updateSolicitud(item, {
+          ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:219:2:
+[37m      219 │     [32mthis.solicitudesService[37m.addHistory(
+          ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-solicitudes/student-solicitudes.component.ts:31:25:
+[37m      31 │       pending: list.filter(([32mitem[37m) => item.status === 'Pendiente')....
+         ╵                             [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-solicitudes/student-solicitudes.component.ts:32:25:
+[37m      32 │       process: list.filter(([32mitem[37m) => item.status === 'En Proceso')...
+         ╵                             [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-solicitudes/student-solicitudes.component.ts:33:24:
+[37m      33 │       closed: list.filter(([32mitem[37m) => item.status === 'Completada' |...
+         ╵                            [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './solicitudes.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:6:35:
+[37m      6 │ import { SolicitudesService } from [32m'./solicitudes.service'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:20:32:
+[37m      20 │ ...eadonly solicitudes = [32minject(SolicitudesService)[37m.getSolicitudes();
+         ╵                          [32m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:37:45:
+[37m      37 │ ...ng(this.solicitudes().filter(([32mitem[37m) => item.status === 'Pendien...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './solicitudes.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:6:35:
+[37m      6 │ import { SolicitudesService } from [32m'./solicitudes.service'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:38:32:
+[37m      38 │ ...eadonly solicitudes = [32minject(SolicitudesService)[37m.getSolicitudes();
+         ╵                          [32m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:58:44:
+[37m      58 │ ...ng(this.solicitudes().filter(([32mitem[37m) => item.status === 'Pendien...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './solicitudes.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:4:35:
+[37m      4 │ import { SolicitudesService } from [32m'./solicitudes.service'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:10:32:
+[37m      10 │ ...e readonly solicitudes = [32mthis.solicitudesService[37m.getSolicitudes();
+         ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:18:36:
+[37m      18 │ ...rn this.solicitudes().filter(([32mitem[37m) => item.studentCode === use...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:32:2:
+[37m      32 │     [32mthis.solicitudesService[37m.addSolicitud({
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:43:2:
+[37m      43 │     [32mthis.solicitudesService[37m.updateSolicitud(original, updated);
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:47:2:
+[37m      47 │     [32mthis.solicitudesService[37m.deleteSolicitud(target);
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:53:9:
+[37m      53 │     return [32mthis.solicitudesService[37m.createSolicitud({
+         ╵            [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2698: Spread types may only be created from object types.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:54:3:
+[37m      54 │       [32m...input[37m,
+         ╵       [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS18046: 'input' is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:56:34:
+[37m      56 │       studentName: user?.fullName ?? [32minput[37m.studentName,
+         ╵                                      [32m~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS18046: 'input' is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:57:37:
+[37m      57 │       studentCode: user?.studentCode ?? [32minput[37m.studentCode,
+         ╵                                         [32m~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS18046: 'input' is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:58:32:
+[37m      58 │       studentEmail: user?.email ?? [32minput[37m.studentEmail,
+         ╵                                    [32m~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS18046: 'input' is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:59:29:
+[37m      59 │       program: user?.program ?? [32minput[37m.program
+         ╵                                 [32m~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/solicitudes.service"[0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:6:35:
+[37m      6 │ ...t { SolicitudesService } from [32m'../../services/solicitudes.service'[37m;
+        ╵                                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/solicitudes.service"[0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:5:35:
+[37m      5 │ ...t { SolicitudesService } from [32m'../../services/solicitudes.service'[37m;
+        ╵                                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./solicitudes.service"[0m
+
+    src/app/services/dashboard.service.ts:6:35:
+[37m      6 │ import { SolicitudesService } from [32m'./solicitudes.service'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./solicitudes.service"[0m
+
+    src/app/services/reportes.service.ts:5:35:
+[37m      5 │ import { SolicitudesService } from [32m'./solicitudes.service'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./solicitudes.service"[0m
+
+    src/app/services/student-solicitudes.service.ts:3:35:
+[37m      3 │ import { SolicitudesService } from [32m'./solicitudes.service'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/solicitudes.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:6:35:
+[37m      6 │ ...t { SolicitudesService } from [32m'../../services/solicitudes.service'[37m;
+        ╵                                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:16:33:
+[37m      16 │ ...eadonly solicitudes = [32minject(SolicitudesService)[37m.getSolicitudes();
+         ╵                          [32m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:22:15:
+[37m      22 │       .filter(([32mitem[37m) => item.priority === 'Alta' || item.status ==...
+         ╵                [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/solicitudes.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:13:35:
+[37m      13 │ ... { SolicitudesService } from [32m'../../services/solicitudes.service'[37m;
+         ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:27:32:
+[37m      27 │ ...e readonly solicitudes = [32mthis.solicitudesService[37m.getSolicitudes();
+         ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:69:12:
+[37m      69 │       .filter(([32mitem[37m) => {
+         ╵                [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'a' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:80:10:
+[37m      80 │       .sort(([32ma[37m, b) => this.priorityRank(a.priority) - this.priorit...
+         ╵              [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'b' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:80:13:
+[37m      80 │       .sort((a, [32mb[37m) => this.priorityRank(a.priority) - this.priorit...
+         ╵                 [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:88:35:
+[37m      88 │ ...turn this.solicitudes().find(([32mitem[37m) => item.id === selected.id)...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:97:25:
+[37m      97 │       pending: list.filter(([32mitem[37m) => item.status === 'Pendiente')....
+         ╵                             [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:98:22:
+[37m      98 │       high: list.filter(([32mitem[37m) => item.priority === 'Alta').length,
+         ╵                          [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:99:25:
+[37m      99 │       process: list.filter(([32mitem[37m) => item.status === 'En Proceso')...
+         ╵                             [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:100:24:
+[37m      100 │       closed: list.filter(([32mitem[37m) => item.status === 'Completada')...
+          ╵                            [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:139:2:
+[37m      139 │     [32mthis.solicitudesService[37m.transitionSolicitud(
+          ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:154:2:
+[37m      154 │     [32mthis.solicitudesService[37m.addHistory(item, 'Observación regist...
+          ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:176:2:
+[37m      176 │     [32mthis.solicitudesService[37m.updateSolicitud(item, {
+          ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:219:2:
+[37m      219 │     [32mthis.solicitudesService[37m.addHistory(
+          ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-solicitudes/student-solicitudes.component.ts:31:25:
+[37m      31 │       pending: list.filter(([32mitem[37m) => item.status === 'Pendiente')....
+         ╵                             [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-solicitudes/student-solicitudes.component.ts:32:25:
+[37m      32 │       process: list.filter(([32mitem[37m) => item.status === 'En Proceso')...
+         ╵                             [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-solicitudes/student-solicitudes.component.ts:33:24:
+[37m      33 │       closed: list.filter(([32mitem[37m) => item.status === 'Completada' |...
+         ╵                            [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './solicitudes.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:6:35:
+[37m      6 │ import { SolicitudesService } from [32m'./solicitudes.service'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:20:32:
+[37m      20 │ ...eadonly solicitudes = [32minject(SolicitudesService)[37m.getSolicitudes();
+         ╵                          [32m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:37:45:
+[37m      37 │ ...ng(this.solicitudes().filter(([32mitem[37m) => item.status === 'Pendien...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './solicitudes.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:6:35:
+[37m      6 │ import { SolicitudesService } from [32m'./solicitudes.service'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:38:32:
+[37m      38 │ ...eadonly solicitudes = [32minject(SolicitudesService)[37m.getSolicitudes();
+         ╵                          [32m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:58:44:
+[37m      58 │ ...ng(this.solicitudes().filter(([32mitem[37m) => item.status === 'Pendien...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './solicitudes.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:4:35:
+[37m      4 │ import { SolicitudesService } from [32m'./solicitudes.service'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:10:32:
+[37m      10 │ ...e readonly solicitudes = [32mthis.solicitudesService[37m.getSolicitudes();
+         ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:18:36:
+[37m      18 │ ...rn this.solicitudes().filter(([32mitem[37m) => item.studentCode === use...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:32:2:
+[37m      32 │     [32mthis.solicitudesService[37m.addSolicitud({
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:43:2:
+[37m      43 │     [32mthis.solicitudesService[37m.updateSolicitud(original, updated);
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:47:2:
+[37m      47 │     [32mthis.solicitudesService[37m.deleteSolicitud(target);
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:53:9:
+[37m      53 │     return [32mthis.solicitudesService[37m.createSolicitud({
+         ╵            [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2698: Spread types may only be created from object types.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:54:3:
+[37m      54 │       [32m...input[37m,
+         ╵       [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS18046: 'input' is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:56:34:
+[37m      56 │       studentName: user?.fullName ?? [32minput[37m.studentName,
+         ╵                                      [32m~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS18046: 'input' is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:57:37:
+[37m      57 │       studentCode: user?.studentCode ?? [32minput[37m.studentCode,
+         ╵                                         [32m~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS18046: 'input' is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:58:32:
+[37m      58 │       studentEmail: user?.email ?? [32minput[37m.studentEmail,
+         ╵                                    [32m~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS18046: 'input' is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:59:29:
+[37m      59 │       program: user?.program ?? [32minput[37m.program
+         ╵                                 [32m~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/solicitudes.service"[0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:6:35:
+[37m      6 │ ...t { SolicitudesService } from [32m'../../services/solicitudes.service'[37m;
+        ╵                                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/solicitudes.service"[0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:5:35:
+[37m      5 │ ...t { SolicitudesService } from [32m'../../services/solicitudes.service'[37m;
+        ╵                                  [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./solicitudes.service"[0m
+
+    src/app/services/dashboard.service.ts:6:35:
+[37m      6 │ import { SolicitudesService } from [32m'./solicitudes.service'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./solicitudes.service"[0m
+
+    src/app/services/reportes.service.ts:5:35:
+[37m      5 │ import { SolicitudesService } from [32m'./solicitudes.service'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./solicitudes.service"[0m
+
+    src/app/services/student-solicitudes.service.ts:3:35:
+[37m      3 │ import { SolicitudesService } from [32m'./solicitudes.service'[37m;
+        ╵                                    [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '{ studentId: number | undefined; studentName: string; studentCode: string; studentEmail: string | undefined; program: string; type: SolicitudTipo; subject: string; description: string; ... 5 more ...; consent: boolean; }' is not assignable to parameter of type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }'.
+  Type '{ studentId: number | undefined; studentName: string; studentCode: string; studentEmail: string | undefined; program: string; type: SolicitudTipo; subject: string; description: string; ... 5 more ...; consent: boolean; }' is missing the following properties from type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:106:43:
+[37m      106 │       this.solicitudesService.createSolicitud([32m{[37m
+          ╵                                               [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: ',' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:40:3:
+[37m      40 │       [32msemester[37m: user.semester ?? solicitud.semester
+         ╵       [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2322: Type 'string' is not assignable to type 'SemestreAcademico'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:40:3:
+[37m      40 │       [32msemester[37m: user.semester ?? solicitud.semester
+         ╵       [32m~~~~~~~~[0m
+
+  The expected type comes from property 'semester' which is declared here on type 'Solicitud'
+
+    src/app/models/solicitud.ts:45:1:
+[37m      45 │   [32msemester[37m: SemestreAcademico;
+         ╵   [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS1005: ',' expected.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:63:3:
+[37m      63 │       [32msemester[37m: user?.semester ?? input.semester
+         ╵       [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2322: Type 'string' is not assignable to type 'SemestreAcademico'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:63:3:
+[37m      63 │       [32msemester[37m: user?.semester ?? input.semester
+         ╵       [32m~~~~~~~~[0m
+
+  The expected type comes from property 'semester' which is declared here on type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }'
+
+    src/app/services/solicitudes.service.ts:215:2:
+[37m      215 │     [32msemester[37m: SemestreAcademico;
+          ╵     [32m~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '{ studentId: number | undefined; studentName: string; studentCode: string; studentEmail: string | undefined; program: string; type: SolicitudTipo; subject: string; description: string; ... 5 more ...; consent: boolean; }' is not assignable to parameter of type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }'.
+  Type '{ studentId: number | undefined; studentName: string; studentCode: string; studentEmail: string | undefined; program: string; type: SolicitudTipo; subject: string; description: string; ... 5 more ...; consent: boolean; }' is missing the following properties from type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:106:43:
+[37m      106 │       this.solicitudesService.createSolicitud([32m{[37m
+          ╵                                               [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2322: Type 'string' is not assignable to type 'SemestreAcademico'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:40:3:
+[37m      40 │       [32msemester[37m: user.semester ?? solicitud.semester
+         ╵       [32m~~~~~~~~[0m
+
+  The expected type comes from property 'semester' which is declared here on type 'Solicitud'
+
+    src/app/models/solicitud.ts:45:1:
+[37m      45 │   [32msemester[37m: SemestreAcademico;
+         ╵   [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2322: Type 'string' is not assignable to type 'SemestreAcademico'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:63:3:
+[37m      63 │       [32msemester[37m: user?.semester ?? input.semester
+         ╵       [32m~~~~~~~~[0m
+
+  The expected type comes from property 'semester' which is declared here on type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }'
+
+    src/app/services/solicitudes.service.ts:215:2:
+[37m      215 │     [32msemester[37m: SemestreAcademico;
+          ╵     [32m~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/students.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:3:32:
+[37m      3 │ import { StudentsService } from [32m'../../services/students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:14:29:
+[37m      14 │   private readonly students = [32mthis.studentsService[37m.getStudents();
+         ╵                               [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'student' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:30:22:
+[37m      30 │     return list.filter(([32mstudent[37m) =>
+         ╵                         [32m~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:63:7:
+[37m      63 │       id: [32mthis.studentsService[37m.getNextId(),
+         ╵           [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:132:3:
+[37m      132 │       [32mthis.studentsService[37m.updateStudent(original, draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:134:3:
+[37m      134 │       [32mthis.studentsService[37m.addStudent(draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:141:2:
+[37m      141 │     [32mthis.studentsService[37m.deleteStudent(student);
+          ╵     [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '{ studentId: number | undefined; studentName: string; studentCode: string; studentEmail: string | undefined; program: string; type: SolicitudTipo; subject: string; description: string; ... 5 more ...; consent: boolean; }' is not assignable to parameter of type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }'.
+  Type '{ studentId: number | undefined; studentName: string; studentCode: string; studentEmail: string | undefined; program: string; type: SolicitudTipo; subject: string; description: string; ... 5 more ...; consent: boolean; }' is missing the following properties from type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:106:43:
+[37m      106 │       this.solicitudesService.createSolicitud([32m{[37m
+          ╵                                               [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './students.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:4:32:
+[37m      4 │ import { StudentsService } from [32m'./students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:98:20:
+[37m      98 │     const studentId = [32mthis.studentsService[37m.getNextId();
+         ╵                       [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:113:2:
+[37m      113 │     [32mthis.studentsService[37m.addStudent({
+          ╵     [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:215:19:
+[37m      215 │     const students = [32mthis.studentsService[37m.getStudents()();
+          ╵                      [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'student' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:217:22:
+[37m      217 │     if (!students.some(([32mstudent[37m) => student.code === TEST_STUDENT...
+          ╵                         [32m~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'student' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:218:40:
+[37m      218 │ ...st seedStudentId = students.some(([32mstudent[37m) => student.id === 105)
+          ╵                                      [32m~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:219:6:
+[37m      219 │         ? [32mthis.studentsService[37m.getNextId()
+          ╵           [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:222:3:
+[37m      222 │       [32mthis.studentsService[37m.addStudent({
+          ╵       [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './students.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:7:32:
+[37m      7 │ import { StudentsService } from [32m'./students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:19:29:
+[37m      19 │   private readonly students = [32minject(StudentsService)[37m.getStudents();
+         ╵                               [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './students.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:7:32:
+[37m      7 │ import { StudentsService } from [32m'./students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:37:29:
+[37m      37 │   private readonly students = [32minject(StudentsService)[37m.getStudents();
+         ╵                               [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2322: Type 'string' is not assignable to type 'SemestreAcademico'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:40:3:
+[37m      40 │       [32msemester[37m: user.semester ?? solicitud.semester
+         ╵       [32m~~~~~~~~[0m
+
+  The expected type comes from property 'semester' which is declared here on type 'Solicitud'
+
+    src/app/models/solicitud.ts:45:1:
+[37m      45 │   [32msemester[37m: SemestreAcademico;
+         ╵   [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2322: Type 'string' is not assignable to type 'SemestreAcademico'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:63:3:
+[37m      63 │       [32msemester[37m: user?.semester ?? input.semester
+         ╵       [32m~~~~~~~~[0m
+
+  The expected type comes from property 'semester' which is declared here on type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }'
+
+    src/app/services/solicitudes.service.ts:215:2:
+[37m      215 │     [32msemester[37m: SemestreAcademico;
+          ╵     [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/students.service"[0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:3:32:
+[37m      3 │ import { StudentsService } from [32m'../../services/students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./students.service"[0m
+
+    src/app/services/auth.service.ts:3:32:
+[37m      3 │ import { StudentsService } from [32m'./students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./students.service"[0m
+
+    src/app/services/dashboard.service.ts:7:32:
+[37m      7 │ import { StudentsService } from [32m'./students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./students.service"[0m
+
+    src/app/services/reportes.service.ts:6:32:
+[37m      6 │ import { StudentsService } from [32m'./students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/students.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:3:32:
+[37m      3 │ import { StudentsService } from [32m'../../services/students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:14:29:
+[37m      14 │   private readonly students = [32mthis.studentsService[37m.getStudents();
+         ╵                               [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'student' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:30:22:
+[37m      30 │     return list.filter(([32mstudent[37m) =>
+         ╵                         [32m~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:63:7:
+[37m      63 │       id: [32mthis.studentsService[37m.getNextId(),
+         ╵           [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:132:3:
+[37m      132 │       [32mthis.studentsService[37m.updateStudent(original, draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:134:3:
+[37m      134 │       [32mthis.studentsService[37m.addStudent(draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:141:2:
+[37m      141 │     [32mthis.studentsService[37m.deleteStudent(student);
+          ╵     [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '{ studentId: number | undefined; studentName: string; studentCode: string; studentEmail: string | undefined; program: string; type: SolicitudTipo; subject: string; description: string; ... 5 more ...; consent: boolean; }' is not assignable to parameter of type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }'.
+  Type '{ studentId: number | undefined; studentName: string; studentCode: string; studentEmail: string | undefined; program: string; type: SolicitudTipo; subject: string; description: string; ... 5 more ...; consent: boolean; }' is missing the following properties from type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:106:43:
+[37m      106 │       this.solicitudesService.createSolicitud([32m{[37m
+          ╵                                               [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './students.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:4:32:
+[37m      4 │ import { StudentsService } from [32m'./students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:98:20:
+[37m      98 │     const studentId = [32mthis.studentsService[37m.getNextId();
+         ╵                       [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:113:2:
+[37m      113 │     [32mthis.studentsService[37m.addStudent({
+          ╵     [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:215:19:
+[37m      215 │     const students = [32mthis.studentsService[37m.getStudents()();
+          ╵                      [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'student' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:217:22:
+[37m      217 │     if (!students.some(([32mstudent[37m) => student.code === TEST_STUDENT...
+          ╵                         [32m~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'student' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:218:40:
+[37m      218 │ ...st seedStudentId = students.some(([32mstudent[37m) => student.id === 105)
+          ╵                                      [32m~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:219:6:
+[37m      219 │         ? [32mthis.studentsService[37m.getNextId()
+          ╵           [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/auth.service.ts:222:3:
+[37m      222 │       [32mthis.studentsService[37m.addStudent({
+          ╵       [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './students.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:7:32:
+[37m      7 │ import { StudentsService } from [32m'./students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:19:29:
+[37m      19 │   private readonly students = [32minject(StudentsService)[37m.getStudents();
+         ╵                               [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './students.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:7:32:
+[37m      7 │ import { StudentsService } from [32m'./students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:37:29:
+[37m      37 │   private readonly students = [32minject(StudentsService)[37m.getStudents();
+         ╵                               [32m~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2322: Type 'string' is not assignable to type 'SemestreAcademico'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:40:3:
+[37m      40 │       [32msemester[37m: user.semester ?? solicitud.semester
+         ╵       [32m~~~~~~~~[0m
+
+  The expected type comes from property 'semester' which is declared here on type 'Solicitud'
+
+    src/app/models/solicitud.ts:45:1:
+[37m      45 │   [32msemester[37m: SemestreAcademico;
+         ╵   [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2322: Type 'string' is not assignable to type 'SemestreAcademico'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:63:3:
+[37m      63 │       [32msemester[37m: user?.semester ?? input.semester
+         ╵       [32m~~~~~~~~[0m
+
+  The expected type comes from property 'semester' which is declared here on type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }'
+
+    src/app/services/solicitudes.service.ts:215:2:
+[37m      215 │     [32msemester[37m: SemestreAcademico;
+          ╵     [32m~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/students.service"[0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:3:32:
+[37m      3 │ import { StudentsService } from [32m'../../services/students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./students.service"[0m
+
+    src/app/services/auth.service.ts:3:32:
+[37m      3 │ import { StudentsService } from [32m'./students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./students.service"[0m
+
+    src/app/services/dashboard.service.ts:7:32:
+[37m      7 │ import { StudentsService } from [32m'./students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./students.service"[0m
+
+    src/app/services/reportes.service.ts:6:32:
+[37m      6 │ import { StudentsService } from [32m'./students.service'[37m;
+        ╵                                 [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './services/auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.ts:4:28:
+[37m      4 │ import { AuthService } from [32m'./services/auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.ts:19:25:
+[37m      19 │   readonly currentUser = [32mthis.authService[37m.currentUser;
+         ╵                          [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/role-select/role-select.component.ts:4:28:
+[37m      4 │ import { AuthService } from [32m'../../services/auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/role-select/role-select.component.ts:33:8:
+[37m      33 │     if ([32mthis.authService[37m.currentUser()) {
+         ╵         [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/role-select/role-select.component.ts:70:19:
+[37m      70 │     const result = [32mthis.authService[37m.login(this.email(), this.passw...
+         ╵                    [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/role-select/role-select.component.ts:81:19:
+[37m      81 │     const result = [32mthis.authService[37m.registerStudent({
+         ╵                    [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/role-select/role-select.component.ts:98:17:
+[37m      98 │     const user = [32mthis.authService[37m.currentUser();
+         ╵                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:10:28:
+[37m      10 │ import { AuthService } from [32m'../../services/auth.service'[37m;
+         ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:23:32:
+[37m      23 │   private readonly currentUser = [32mthis.authService[37m.currentUser();
+         ╵                                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '{ studentId: any; studentName: any; studentCode: any; studentEmail: any; program: any; type: SolicitudTipo; subject: string; description: string; priority: SolicitudPrioridad; ... 4 more ...; consent: boolean; }' is not assignable to parameter of type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }'.
+  Type '{ studentId: any; studentName: any; studentCode: any; studentEmail: any; program: any; type: SolicitudTipo; subject: string; description: string; priority: SolicitudPrioridad; ... 4 more ...; consent: boolean; }' is missing the following properties from type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:106:43:
+[37m      106 │       this.solicitudesService.createSolicitud([32m{[37m
+          ╵                                               [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/role.service.ts:2:28:
+[37m      2 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/role.service.ts:12:43:
+[37m      12 │ ...omputed<UserRole>(() => [32mthis.authService[37m.currentUser()?.role ??...
+         ╵                            [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/role.service.ts:21:4:
+[37m      21 │     [32mthis.authService[37m.logout();
+         ╵     [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-becas.service.ts:3:28:
+[37m      3 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-becas.service.ts:36:15:
+[37m      36 │     const user = [32mthis.authService[37m.currentUser();
+         ╵                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-citas.service.ts:3:28:
+[37m      3 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-citas.service.ts:11:15:
+[37m      11 │     const user = [32mthis.authService[37m.currentUser();
+         ╵                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:3:28:
+[37m      3 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:12:15:
+[37m      12 │     const user = [32mthis.authService[37m.currentUser();
+         ╵                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:26:15:
+[37m      26 │     const user = [32mthis.authService[37m.currentUser();
+         ╵                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:53:15:
+[37m      53 │     const user = [32mthis.authService[37m.currentUser();
+         ╵                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./services/auth.service"[0m
+
+    src/app/app.ts:4:28:
+[37m      4 │ import { AuthService } from [32m'./services/auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/auth.service"[0m
+
+    src/app/pages/role-select/role-select.component.ts:4:28:
+[37m      4 │ import { AuthService } from [32m'../../services/auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/auth.service"[0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:4:28:
+[37m      4 │ import { AuthService } from [32m'../../services/auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./auth.service"[0m
+
+    src/app/services/role.service.ts:2:28:
+[37m      2 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./auth.service"[0m
+
+    src/app/services/student-becas.service.ts:2:28:
+[37m      2 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./auth.service"[0m
+
+    src/app/services/student-citas.service.ts:2:28:
+[37m      2 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./auth.service"[0m
+
+    src/app/services/student-solicitudes.service.ts:2:28:
+[37m      2 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './services/auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.ts:4:28:
+[37m      4 │ import { AuthService } from [32m'./services/auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.ts:19:25:
+[37m      19 │   readonly currentUser = [32mthis.authService[37m.currentUser;
+         ╵                          [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/role-select/role-select.component.ts:4:28:
+[37m      4 │ import { AuthService } from [32m'../../services/auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/role-select/role-select.component.ts:33:8:
+[37m      33 │     if ([32mthis.authService[37m.currentUser()) {
+         ╵         [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/role-select/role-select.component.ts:70:19:
+[37m      70 │     const result = [32mthis.authService[37m.login(this.email(), this.passw...
+         ╵                    [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/role-select/role-select.component.ts:81:19:
+[37m      81 │     const result = [32mthis.authService[37m.registerStudent({
+         ╵                    [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/role-select/role-select.component.ts:98:17:
+[37m      98 │     const user = [32mthis.authService[37m.currentUser();
+         ╵                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:10:28:
+[37m      10 │ import { AuthService } from [32m'../../services/auth.service'[37m;
+         ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:23:32:
+[37m      23 │   private readonly currentUser = [32mthis.authService[37m.currentUser();
+         ╵                                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '{ studentId: any; studentName: any; studentCode: any; studentEmail: any; program: any; type: SolicitudTipo; subject: string; description: string; priority: SolicitudPrioridad; ... 4 more ...; consent: boolean; }' is not assignable to parameter of type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }'.
+  Type '{ studentId: any; studentName: any; studentCode: any; studentEmail: any; program: any; type: SolicitudTipo; subject: string; description: string; priority: SolicitudPrioridad; ... 4 more ...; consent: boolean; }' is missing the following properties from type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:106:43:
+[37m      106 │       this.solicitudesService.createSolicitud([32m{[37m
+          ╵                                               [32m^[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/role.service.ts:2:28:
+[37m      2 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/role.service.ts:12:43:
+[37m      12 │ ...omputed<UserRole>(() => [32mthis.authService[37m.currentUser()?.role ??...
+         ╵                            [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/role.service.ts:21:4:
+[37m      21 │     [32mthis.authService[37m.logout();
+         ╵     [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-becas.service.ts:3:28:
+[37m      3 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-becas.service.ts:36:15:
+[37m      36 │     const user = [32mthis.authService[37m.currentUser();
+         ╵                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-citas.service.ts:3:28:
+[37m      3 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-citas.service.ts:11:15:
+[37m      11 │     const user = [32mthis.authService[37m.currentUser();
+         ╵                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './auth.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:3:28:
+[37m      3 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:12:15:
+[37m      12 │     const user = [32mthis.authService[37m.currentUser();
+         ╵                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:26:15:
+[37m      26 │     const user = [32mthis.authService[37m.currentUser();
+         ╵                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-solicitudes.service.ts:53:15:
+[37m      53 │     const user = [32mthis.authService[37m.currentUser();
+         ╵                  [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./services/auth.service"[0m
+
+    src/app/app.ts:4:28:
+[37m      4 │ import { AuthService } from [32m'./services/auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/auth.service"[0m
+
+    src/app/pages/role-select/role-select.component.ts:4:28:
+[37m      4 │ import { AuthService } from [32m'../../services/auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/auth.service"[0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:4:28:
+[37m      4 │ import { AuthService } from [32m'../../services/auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./auth.service"[0m
+
+    src/app/services/role.service.ts:2:28:
+[37m      2 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./auth.service"[0m
+
+    src/app/services/student-becas.service.ts:2:28:
+[37m      2 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./auth.service"[0m
+
+    src/app/services/student-citas.service.ts:2:28:
+[37m      2 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./auth.service"[0m
+
+    src/app/services/student-solicitudes.service.ts:2:28:
+[37m      2 │ import { AuthService } from [32m'./auth.service'[37m;
+        ╵                             [32m~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '{ studentId: number | undefined; studentName: string; studentCode: string; studentEmail: string | undefined; program: string; type: SolicitudTipo; subject: string; description: string; ... 5 more ...; consent: boolean; }' is not assignable to parameter of type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }'.
+  Type '{ studentId: number | undefined; studentName: string; studentCode: string; studentEmail: string | undefined; program: string; type: SolicitudTipo; subject: string; description: string; ... 5 more ...; consent: boolean; }' is missing the following properties from type '{ studentId?: number | undefined; studentName: string; studentCode: string; studentEmail?: string | undefined; faculty: string; program: string; semester: SemestreAcademico; ... 8 more ...; consent: boolean; }': faculty, semester[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/student-nueva-solicitud/student-nueva-solicitud.component.ts:106:43:
+[37m      106 │       this.solicitudesService.createSolicitud([32m{[37m
+          ╵                                               [32m^[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/student-nueva-solicitud/student-nueva-solicitud.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:13:47:
+[37m      13 │ ...nt } from [32m'./pages/student-nueva-solicitud/student-nueva-solici[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/student-nueva-solicitud/student-nueva-solicitud.component"[0m
+
+    src/app/app.routes.ts:12:47:
+[37m      12 │ ...nt } from [32m'./pages/student-nueva-solicitud/student-nueva-solici[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/student-nueva-solicitud/student-nueva-solicitud.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:13:47:
+[37m      13 │ ...nt } from [32m'./pages/student-nueva-solicitud/student-nueva-solici[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/student-nueva-solicitud/student-nueva-solicitud.component"[0m
+
+    src/app/app.routes.ts:12:47:
+[37m      12 │ ...nt } from [32m'./pages/student-nueva-solicitud/student-nueva-solici[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/student-nueva-solicitud/student-nueva-solicitud.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:13:47:
+[37m      13 │ ...nt } from [32m'./pages/student-nueva-solicitud/student-nueva-solici[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/student-nueva-solicitud/student-nueva-solicitud.component"[0m
+
+    src/app/app.routes.ts:12:47:
+[37m      12 │ ...nt } from [32m'./pages/student-nueva-solicitud/student-nueva-solici[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/student-nueva-solicitud/student-nueva-solicitud.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:13:47:
+[37m      13 │ ...nt } from [32m'./pages/student-nueva-solicitud/student-nueva-solici[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/student-nueva-solicitud/student-nueva-solicitud.component"[0m
+
+    src/app/app.routes.ts:12:47:
+[37m      12 │ ...nt } from [32m'./pages/student-nueva-solicitud/student-nueva-solici[37m...
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/admin-solicitudes/admin-solicitudes.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:10:42:
+[37m      10 │ ...nt } from [32m'./pages/admin-solicitudes/admin-solicitudes.component'[37m;
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/admin-solicitudes/admin-solicitudes.component"[0m
+
+    src/app/app.routes.ts:9:42:
+[37m      9 │ ...ent } from [32m'./pages/admin-solicitudes/admin-solicitudes.component'[37m;
+        ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './pages/admin-solicitudes/admin-solicitudes.component' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.routes.ts:10:42:
+[37m      10 │ ...nt } from [32m'./pages/admin-solicitudes/admin-solicitudes.component'[37m;
+         ╵              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./pages/admin-solicitudes/admin-solicitudes.component"[0m
+
+    src/app/app.routes.ts:9:42:
+[37m      9 │ ...ent } from [32m'./pages/admin-solicitudes/admin-solicitudes.component'[37m;
+        ╵               [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/caso' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:4:45:
+[37m      4 │ import { Caso, CasoEstado, CasoRiesgo } from [32m'../../models/caso'[37m;
+        ╵                                              [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/caso' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:9:33:
+[37m      9 │ import { Caso, CasoRiesgo } from [32m'../../models/caso'[37m;
+        ╵                                  [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../models/caso' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/casos.service.ts:2:21:
+[37m      2 │ import { Caso } from [32m'../models/caso'[37m;
+        ╵                      [32m~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/caso' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:4:45:
+[37m      4 │ import { Caso, CasoEstado, CasoRiesgo } from [32m'../../models/caso'[37m;
+        ╵                                              [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/caso' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:9:33:
+[37m      9 │ import { Caso, CasoRiesgo } from [32m'../../models/caso'[37m;
+        ╵                                  [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../models/caso' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/casos.service.ts:2:21:
+[37m      2 │ import { Caso } from [32m'../models/caso'[37m;
+        ╵                      [32m~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/cita' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:4:43:
+[37m      4 │ import { Cita, CitaEstado, CitaTipo } from [32m'../../models/cita'[37m;
+        ╵                                            [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/cita' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:10:21:
+[37m      10 │ import { Cita } from [32m'../../models/cita'[37m;
+         ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../models/cita' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/citas.service.ts:2:21:
+[37m      2 │ import { Cita } from [32m'../models/cita'[37m;
+        ╵                      [32m~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/cita' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:4:43:
+[37m      4 │ import { Cita, CitaEstado, CitaTipo } from [32m'../../models/cita'[37m;
+        ╵                                            [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/cita' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:10:21:
+[37m      10 │ import { Cita } from [32m'../../models/cita'[37m;
+         ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../models/cita' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/citas.service.ts:2:21:
+[37m      2 │ import { Cita } from [32m'../models/cita'[37m;
+        ╵                      [32m~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/beca' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:4:21:
+[37m      4 │ import { Beca } from [32m'../../models/beca'[37m;
+        ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../models/beca' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/becas.service.ts:2:21:
+[37m      2 │ import { Beca } from [32m'../models/beca'[37m;
+        ╵                      [32m~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../models/beca' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:4:21:
+[37m      4 │ import { Beca } from [32m'../../models/beca'[37m;
+        ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG2008: Could not find template file './admin-solicitudes.component.html'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:20:14:
+[37m      20 │   templateUrl: [32m'./admin-solicitudes.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../models/beca' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/becas.service.ts:2:21:
+[37m      2 │ import { Beca } from [32m'../models/beca'[37m;
+        ╵                      [32m~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8107: NG8107: The left side of this optional chain operation does not include 'null' or 'undefined' in its type, therefore the '?.' operator can be replaced with the '.' operator. Find more at https://v21.angular.dev/extended-diagnostics/NG8107[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.html:19:81:
+[37m      19 │ ...lass.active]="activeStudent()?.[32mid[37m === student.id" (click)="onVi...
+         ╵                                   [32m~~[0m
+
+  Warning occurs in the template of component AdminEstudiantesComponent.
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:9:14:
+[37m      9 │   templateUrl: [32m'./admin-estudiantes.component.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/becas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:3:29:
+[37m      3 │ import { BecasService } from [32m'../../services/becas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:14:18:
+[37m      14 │   readonly becas = [32mthis.becasService[37m.getBecas();
+         ╵                    [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:40:7:
+[37m      40 │       id: [32mthis.becasService[37m.getNextId(),
+         ╵           [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:101:3:
+[37m      101 │       [32mthis.becasService[37m.updateBeca(original, draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:103:3:
+[37m      103 │       [32mthis.becasService[37m.addBeca(draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:110:2:
+[37m      110 │     [32mthis.becasService[37m.deleteBeca(item);
+          ╵     [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './becas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:2:29:
+[37m      2 │ import { BecasService } from [32m'./becas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:22:26:
+[37m      22 │   private readonly becas = [32minject(BecasService)[37m.getBecas();
+         ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:49:39:
+[37m      49 │ ...: String(this.becas().filter(([32mitem[37m) => item.status === 'Activa'...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './becas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:3:29:
+[37m      3 │ import { BecasService } from [32m'./becas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:40:26:
+[37m      40 │   private readonly becas = [32minject(BecasService)[37m.getBecas();
+         ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:66:38:
+[37m      66 │ ...: String(this.becas().filter(([32mitem[37m) => item.status === 'Activa'...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/becas.service"[0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:3:29:
+[37m      3 │ import { BecasService } from [32m'../../services/becas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./becas.service"[0m
+
+    src/app/services/dashboard.service.ts:2:29:
+[37m      2 │ import { BecasService } from [32m'./becas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./becas.service"[0m
+
+    src/app/services/reportes.service.ts:2:29:
+[37m      2 │ import { BecasService } from [32m'./becas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8107: NG8107: The left side of this optional chain operation does not include 'null' or 'undefined' in its type, therefore the '?.' operator can be replaced with the '.' operator. Find more at https://v21.angular.dev/extended-diagnostics/NG8107[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.html:19:81:
+[37m      19 │ ...lass.active]="activeStudent()?.[32mid[37m === student.id" (click)="onVi...
+         ╵                                   [32m~~[0m
+
+  Warning occurs in the template of component AdminEstudiantesComponent.
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:9:14:
+[37m      9 │   templateUrl: [32m'./admin-estudiantes.component.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/becas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:3:29:
+[37m      3 │ import { BecasService } from [32m'../../services/becas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:14:18:
+[37m      14 │   readonly becas = [32mthis.becasService[37m.getBecas();
+         ╵                    [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:40:7:
+[37m      40 │       id: [32mthis.becasService[37m.getNextId(),
+         ╵           [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:101:3:
+[37m      101 │       [32mthis.becasService[37m.updateBeca(original, draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:103:3:
+[37m      103 │       [32mthis.becasService[37m.addBeca(draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:110:2:
+[37m      110 │     [32mthis.becasService[37m.deleteBeca(item);
+          ╵     [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './becas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:2:29:
+[37m      2 │ import { BecasService } from [32m'./becas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:22:26:
+[37m      22 │   private readonly becas = [32minject(BecasService)[37m.getBecas();
+         ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:49:39:
+[37m      49 │ ...: String(this.becas().filter(([32mitem[37m) => item.status === 'Activa'...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './becas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:3:29:
+[37m      3 │ import { BecasService } from [32m'./becas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:40:26:
+[37m      40 │   private readonly becas = [32minject(BecasService)[37m.getBecas();
+         ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:66:38:
+[37m      66 │ ...: String(this.becas().filter(([32mitem[37m) => item.status === 'Activa'...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/becas.service"[0m
+
+    src/app/pages/admin-becas/admin-becas.component.ts:3:29:
+[37m      3 │ import { BecasService } from [32m'../../services/becas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./becas.service"[0m
+
+    src/app/services/dashboard.service.ts:2:29:
+[37m      2 │ import { BecasService } from [32m'./becas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./becas.service"[0m
+
+    src/app/services/reportes.service.ts:2:29:
+[37m      2 │ import { BecasService } from [32m'./becas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8107: NG8107: The left side of this optional chain operation does not include 'null' or 'undefined' in its type, therefore the '?.' operator can be replaced with the '.' operator. Find more at https://v21.angular.dev/extended-diagnostics/NG8107[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.html:19:81:
+[37m      19 │ ...lass.active]="activeStudent()?.[32mid[37m === student.id" (click)="onVi...
+         ╵                                   [32m~~[0m
+
+  Warning occurs in the template of component AdminEstudiantesComponent.
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:9:14:
+[37m      9 │   templateUrl: [32m'./admin-estudiantes.component.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8107: NG8107: The left side of this optional chain operation does not include 'null' or 'undefined' in its type, therefore the '?.' operator can be replaced with the '.' operator. Find more at https://v21.angular.dev/extended-diagnostics/NG8107[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.html:19:81:
+[37m      19 │ ...lass.active]="activeStudent()?.[32mid[37m === student.id" (click)="onVi...
+         ╵                                   [32m~~[0m
+
+  Warning occurs in the template of component AdminEstudiantesComponent.
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:9:14:
+[37m      9 │   templateUrl: [32m'./admin-estudiantes.component.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/citas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:3:29:
+[37m      3 │ import { CitasService } from [32m'../../services/citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:16:26:
+[37m      16 │   private readonly citas = [32mthis.citasService[37m.getCitas();
+         ╵                            [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:31:30:
+[37m      31 │     return this.citas().filter(([32mitem[37m) => {
+         ╵                                 [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:43:34:
+[37m      43 │     const names = this.citas().map(([32mitem[37m) => item.professionalName);
+         ╵                                     [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:98:7:
+[37m      98 │       id: [32mthis.citasService[37m.getNextId(),
+         ╵           [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2322: Type '{}' is not assignable to type 'string'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:100:3:
+[37m      100 │       [32mprofessionalName[37m: this.professionalNames()[0] ?? 'Profesion...
+          ╵       [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:163:3:
+[37m      163 │       [32mthis.citasService[37m.updateCita(original, draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:165:3:
+[37m      165 │       [32mthis.citasService[37m.addCita(draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:176:2:
+[37m      176 │     [32mthis.citasService[37m.updateCita(item, { ...item, status: 'Cancel...
+          ╵     [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/citas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:5:29:
+[37m      5 │ import { CitasService } from [32m'../../services/citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:17:27:
+[37m      17 │   private readonly citas = [32minject(CitasService)[37m.getCitas();
+         ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:27:15:
+[37m      27 │       .filter(([32mitem[37m) => item.status === 'Programada')
+         ╵                [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/citas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:12:29:
+[37m      12 │ import { CitasService } from [32m'../../services/citas.service'[37m;
+         ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:164:7:
+[37m      164 │       id: [32mthis.citasService[37m.getNextId(),
+          ╵           [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:178:2:
+[37m      178 │     [32mthis.citasService[37m.addCita(cita);
+          ╵     [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './citas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:4:29:
+[37m      4 │ import { CitasService } from [32m'./citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:21:26:
+[37m      21 │   private readonly citas = [32minject(CitasService)[37m.getCitas();
+         ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:43:39:
+[37m      43 │ ...: String(this.citas().filter(([32mitem[37m) => item.status === 'Program...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './citas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:4:29:
+[37m      4 │ import { CitasService } from [32m'./citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:39:26:
+[37m      39 │   private readonly citas = [32minject(CitasService)[37m.getCitas();
+         ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:62:38:
+[37m      62 │ ...: String(this.citas().filter(([32mitem[37m) => item.status === 'Program...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './citas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-citas.service.ts:4:29:
+[37m      4 │ import { CitasService } from [32m'./citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-citas.service.ts:9:26:
+[37m      9 │   private readonly citas = [32minject(CitasService)[37m.getCitas();
+        ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-citas.service.ts:18:12:
+[37m      18 │       .filter(([32mitem[37m) => item.studentCode === user.studentCode)
+         ╵                [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-citas.service.ts:19:9:
+[37m      19 │       .map(([32mitem[37m) => ({
+         ╵             [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/citas.service"[0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:3:29:
+[37m      3 │ import { CitasService } from [32m'../../services/citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/citas.service"[0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:5:29:
+[37m      5 │ import { CitasService } from [32m'../../services/citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/citas.service"[0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:4:29:
+[37m      4 │ import { CitasService } from [32m'../../services/citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./citas.service"[0m
+
+    src/app/services/dashboard.service.ts:4:29:
+[37m      4 │ import { CitasService } from [32m'./citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./citas.service"[0m
+
+    src/app/services/reportes.service.ts:3:29:
+[37m      3 │ import { CitasService } from [32m'./citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./citas.service"[0m
+
+    src/app/services/student-citas.service.ts:3:29:
+[37m      3 │ import { CitasService } from [32m'./citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8107: NG8107: The left side of this optional chain operation does not include 'null' or 'undefined' in its type, therefore the '?.' operator can be replaced with the '.' operator. Find more at https://v21.angular.dev/extended-diagnostics/NG8107[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.html:19:81:
+[37m      19 │ ...lass.active]="activeStudent()?.[32mid[37m === student.id" (click)="onVi...
+         ╵                                   [32m~~[0m
+
+  Warning occurs in the template of component AdminEstudiantesComponent.
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:9:14:
+[37m      9 │   templateUrl: [32m'./admin-estudiantes.component.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/citas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:3:29:
+[37m      3 │ import { CitasService } from [32m'../../services/citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:16:26:
+[37m      16 │   private readonly citas = [32mthis.citasService[37m.getCitas();
+         ╵                            [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:31:30:
+[37m      31 │     return this.citas().filter(([32mitem[37m) => {
+         ╵                                 [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:43:34:
+[37m      43 │     const names = this.citas().map(([32mitem[37m) => item.professionalName);
+         ╵                                     [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:98:7:
+[37m      98 │       id: [32mthis.citasService[37m.getNextId(),
+         ╵           [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2322: Type '{}' is not assignable to type 'string'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:100:3:
+[37m      100 │       [32mprofessionalName[37m: this.professionalNames()[0] ?? 'Profesion...
+          ╵       [32m~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:163:3:
+[37m      163 │       [32mthis.citasService[37m.updateCita(original, draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:165:3:
+[37m      165 │       [32mthis.citasService[37m.addCita(draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:176:2:
+[37m      176 │     [32mthis.citasService[37m.updateCita(item, { ...item, status: 'Cancel...
+          ╵     [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/citas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:5:29:
+[37m      5 │ import { CitasService } from [32m'../../services/citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:17:27:
+[37m      17 │   private readonly citas = [32minject(CitasService)[37m.getCitas();
+         ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:27:15:
+[37m      27 │       .filter(([32mitem[37m) => item.status === 'Programada')
+         ╵                [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/citas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:12:29:
+[37m      12 │ import { CitasService } from [32m'../../services/citas.service'[37m;
+         ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:164:7:
+[37m      164 │       id: [32mthis.citasService[37m.getNextId(),
+          ╵           [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:178:2:
+[37m      178 │     [32mthis.citasService[37m.addCita(cita);
+          ╵     [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './citas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:4:29:
+[37m      4 │ import { CitasService } from [32m'./citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:21:26:
+[37m      21 │   private readonly citas = [32minject(CitasService)[37m.getCitas();
+         ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:43:39:
+[37m      43 │ ...: String(this.citas().filter(([32mitem[37m) => item.status === 'Program...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './citas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:4:29:
+[37m      4 │ import { CitasService } from [32m'./citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:39:26:
+[37m      39 │   private readonly citas = [32minject(CitasService)[37m.getCitas();
+         ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/reportes.service.ts:62:38:
+[37m      62 │ ...: String(this.citas().filter(([32mitem[37m) => item.status === 'Program...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './citas.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-citas.service.ts:4:29:
+[37m      4 │ import { CitasService } from [32m'./citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-citas.service.ts:9:26:
+[37m      9 │   private readonly citas = [32minject(CitasService)[37m.getCitas();
+        ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-citas.service.ts:18:12:
+[37m      18 │       .filter(([32mitem[37m) => item.studentCode === user.studentCode)
+         ╵                [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/student-citas.service.ts:19:9:
+[37m      19 │       .map(([32mitem[37m) => ({
+         ╵             [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/citas.service"[0m
+
+    src/app/pages/admin-citas/admin-citas.component.ts:3:29:
+[37m      3 │ import { CitasService } from [32m'../../services/citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/citas.service"[0m
+
+    src/app/pages/admin-dashboard/admin-dashboard.component.ts:5:29:
+[37m      5 │ import { CitasService } from [32m'../../services/citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/citas.service"[0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:4:29:
+[37m      4 │ import { CitasService } from [32m'../../services/citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./citas.service"[0m
+
+    src/app/services/dashboard.service.ts:4:29:
+[37m      4 │ import { CitasService } from [32m'./citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./citas.service"[0m
+
+    src/app/services/reportes.service.ts:3:29:
+[37m      3 │ import { CitasService } from [32m'./citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./citas.service"[0m
+
+    src/app/services/student-citas.service.ts:3:29:
+[37m      3 │ import { CitasService } from [32m'./citas.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8107: NG8107: The left side of this optional chain operation does not include 'null' or 'undefined' in its type, therefore the '?.' operator can be replaced with the '.' operator. Find more at https://v21.angular.dev/extended-diagnostics/NG8107[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.html:19:81:
+[37m      19 │ ...lass.active]="activeStudent()?.[32mid[37m === student.id" (click)="onVi...
+         ╵                                   [32m~~[0m
+
+  Warning occurs in the template of component AdminEstudiantesComponent.
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:9:14:
+[37m      9 │   templateUrl: [32m'./admin-estudiantes.component.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/casos.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:3:29:
+[37m      3 │ import { CasosService } from [32m'../../services/casos.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:16:26:
+[37m      16 │   private readonly casos = [32mthis.casosService[37m.getCasos();
+         ╵                            [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:30:30:
+[37m      30 │     return this.casos().filter(([32mitem[37m) => {
+         ╵                                 [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:78:7:
+[37m      78 │       id: [32mthis.casosService[37m.getNextId(),
+         ╵           [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:155:3:
+[37m      155 │       [32mthis.casosService[37m.updateCaso(original, draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:157:3:
+[37m      157 │       [32mthis.casosService[37m.addCaso(draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/casos.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:11:29:
+[37m      11 │ import { CasosService } from [32m'../../services/casos.service'[37m;
+         ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:224:7:
+[37m      224 │       id: [32mthis.casosService[37m.getNextId(),
+          ╵           [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:233:2:
+[37m      233 │     [32mthis.casosService[37m.addCaso(caso);
+          ╵     [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '(list: Cita[]) => { type: string; id: string; studentCode?: string | undefined; studentEmail?: string | undefined; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }[]' is not assignable to parameter of type '(value: Cita[]) => Cita[]'.
+  Type '{ type: string; id: string; studentCode?: string | undefined; studentEmail?: string | undefined; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }[]' is not assignable to type 'Cita[]'.
+    Type '{ type: string; id: string; studentCode?: string; studentEmail?: string; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }' is not assignable to type 'Cita'.
+      Types of property 'type' are incompatible.
+        Type 'string' is not assignable to type 'CitaTipo'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/citas.service.ts:97:20:
+[37m      97 │     this.citas.update([32m(list) => {[37m
+         ╵                       [32m~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '{ type: string; id: string; studentCode?: string | undefined; studentEmail?: string | undefined; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }[]' is not assignable to parameter of type 'Cita[]'.
+  Type '{ type: string; id: string; studentCode?: string; studentEmail?: string; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }' is not assignable to type 'Cita'.
+    Types of property 'type' are incompatible.
+      Type 'string' is not assignable to type 'CitaTipo'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/citas.service.ts:128:17:
+[37m      128 │         this.persist([32mnext[37m);
+          ╵                      [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './casos.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:3:29:
+[37m      3 │ import { CasosService } from [32m'./casos.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:23:26:
+[37m      23 │   private readonly casos = [32minject(CasosService)[37m.getCasos();
+         ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:55:39:
+[37m      55 │ ...: String(this.casos().filter(([32mitem[37m) => item.status === 'Activo'...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/casos.service"[0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:3:29:
+[37m      3 │ import { CasosService } from [32m'../../services/casos.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/casos.service"[0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:3:29:
+[37m      3 │ import { CasosService } from [32m'../../services/casos.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./casos.service"[0m
+
+    src/app/services/dashboard.service.ts:3:29:
+[37m      3 │ import { CasosService } from [32m'./casos.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8107: NG8107: The left side of this optional chain operation does not include 'null' or 'undefined' in its type, therefore the '?.' operator can be replaced with the '.' operator. Find more at https://v21.angular.dev/extended-diagnostics/NG8107[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.html:19:81:
+[37m      19 │ ...lass.active]="activeStudent()?.[32mid[37m === student.id" (click)="onVi...
+         ╵                                   [32m~~[0m
+
+  Warning occurs in the template of component AdminEstudiantesComponent.
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:9:14:
+[37m      9 │   templateUrl: [32m'./admin-estudiantes.component.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/casos.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:3:29:
+[37m      3 │ import { CasosService } from [32m'../../services/casos.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:16:26:
+[37m      16 │   private readonly casos = [32mthis.casosService[37m.getCasos();
+         ╵                            [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:30:30:
+[37m      30 │     return this.casos().filter(([32mitem[37m) => {
+         ╵                                 [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:78:7:
+[37m      78 │       id: [32mthis.casosService[37m.getNextId(),
+         ╵           [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:155:3:
+[37m      155 │       [32mthis.casosService[37m.updateCaso(original, draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:157:3:
+[37m      157 │       [32mthis.casosService[37m.addCaso(draft);
+          ╵       [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module '../../services/casos.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:11:29:
+[37m      11 │ import { CasosService } from [32m'../../services/casos.service'[37m;
+         ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:224:7:
+[37m      224 │       id: [32mthis.casosService[37m.getNextId(),
+          ╵           [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:233:2:
+[37m      233 │     [32mthis.casosService[37m.addCaso(caso);
+          ╵     [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '(list: Cita[]) => { type: string; id: string; studentCode?: string | undefined; studentEmail?: string | undefined; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }[]' is not assignable to parameter of type '(value: Cita[]) => Cita[]'.
+  Type '{ type: string; id: string; studentCode?: string | undefined; studentEmail?: string | undefined; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }[]' is not assignable to type 'Cita[]'.
+    Type '{ type: string; id: string; studentCode?: string; studentEmail?: string; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }' is not assignable to type 'Cita'.
+      Types of property 'type' are incompatible.
+        Type 'string' is not assignable to type 'CitaTipo'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/citas.service.ts:97:20:
+[37m      97 │     this.citas.update([32m(list) => {[37m
+         ╵                       [32m~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '{ type: string; id: string; studentCode?: string | undefined; studentEmail?: string | undefined; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }[]' is not assignable to parameter of type 'Cita[]'.
+  Type '{ type: string; id: string; studentCode?: string; studentEmail?: string; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }' is not assignable to type 'Cita'.
+    Types of property 'type' are incompatible.
+      Type 'string' is not assignable to type 'CitaTipo'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/citas.service.ts:128:17:
+[37m      128 │         this.persist([32mnext[37m);
+          ╵                      [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './casos.service' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:3:29:
+[37m      3 │ import { CasosService } from [32m'./casos.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2571: Object is of type 'unknown'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:23:26:
+[37m      23 │   private readonly casos = [32minject(CasosService)[37m.getCasos();
+         ╵                            [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS7006: Parameter 'item' implicitly has an 'any' type.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/dashboard.service.ts:55:39:
+[37m      55 │ ...: String(this.casos().filter(([32mitem[37m) => item.status === 'Activo'...
+         ╵                                  [32m~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/casos.service"[0m
+
+    src/app/pages/admin-casos/admin-casos.component.ts:3:29:
+[37m      3 │ import { CasosService } from [32m'../../services/casos.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "../../services/casos.service"[0m
+
+    src/app/pages/admin-solicitudes/admin-solicitudes.component.ts:3:29:
+[37m      3 │ import { CasosService } from [32m'../../services/casos.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./casos.service"[0m
+
+    src/app/services/dashboard.service.ts:3:29:
+[37m      3 │ import { CasosService } from [32m'./casos.service'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8107: NG8107: The left side of this optional chain operation does not include 'null' or 'undefined' in its type, therefore the '?.' operator can be replaced with the '.' operator. Find more at https://v21.angular.dev/extended-diagnostics/NG8107[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.html:19:81:
+[37m      19 │ ...lass.active]="activeStudent()?.[32mid[37m === student.id" (click)="onVi...
+         ╵                                   [32m~~[0m
+
+  Warning occurs in the template of component AdminEstudiantesComponent.
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:9:14:
+[37m      9 │   templateUrl: [32m'./admin-estudiantes.component.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '(list: Cita[]) => { type: string; id: string; studentCode?: string | undefined; studentEmail?: string | undefined; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }[]' is not assignable to parameter of type '(value: Cita[]) => Cita[]'.
+  Type '{ type: string; id: string; studentCode?: string | undefined; studentEmail?: string | undefined; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }[]' is not assignable to type 'Cita[]'.
+    Type '{ type: string; id: string; studentCode?: string; studentEmail?: string; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }' is not assignable to type 'Cita'.
+      Types of property 'type' are incompatible.
+        Type 'string' is not assignable to type 'CitaTipo'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/citas.service.ts:97:20:
+[37m      97 │     this.citas.update([32m(list) => {[37m
+         ╵                       [32m~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '{ type: string; id: string; studentCode?: string | undefined; studentEmail?: string | undefined; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }[]' is not assignable to parameter of type 'Cita[]'.
+  Type '{ type: string; id: string; studentCode?: string; studentEmail?: string; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }' is not assignable to type 'Cita'.
+    Types of property 'type' are incompatible.
+      Type 'string' is not assignable to type 'CitaTipo'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/citas.service.ts:128:17:
+[37m      128 │         this.persist([32mnext[37m);
+          ╵                      [32m~~~~[0m
+
+[39m[22m
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8107: NG8107: The left side of this optional chain operation does not include 'null' or 'undefined' in its type, therefore the '?.' operator can be replaced with the '.' operator. Find more at https://v21.angular.dev/extended-diagnostics/NG8107[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.html:19:81:
+[37m      19 │ ...lass.active]="activeStudent()?.[32mid[37m === student.id" (click)="onVi...
+         ╵                                   [32m~~[0m
+
+  Warning occurs in the template of component AdminEstudiantesComponent.
+
+    src/app/pages/admin-estudiantes/admin-estudiantes.component.ts:9:14:
+[37m      9 │   templateUrl: [32m'./admin-estudiantes.component.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '(list: Cita[]) => { type: string; id: string; studentCode?: string | undefined; studentEmail?: string | undefined; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }[]' is not assignable to parameter of type '(value: Cita[]) => Cita[]'.
+  Type '{ type: string; id: string; studentCode?: string | undefined; studentEmail?: string | undefined; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }[]' is not assignable to type 'Cita[]'.
+    Type '{ type: string; id: string; studentCode?: string; studentEmail?: string; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }' is not assignable to type 'Cita'.
+      Types of property 'type' are incompatible.
+        Type 'string' is not assignable to type 'CitaTipo'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/citas.service.ts:97:20:
+[37m      97 │     this.citas.update([32m(list) => {[37m
+         ╵                       [32m~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '{ type: string; id: string; studentCode?: string | undefined; studentEmail?: string | undefined; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }[]' is not assignable to parameter of type 'Cita[]'.
+  Type '{ type: string; id: string; studentCode?: string; studentEmail?: string; studentName: string; professionalName: string; date: string; time: string; status: CitaEstado; }' is not assignable to type 'Cita'.
+    Types of property 'type' are incompatible.
+      Type 'string' is not assignable to type 'CitaTipo'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/services/citas.service.ts:128:17:
+[37m      128 │         this.persist([32mnext[37m);
+          ╵                      [32m~~~~[0m
+
+[39m[22m

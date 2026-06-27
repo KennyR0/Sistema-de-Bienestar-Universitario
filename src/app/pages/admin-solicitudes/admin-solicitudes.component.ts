@@ -6,7 +6,7 @@ import {
 	SolicitudPrioridad,
 	SolicitudTipo
 } from '../../models/solicitud';
-import { Caso } from '../../models/caso';
+import { Caso, CasoRiesgo } from '../../models/caso';
 import { Cita } from '../../models/cita';
 import { CasosService } from '../../services/casos.service';
 import { CitasService } from '../../services/citas.service';
@@ -31,6 +31,10 @@ export class AdminSolicitudesComponent {
 	statusFilter = signal<string>(ALL_FILTER);
 	priorityFilter = signal<string>(ALL_FILTER);
 	selectedSolicitud = signal<Solicitud | null>(null);
+	caseDialogSolicitud = signal<Solicitud | null>(null);
+	caseRisk = signal<CasoRiesgo>('Académico');
+	caseNote = signal('');
+	operationMessage = signal('');
 	noteText = signal('');
 	appointmentDate = signal(new Date().toISOString().slice(0, 10));
 	appointmentTime = signal('09:00');
@@ -56,6 +60,7 @@ export class AdminSolicitudesComponent {
 		'Media',
 		'Baja'
 	];
+	readonly caseRiskOptions: CasoRiesgo[] = ['Académico', 'Personal', 'Social', 'Económico'];
 
 	readonly filteredSolicitudes = computed(() => {
 		const term = this.searchTerm().toLowerCase().trim();
@@ -63,9 +68,10 @@ export class AdminSolicitudesComponent {
 		const status = this.statusFilter();
 		const priority = this.priorityFilter();
 
+		// La bandeja prioriza urgencias despues de aplicar busqueda y filtros administrativos.
 		return this.solicitudes()
 			.filter((item) => {
-				const haystack = `${item.studentName} ${item.studentCode} ${item.program} ${item.subject}`
+				const haystack = `${item.studentName} ${item.studentCode} ${item.faculty} ${item.program} ${item.semester} ${item.subject}`
 					.toLowerCase()
 					.trim();
 				return (
@@ -83,6 +89,7 @@ export class AdminSolicitudesComponent {
 		const list = this.filteredSolicitudes();
 
 		if (selected) {
+			// Se refresca desde la fuente para reflejar cambios de estado o historial recientes.
 			return this.solicitudes().find((item) => item.id === selected.id) ?? list[0] ?? null;
 		}
 
@@ -118,6 +125,7 @@ export class AdminSolicitudesComponent {
 	onSelect(item: Solicitud) {
 		this.selectedSolicitud.set(item);
 		this.noteText.set('');
+		this.operationMessage.set('');
 	}
 
 	onNoteInput(value: string) {
@@ -138,6 +146,7 @@ export class AdminSolicitudesComponent {
 			status,
 			`La solicitud cambió a estado ${status}.`
 		);
+		this.operationMessage.set(`Estado actualizado a ${status}.`);
 	}
 
 	onAddNote(item: Solicitud) {
@@ -149,11 +158,15 @@ export class AdminSolicitudesComponent {
 
 		this.solicitudesService.addHistory(item, 'Observación registrada', note, 'Equipo Bienestar');
 		this.noteText.set('');
+		this.operationMessage.set('Observación agregada al historial.');
 	}
 
 	onAssignAppointment(item: Solicitud) {
+		// Programar una cita tambien mueve la solicitud a seguimiento y deja evidencia en historial.
 		const cita: Cita = {
 			id: this.citasService.getNextId(),
+			studentCode: item.studentCode,
+			studentEmail: item.studentEmail,
 			studentName: item.studentName,
 			professionalName:
 				item.assignedProfessional && item.assignedProfessional !== 'Sin asignar'
@@ -181,25 +194,64 @@ export class AdminSolicitudesComponent {
 				...item.history
 			]
 		});
+		this.operationMessage.set('Cita programada y solicitud movida a seguimiento.');
 	}
 
 	onOpenCase(item: Solicitud) {
+		// El tipo de solicitud sugiere el riesgo inicial, pero el equipo puede ajustarlo antes de confirmar.
+		this.caseRisk.set(this.getInitialRisk(item));
+		this.caseNote.set('');
+		this.caseDialogSolicitud.set(item);
+	}
+
+	onCancelOpenCase() {
+		this.caseDialogSolicitud.set(null);
+		this.caseNote.set('');
+	}
+
+	onCaseRiskChange(value: CasoRiesgo) {
+		this.caseRisk.set(value);
+	}
+
+	onCaseNoteInput(value: string) {
+		this.caseNote.set(value);
+	}
+
+	onConfirmOpenCase() {
+		const item = this.caseDialogSolicitud();
+
+		if (!item) {
+			return;
+		}
+
 		const caso: Caso = {
 			id: this.casosService.getNextId(),
 			studentName: item.studentName,
-			riskType: item.type === 'Social' ? 'Social' : 'Académico',
+			riskType: this.caseRisk(),
 			status: 'Activo',
 			startDate: new Date().toISOString().slice(0, 10),
 			lastUpdate: new Date().toISOString().slice(0, 10)
 		};
+		const note = this.caseNote().trim();
 
+		// Abrir el caso crea una ficha de seguimiento y conserva el rastro dentro de la solicitud.
 		this.casosService.addCaso(caso);
 		this.solicitudesService.addHistory(
 			item,
 			'Caso abierto',
-			`Se abrió el caso ${caso.id} para seguimiento especializado.`,
+			`Se abrió el caso ${caso.id} con riesgo ${caso.riskType}. ${note ? `Nota inicial: ${note}` : 'Queda pendiente la primera revisión del equipo.'}`,
 			'Equipo Bienestar'
 		);
+		this.caseDialogSolicitud.set(null);
+		this.caseNote.set('');
+		this.operationMessage.set(`Caso ${caso.id} abierto para seguimiento especializado.`);
+	}
+
+	private getInitialRisk(item: Solicitud): CasoRiesgo {
+		if (item.type === 'Social') return 'Social';
+		if (item.type === 'Académica') return 'Académico';
+		if (item.type === 'Médica') return 'Personal';
+		return 'Personal';
 	}
 
 	private priorityRank(priority: SolicitudPrioridad) {

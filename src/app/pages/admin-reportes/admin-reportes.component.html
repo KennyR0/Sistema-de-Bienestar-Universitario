@@ -3,9 +3,14 @@
 		<div>
 			<p class="module-kicker">Inteligencia operativa</p>
 			<h2>Reportes y estadísticas</h2>
-			<p>Genere cortes de información y revise indicadores rápidos del departamento.</p>
+			<p>Genere cortes de información, revise indicadores y mantenga limpio el historial del departamento.</p>
 		</div>
-		<button class="btn btn-primary" type="button" (click)="onGenerate()">Generar reporte</button>
+		<div class="hero-actions">
+			<button class="btn btn-outline" type="button" (click)="onClearReports()" [disabled]="reportes().length === 0">Limpiar historial</button>
+			<button class="btn btn-primary" type="button" (click)="onGenerate()" [disabled]="!canGenerate()">
+				{{ isGenerating() ? 'Generando...' : 'Generar reporte' }}
+			</button>
+		</div>
 	</header>
 
 	<section class="metric-strip">
@@ -14,36 +19,83 @@
 		}
 	</section>
 
-	<section class="workbench">
-		<div class="form-section">
-			<h3>Nuevo reporte</h3>
-			<div class="form-grid">
-				<div class="form-group"><label>Tipo</label><select class="form-control" [value]="selectedType()" (change)="onTypeChange($any($event.target).value)">@for (type of reportTypes; track type) { <option [value]="type">{{ type }}</option> }</select></div>
-				<div class="form-group"><label>Inicio</label><input class="form-control" type="date" [value]="startDate()" (change)="onStartDateChange($any($event.target).value)" /></div>
-				<div class="form-group"><label>Fin</label><input class="form-control" type="date" [value]="endDate()" (change)="onEndDateChange($any($event.target).value)" /></div>
-			</div>
-			<div class="form-actions"><button class="btn btn-outline" type="button" (click)="onClear()">Limpiar</button><button class="btn btn-primary" type="button" (click)="onGenerate()">Generar</button></div>
-		</div>
-		<div class="request-list">
-			@for (report of reportes(); track report.id) {
-				<button class="request-card" type="button" (click)="onView(report)">
-					<span class="request-card__top"><strong>{{ report.name }}</strong><span>{{ report.date }}</span></span>
-					<span>{{ report.type }} · {{ report.generatedBy }}</span>
-				</button>
-			}
-		</div>
-	</section>
-
-	@if (viewingReporte(); as report) {
-		<section class="detail-panel">
-			<p class="module-kicker">Reporte guardado</p>
-			<h3>{{ report.name }}</h3>
-			<div class="detail-grid">
-				<div><span>Tipo</span><strong>{{ report.type }}</strong></div>
-				<div><span>Generado por</span><strong>{{ report.generatedBy }}</strong></div>
-				<div><span>Fecha</span><strong>{{ report.date }}</strong></div>
-			</div>
-			<button class="btn btn-outline" type="button" (click)="onCloseView()">Cerrar</button>
-		</section>
+	@if (feedbackMessage()) {
+		<p class="inline-status">{{ feedbackMessage() }}</p>
 	}
+
+	<section class="workbench reports-workbench">
+		<div class="form-section report-builder">
+			<p class="module-kicker">Nuevo corte</p>
+			<h3>Configurar reporte</h3>
+			<div class="form-grid">
+				<div class="form-group">
+					<label for="report-type">Tipo</label>
+					<select id="report-type" class="form-control" [value]="selectedType()" (change)="onTypeChange($any($event.target).value)">
+						@for (type of reportTypes; track type) {
+							<option [value]="type">{{ type }}</option>
+						}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="report-start">Inicio</label>
+					<input id="report-start" class="form-control" type="date" [value]="startDate()" (change)="onStartDateChange($any($event.target).value)" />
+				</div>
+				<div class="form-group">
+					<label for="report-end">Fin</label>
+					<input id="report-end" class="form-control" type="date" [value]="endDate()" (change)="onEndDateChange($any($event.target).value)" />
+				</div>
+			</div>
+			<div class="form-actions">
+				<button class="btn btn-outline" type="button" (click)="onClear()">Limpiar formulario</button>
+				<button class="btn btn-primary" type="button" (click)="onGenerate()" [disabled]="!canGenerate()">
+					{{ isGenerating() ? 'Generando...' : 'Generar' }}
+				</button>
+			</div>
+		</div>
+
+		<div class="report-history-panel">
+			<div class="panel-heading">
+				<div>
+					<p class="module-kicker">Historial</p>
+					<h3>Reportes guardados</h3>
+				</div>
+				<span class="signal-chip">{{ reportes().length }} registros</span>
+			</div>
+
+			<div class="request-list">
+				@for (report of reportes(); track report.id) {
+					<article class="request-card report-card" [class.active]="viewingReporte()?.id === report.id">
+						<button class="report-card__main" type="button" (click)="onView(report)">
+							<span class="request-card__top"><strong>{{ report.name }}</strong><span>{{ report.date }}</span></span>
+							<span>{{ report.type }} | {{ report.generatedBy }}</span>
+						</button>
+						<button class="btn btn-outline btn-compact" type="button" (click)="onDelete(report)">Eliminar</button>
+					</article>
+				}
+				@if (reportes().length === 0) {
+					<p class="empty-state">No hay reportes guardados. Genere un corte cuando necesite respaldar información.</p>
+				}
+			</div>
+		</div>
+
+		<section class="detail-panel report-preview-panel">
+			@if (viewingReporte(); as report) {
+				<p class="module-kicker">Reporte seleccionado</p>
+				<h3>{{ report.name }}</h3>
+				<div class="detail-grid">
+					<div><span>Tipo</span><strong>{{ report.type }}</strong></div>
+					<div><span>Generado por</span><strong>{{ report.generatedBy }}</strong></div>
+					<div><span>Fecha</span><strong>{{ report.date }}</strong></div>
+				</div>
+				<div class="form-actions">
+					<button class="btn btn-outline" type="button" (click)="onCloseView()">Cerrar vista</button>
+					<button class="btn btn-danger" type="button" (click)="onDelete(report)">Eliminar reporte</button>
+				</div>
+			} @else {
+				<p class="module-kicker">Vista previa</p>
+				<h3>Seleccione un reporte</h3>
+				<p>El detalle se muestra aquí para revisar el corte sin empujar contenido al final de la pantalla.</p>
+			}
+		</section>
+	</section>
 </div>

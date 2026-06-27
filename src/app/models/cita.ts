@@ -3,6 +3,8 @@ export type CitaEstado = 'Programada' | 'Completada' | 'Cancelada';
 
 export interface Cita {
 	id: string;
+	studentCode?: string;
+	studentEmail?: string;
 	studentName: string;
 	professionalName: string;
 	date: string;

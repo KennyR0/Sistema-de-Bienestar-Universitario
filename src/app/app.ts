@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { AuthService } from './services/auth.service';
 import { RoleService } from './services/role.service';
 
 @Component({
@@ -10,9 +11,12 @@ import { RoleService } from './services/role.service';
   styleUrl: './app.css'
 })
 export class App {
+  private readonly authService = inject(AuthService);
   private readonly roleService = inject(RoleService);
+  private readonly router = inject(Router);
 
   readonly role = this.roleService.role;
+  readonly currentUser = this.authService.currentUser;
   readonly isAdmin = computed(() => this.role() === 'admin');
   readonly isStudent = computed(() => this.role() === 'student');
 
@@ -36,5 +40,6 @@ export class App {
 
   logout(): void {
     this.roleService.clearRole();
+    this.router.navigate(['/']);
   }
 }
