@@ -8,133 +8,108 @@
 		<a class="btn btn-outline" routerLink="/estudiante/solicitudes">Volver a mis solicitudes</a>
 	</header>
 
-	@if (submittedSuccessfully()) {
-		<section class="success-panel">
-			<p class="module-kicker">Solicitud registrada</p>
-			<h3>Solicitud enviada correctamente</h3>
-			<p>
-				El equipo de Bienestar Universitario revisará su caso y se comunicará según la disponibilidad registrada.
-			</p>
-			<a class="btn btn-primary" routerLink="/estudiante/solicitudes">Volver a mis solicitudes</a>
-		</section>
-	} @else {
-		<section class="guided-form">
-			<div class="form-section">
-				<h3>1. Datos del estudiante</h3>
-				<div class="form-grid">
-					<div class="form-group">
-						<label for="student-name">Nombre completo</label>
-						<input id="student-name" class="form-control" [value]="studentName()" (input)="onTextInput('studentName', $any($event.target).value)" />
-					</div>
-					<div class="form-group">
-						<label for="student-code">Código estudiantil</label>
-						<input id="student-code" class="form-control" [value]="studentCode()" (input)="onTextInput('studentCode', $any($event.target).value)" />
-					</div>
-					<div class="form-group">
-						<label for="student-faculty">Facultad</label>
-						<input id="student-faculty" class="form-control" [value]="faculty()" (input)="onTextInput('faculty', $any($event.target).value)" />
-					</div>
-					<div class="form-group">
-						<label for="student-program">Carrera</label>
-						<input id="student-program" class="form-control" [value]="program()" (input)="onTextInput('program', $any($event.target).value)" />
-					</div>
-					<div class="form-group">
-						<label for="student-semester">Semestre</label>
-						<select id="student-semester" class="form-control" [value]="semester()" (change)="onSemesterChange($any($event.target).value)">
-							@for (option of semesterOptions; track option) {
-								<option [value]="option">{{ option }}</option>
-							}
-						</select>
-					</div>
+	<section class="guided-form">
+		<div class="form-section">
+			<h3>1. Datos del estudiante</h3>
+			<div class="form-grid">
+				<div class="form-group">
+					<label for="student-name">Nombre completo</label>
+					<input id="student-name" class="form-control" [value]="studentName()" (input)="onTextInput('studentName', $any($event.target).value)" />
+				</div>
+				<div class="form-group">
+					<label for="student-code">Código estudiantil</label>
+					<input id="student-code" class="form-control" [value]="studentCode()" (input)="onTextInput('studentCode', $any($event.target).value)" />
+				</div>
+				<div class="form-group">
+					<label for="student-program">Carrera</label>
+					<input id="student-program" class="form-control" [value]="program()" (input)="onTextInput('program', $any($event.target).value)" />
 				</div>
 			</div>
+		</div>
 
-			<div class="form-section">
-				<h3>2. Motivo de atención</h3>
-				<div class="form-grid">
-					<div class="form-group">
-						<label for="solicitud-type">Tipo de atención</label>
-						<select id="solicitud-type" class="form-control" (change)="onTypeChange($any($event.target).value)">
-							<option value="">Seleccione...</option>
-							@for (option of typeOptions; track option) {
-								<option [value]="option">{{ option }}</option>
-							}
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="priority">Nivel de prioridad percibida</label>
-						<select id="priority" class="form-control" [value]="priority()" (change)="onPriorityChange($any($event.target).value)">
-							@for (option of priorityOptions; track option) {
-								<option [value]="option">{{ option }}</option>
-							}
-						</select>
-					</div>
-					<div class="form-group form-group--wide">
-						<label for="subject">Asunto</label>
-						<input id="subject" class="form-control" placeholder="Ej. Necesito orientación psicológica" [value]="subject()" (input)="onTextInput('subject', $any($event.target).value)" />
-					</div>
-					<div class="form-group form-group--wide">
-						<label for="description">Descripción detallada</label>
-						<textarea id="description" class="form-control" rows="5" placeholder="Explique qué ocurre, desde cuándo y qué apoyo espera recibir." [value]="description()" (input)="onTextInput('description', $any($event.target).value)"></textarea>
-					</div>
+		<div class="form-section">
+			<h3>2. Motivo de atención</h3>
+			<div class="form-grid">
+				<div class="form-group">
+					<label for="solicitud-type">Tipo de atención</label>
+					<select id="solicitud-type" class="form-control" (change)="onTypeChange($any($event.target).value)">
+						<option value="">Seleccione...</option>
+						@for (option of typeOptions; track option) {
+							<option [value]="option">{{ option }}</option>
+						}
+					</select>
 				</div>
-				<p class="form-footnote">* La prioridad final será revisada por el equipo de Bienestar Universitario.</p>
-			</div>
+				<div class="form-group">
+					<label for="priority">Nivel de prioridad percibida</label>
+					<select id="priority" class="form-control" [value]="priority()" (change)="onPriorityChange($any($event.target).value)">
+						@for (option of priorityOptions; track option) {
+							<option [value]="option">{{ option }}</option>
+						}					
 
-			<div class="form-section">
-				<h3>3. Contacto y disponibilidad</h3>
-				<div class="form-grid">
-					<div class="form-group">
-						<label for="contact-channel">Canal preferido</label>
-						<select id="contact-channel" class="form-control" [value]="contactChannel()" (change)="onContactChange($any($event.target).value)">
-							@for (option of contactOptions; track option) {
-								<option [value]="option">{{ option }}</option>
-							}
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="contact-value">Dato de contacto</label>
-						<input id="contact-value" class="form-control" placeholder="Correo, teléfono o WhatsApp" [value]="contactValue()" (input)="onTextInput('contactValue', $any($event.target).value)" />
-					</div>
-					<div class="form-group form-group--wide">
-						<label for="availability">Disponibilidad horaria</label>
-						<input id="availability" class="form-control" placeholder="Ej. Lunes y miércoles después de las 14:00" [value]="availability()" (input)="onTextInput('availability', $any($event.target).value)" />
-					</div>
+					</select>
+				</div>
+
+
+				<div class="form-group form-group--wide">
+					<label for="subject">Asunto</label>
+					<input id="subject" class="form-control" placeholder="Ej. Necesito orientación psicológica" [value]="subject()" (input)="onTextInput('subject', $any($event.target).value)" />
+				</div>
+				<div class="form-group form-group--wide">
+					<label for="description">Descripción detallada</label>
+					<textarea id="description" class="form-control" rows="5" placeholder="Explique qué ocurre, desde cuándo y qué apoyo espera recibir." [value]="description()" (input)="onTextInput('description', $any($event.target).value)"></textarea>
 				</div>
 			</div>
+		</div>
 
-			<div class="form-section">
-				<h3>4. Adjuntos y consentimiento</h3>
-				<div class="form-grid attachment-consent-grid">
-					<div class="form-group">
-						<label for="attachment">Documento de respaldo</label>
-						<input id="attachment" class="visually-hidden" type="file" (change)="onAttachmentSelected($event)" />
-						<div class="file-picker">
-							<label class="btn btn-outline" for="attachment">Seleccionar archivo</label>
-							<span>{{ attachmentName() || 'Ningún archivo seleccionado' }}</span>
-						</div>
-						<small>Puede adjuntar certificados, informes, capturas o documentos relacionados. Opcional.</small>
-					</div>
-					<label class="consent-box consent-box--centered">
-						<input type="checkbox" [checked]="consent()" (change)="onConsentChange($any($event.target).checked)" />
-						<span>Acepto que el Departamento de Bienestar Universitario revise esta información con fines de orientación, contacto y seguimiento de mi solicitud.</span>
-					</label>
+		<div class="form-section">
+			<h3>3. Contacto y disponibilidad</h3>
+			<div class="form-grid">
+				<div class="form-group">
+					<label for="contact-channel">Canal preferido</label>
+					<select id="contact-channel" class="form-control" [value]="contactChannel()" (change)="onContactChange($any($event.target).value)">
+						@for (option of contactOptions; track option) {
+							<option [value]="option">{{ option }}</option>
+						}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="contact-value">Dato de contacto</label>
+					<input id="contact-value" class="form-control" placeholder="Correo, teléfono o WhatsApp" [value]="contactValue()" (input)="onTextInput('contactValue', $any($event.target).value)" />
+				</div>
+				<div class="form-group form-group--wide">
+					<label for="availability">Disponibilidad horaria</label>
+					<input id="availability" class="form-control" placeholder="Ej. Lunes y miércoles después de las 14:00" [value]="availability()" (input)="onTextInput('availability', $any($event.target).value)" />
 				</div>
 			</div>
+		</div>
 
-			@if (attemptedSubmit() && errors().length > 0) {
-				<div class="validation-panel">
-					<strong>Revise la solicitud antes de enviarla</strong>
-					@for (error of errors(); track error) {
-						<p>{{ error }}</p>
-					}
+		<div class="form-section">
+			<h3>4. Adjuntos y consentimiento</h3>
+			<div class="form-grid">
+				<div class="form-group">
+					<label for="attachment">Documento de respaldo</label>
+					<input id="attachment" class="form-control" placeholder="Nombre del archivo" [value]="attachmentName()" (input)="onTextInput('attachmentName', $any($event.target).value)" />
+					<small>Adjunte certificados, informes o documentos relevantes cuando corresponda.</small>
 				</div>
-			}
-
-			<div class="form-actions">
-				<a class="btn btn-outline" routerLink="/estudiante/solicitudes">Cancelar</a>
-				<button class="btn btn-primary" type="button" (click)="onSubmit()">Enviar solicitud</button>
+				<label class="consent-box">
+					<input type="checkbox" [checked]="consent()" (change)="onConsentChange($any($event.target).checked)" />
+					<span>Acepto que Bienestar Universitario revise esta información para gestionar mi atención.</span>
+				</label>
 			</div>
-		</section>
-	}
+		</div>
+
+		@if (attemptedSubmit() && errors().length > 0) {
+			<div class="validation-panel">
+				<strong>Revise la solicitud antes de enviarla</strong>
+				@for (error of errors(); track error) {
+					<p>{{ error }}</p>
+				}
+			</div>
+		}
+
+		<div class="form-actions">
+			<a class="btn btn-outline" routerLink="/estudiante/solicitudes">Cancelar</a>
+			<button class="btn btn-primary" type="button" (click)="onSubmit()">Enviar solicitud</button>
+		</div>
+	</section>
 </div>
