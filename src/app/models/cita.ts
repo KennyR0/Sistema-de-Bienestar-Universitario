@@ -11,4 +11,6 @@ export interface Cita {
 	time: string;
 	type: CitaTipo;
 	status: CitaEstado;
+	rescheduleRequested?: boolean;
+	studentRequestNote?: string;
 }

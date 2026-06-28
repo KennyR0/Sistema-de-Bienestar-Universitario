@@ -43,10 +43,10 @@
 					<span>{{ item.type }} · {{ item.date }}</span>
 					<span class="progress-line">
 						<span [class.complete]="item.status !== 'Pendiente'"></span>
-						<span [class.complete]="item.status === 'En Proceso' || item.status === 'Completada' || item.status === 'Aprobada'"></span>
+						<span [class.complete]="item.status === 'En triage' || item.status === 'En Proceso' || item.status === 'Completada' || item.status === 'Aprobada'"></span>
 						<span [class.complete]="item.status === 'Completada' || item.status === 'Aprobada'"></span>
 					</span>
-					<span class="badge" [class.badge-pending]="item.status === 'Pendiente'" [class.badge-process]="item.status === 'En Proceso'" [class.badge-completed]="item.status === 'Completada' || item.status === 'Aprobada'" [class.badge-rejected]="item.status === 'Rechazada'">
+					<span class="badge" [class.badge-pending]="item.status === 'Pendiente'" [class.badge-process]="item.status === 'En triage' || item.status === 'En Proceso'" [class.badge-completed]="item.status === 'Completada' || item.status === 'Aprobada'" [class.badge-rejected]="item.status === 'Rechazada'">
 						{{ item.status }}
 					</span>
 				</button>
@@ -64,7 +64,12 @@
 						<h3>{{ solicitud.subject }}</h3>
 						<p>{{ solicitud.type }} · {{ solicitud.contactChannel }} · {{ solicitud.contactValue }}</p>
 					</div>
-					<span class="badge" [class.badge-pending]="solicitud.status === 'Pendiente'" [class.badge-process]="solicitud.status === 'En Proceso'" [class.badge-completed]="solicitud.status === 'Completada' || solicitud.status === 'Aprobada'" [class.badge-rejected]="solicitud.status === 'Rechazada'">{{ solicitud.status }}</span>
+					<span class="badge" [class.badge-pending]="solicitud.status === 'Pendiente'" [class.badge-process]="solicitud.status === 'En triage' || solicitud.status === 'En Proceso'" [class.badge-completed]="solicitud.status === 'Completada' || solicitud.status === 'Aprobada'" [class.badge-rejected]="solicitud.status === 'Rechazada'">{{ solicitud.status }}</span>
+				</div>
+
+				<div class="next-action-panel">
+					<span>Próxima acción</span>
+					<strong>{{ solicitud.nextAction || 'El equipo de Bienestar revisará la información registrada.' }}</strong>
 				</div>
 
 				<div class="detail-grid">
@@ -75,10 +80,6 @@
 					<div>
 						<span>Disponibilidad</span>
 						<strong>{{ solicitud.availability }}</strong>
-					</div>
-					<div>
-						<span>Próxima acción</span>
-						<strong>{{ solicitud.nextAction }}</strong>
 					</div>
 					<div>
 						<span>Consentimiento</span>

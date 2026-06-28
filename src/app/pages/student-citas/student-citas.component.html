@@ -7,6 +7,10 @@
 		</div>
 	</header>
 
+	@if (feedbackMessage()) {
+		<p class="inline-status">{{ feedbackMessage() }}</p>
+	}
+
 	<section class="request-list request-list--cards">
 		@for (item of citas(); track item.id) {
 			<article class="student-request-card">
@@ -15,8 +19,45 @@
 					<div><span>Profesional</span><strong>{{ item.professionalName }}</strong></div>
 					<div><span>Fecha</span><strong>{{ item.date }}</strong></div>
 					<div><span>Hora</span><strong>{{ item.time }}</strong></div>
+					<div><span>Solicitud de cambio</span><strong>{{ item.rescheduleRequested ? 'Enviada' : 'Sin solicitud' }}</strong></div>
 				</div>
+				@if (item.studentRequestNote) {
+					<p class="request-description">{{ item.studentRequestNote }}</p>
+				}
+				@if (item.status === 'Programada') {
+					<div class="form-actions">
+						<button class="btn btn-outline" type="button" (click)="onOpenReschedule(item)">
+							Solicitar reagendar
+						</button>
+					</div>
+				}
 			</article>
 		}
 	</section>
+
+	@if (requestingCita(); as cita) {
+		<div class="drawer-backdrop" role="presentation" (click)="onCancelReschedule()">
+			<section class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="reschedule-drawer-title" (click)="$event.stopPropagation()">
+				<div class="drawer-heading">
+					<div>
+						<p class="module-kicker">Agenda personal</p>
+						<h3 id="reschedule-drawer-title">Solicitar cambio de cita</h3>
+					</div>
+					<button class="drawer-close" type="button" aria-label="Cerrar" (click)="onCancelReschedule()">×</button>
+				</div>
+				<div class="detail-grid">
+					<div><span>Atención</span><strong>{{ cita.type }}</strong></div>
+					<div><span>Fecha actual</span><strong>{{ cita.date }} | {{ cita.time }}</strong></div>
+				</div>
+				<div class="form-group">
+					<label>Motivo o disponibilidad sugerida</label>
+					<textarea class="form-control" rows="4" [value]="rescheduleNote()" (input)="onRescheduleNoteInput($any($event.target).value)"></textarea>
+				</div>
+				<div class="form-actions">
+					<button class="btn btn-outline" type="button" (click)="onCancelReschedule()">Cancelar</button>
+					<button class="btn btn-primary" type="button" (click)="onSubmitReschedule()">Enviar solicitud</button>
+				</div>
+			</section>
+		</div>
+	}
 </div>

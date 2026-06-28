@@ -17,7 +17,7 @@
 			<strong>{{ summary().pending }}</strong>
 		</article>
 		<article class="metric-tile">
-			<span>En proceso</span>
+			<span>En atención</span>
 			<strong>{{ summary().process }}</strong>
 		</article>
 		<article class="metric-tile">
@@ -77,7 +77,7 @@
 						</span>
 						<span>{{ item.studentName }} | {{ item.program }}</span>
 						<span class="request-card__meta">
-							<span class="badge" [class.badge-pending]="item.status === 'Pendiente'" [class.badge-process]="item.status === 'En Proceso'" [class.badge-completed]="item.status === 'Completada' || item.status === 'Aprobada'" [class.badge-rejected]="item.status === 'Rechazada'">
+							<span class="badge" [class.badge-pending]="item.status === 'Pendiente'" [class.badge-process]="item.status === 'En triage' || item.status === 'En Proceso'" [class.badge-completed]="item.status === 'Completada' || item.status === 'Aprobada'" [class.badge-rejected]="item.status === 'Rechazada'">
 								{{ item.status }}
 							</span>
 							<span>{{ item.priority }}</span>
@@ -155,14 +155,11 @@
 						<p>Cambie el estado solo cuando exista una decisión o una acción documentada.</p>
 					</div>
 					<div class="action-grid">
+						<button class="btn btn-outline" type="button" (click)="onSetStatus(solicitud, 'En triage')">
+							Enviar a triage
+						</button>
 						<button class="btn btn-primary" type="button" (click)="onSetStatus(solicitud, 'En Proceso')">
 							Marcar en proceso
-						</button>
-						<button class="btn btn-success" type="button" (click)="onSetStatus(solicitud, 'Completada')">
-							Completar
-						</button>
-						<button class="btn btn-danger" type="button" (click)="onSetStatus(solicitud, 'Rechazada')">
-							Rechazar
 						</button>
 						<button class="btn btn-outline" type="button" (click)="onOpenCase(solicitud)">
 							Abrir caso
@@ -193,6 +190,19 @@
 						<textarea class="form-control" rows="5" placeholder="Registrar acuerdo, llamada o derivación" [value]="noteText()" (input)="onNoteInput($any($event.target).value)"></textarea>
 						<div class="form-actions">
 							<button class="btn btn-outline" type="button" (click)="onAddNote(solicitud)">Agregar al historial</button>
+						</div>
+					</div>
+
+					<div class="form-section">
+						<h3>Cierre con respuesta</h3>
+						<textarea class="form-control" rows="5" placeholder="Escriba la respuesta, motivo o acuerdo final que quedará en el historial." [value]="resolutionText()" (input)="onResolutionInput($any($event.target).value)"></textarea>
+						<div class="form-actions">
+							<button class="btn btn-success" type="button" (click)="onCloseWithResolution(solicitud, 'Completada')">
+								Cerrar solicitud
+							</button>
+							<button class="btn btn-danger" type="button" (click)="onCloseWithResolution(solicitud, 'Rechazada')">
+								Rechazar con motivo
+							</button>
 						</div>
 					</div>
 				</div>

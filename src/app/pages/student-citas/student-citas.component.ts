@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StudentCitasService } from '../../services/student-citas.service';
 import { StudentCita } from '../../models/student-cita';
@@ -12,6 +12,9 @@ import { StudentCita } from '../../models/student-cita';
 export class StudentCitasComponent {
 	private readonly citasService = inject(StudentCitasService);
 	readonly citas = this.citasService.getCitas();
+	requestingCita = signal<StudentCita | null>(null);
+	rescheduleNote = signal('');
+	feedbackMessage = signal('');
 
 	statusClass(item: StudentCita) {
 		switch (item.status) {
@@ -28,5 +31,37 @@ export class StudentCitasComponent {
 
 	trackByIndex(index: number) {
 		return index;
+	}
+
+	onOpenReschedule(item: StudentCita) {
+		if (item.status !== 'Programada') {
+			return;
+		}
+
+		this.requestingCita.set(item);
+		this.rescheduleNote.set(item.studentRequestNote ?? '');
+		this.feedbackMessage.set('');
+	}
+
+	onCancelReschedule() {
+		this.requestingCita.set(null);
+		this.rescheduleNote.set('');
+	}
+
+	onRescheduleNoteInput(value: string) {
+		this.rescheduleNote.set(value);
+	}
+
+	onSubmitReschedule() {
+		const cita = this.requestingCita();
+
+		if (!cita) {
+			return;
+		}
+
+		this.citasService.requestReschedule(cita.id, this.rescheduleNote());
+		this.requestingCita.set(null);
+		this.rescheduleNote.set('');
+		this.feedbackMessage.set('Solicitud de reagendamiento enviada a Bienestar.');
 	}
 }

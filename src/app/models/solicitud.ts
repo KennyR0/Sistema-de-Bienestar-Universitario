@@ -1,6 +1,7 @@
 export type SolicitudTipo = 'Psicológica' | 'Médica' | 'Social' | 'Académica';
 export type SolicitudEstado =
 	| 'Pendiente'
+	| 'En triage'
 	| 'Aprobada'
 	| 'En Proceso'
 	| 'Completada'

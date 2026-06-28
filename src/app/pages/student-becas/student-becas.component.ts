@@ -1,12 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { StudentBecasService } from '../../services/student-becas.service';
 import { StudentBeca } from '../../models/student-beca';
 
 @Component({
 	selector: 'app-student-becas',
 	standalone: true,
-	imports: [CommonModule],
+	imports: [CommonModule, RouterLink],
 	templateUrl: './student-becas.component.html'
 })
 export class StudentBecasComponent {

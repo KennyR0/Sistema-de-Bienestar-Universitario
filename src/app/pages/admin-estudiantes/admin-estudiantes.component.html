@@ -42,17 +42,154 @@
 					<div><span>Carrera</span><strong>{{ student.program }}</strong></div>
 					<div><span>Semestre</span><strong>{{ student.semester || 'Primer semestre' }}</strong></div>
 					<div><span>Estado</span><strong>{{ student.status }}</strong></div>
-					<div><span>Ruta sugerida</span><strong>{{ student.status === 'Activo' ? 'Disponible para atención' : 'Verificar matrícula' }}</strong></div>
-					<div><span>Indicador</span><strong>Seguimiento regular</strong></div>
+					<div><span>Solicitudes abiertas</span><strong>{{ studentSummary().openRequests }}</strong></div>
+					<div><span>Casos activos</span><strong>{{ studentSummary().activeCases }}</strong></div>
+					<div><span>Próxima cita</span><strong>{{ studentSummary().nextAppointment?.date || 'Sin cita programada' }}</strong></div>
+					<div><span>Último movimiento</span><strong>{{ studentSummary().lastUpdate }}</strong></div>
 				</div>
 				<div class="action-grid">
-					<button class="btn btn-outline" type="button">Ver historial</button>
-					<button class="btn btn-outline" type="button">Crear solicitud</button>
+					<button class="btn btn-outline" type="button" (click)="onOpenSolicitud(student)">Crear solicitud</button>
 					<button class="btn btn-danger" type="button" (click)="onDelete(student)">Eliminar registro</button>
 				</div>
+
+				@if (solicitudMessage()) {
+					<p class="inline-status">{{ solicitudMessage() }}</p>
+				}
+
+				<section class="student-file">
+					<div class="panel-heading">
+						<div>
+							<p class="module-kicker">Expediente integrado</p>
+							<h3>Ruta de atención del estudiante</h3>
+						</div>
+						<span class="signal-chip">{{ studentSolicitudes().length }} solicitudes</span>
+					</div>
+
+					<div class="student-file-grid">
+						<article>
+							<h4>Solicitudes</h4>
+							@for (solicitud of studentSolicitudes(); track solicitud.id) {
+								<div class="file-row">
+									<div>
+										<strong>{{ solicitud.subject }}</strong>
+										<span>{{ solicitud.type }} | {{ solicitud.date }} | {{ solicitud.priority }}</span>
+									</div>
+									<span class="badge" [class.badge-pending]="solicitud.status === 'Pendiente'" [class.badge-process]="solicitud.status === 'En triage' || solicitud.status === 'En Proceso'" [class.badge-completed]="solicitud.status === 'Completada' || solicitud.status === 'Aprobada'" [class.badge-rejected]="solicitud.status === 'Rechazada'">
+										{{ solicitud.status }}
+									</span>
+								</div>
+							}
+							@if (studentSolicitudes().length === 0) {
+								<p class="empty-state">No hay solicitudes registradas para este estudiante.</p>
+							}
+						</article>
+
+						<article>
+							<h4>Citas</h4>
+							@for (cita of studentCitas(); track cita.id) {
+								<div class="file-row">
+									<div>
+										<strong>{{ cita.type }} con {{ cita.professionalName }}</strong>
+										<span>{{ cita.date }} | {{ cita.time }}</span>
+									</div>
+									<span class="badge" [class.badge-pending]="cita.status === 'Programada'" [class.badge-completed]="cita.status === 'Completada'" [class.badge-canceled]="cita.status === 'Cancelada'">
+										{{ cita.status }}
+									</span>
+								</div>
+							}
+							@if (studentCitas().length === 0) {
+								<p class="empty-state">No hay citas vinculadas al expediente.</p>
+							}
+						</article>
+
+						<article>
+							<h4>Casos</h4>
+							@for (caso of studentCasos(); track caso.id) {
+								<div class="file-row">
+									<div>
+										<strong>Caso {{ caso.id }} | {{ caso.riskType }}</strong>
+										<span>Última actualización: {{ caso.lastUpdate }}</span>
+									</div>
+									<span class="badge" [class.badge-active]="caso.status === 'Activo'" [class.badge-inactive]="caso.status !== 'Activo'">
+										{{ caso.status }}
+									</span>
+								</div>
+							}
+							@if (studentCasos().length === 0) {
+								<p class="empty-state">No hay casos de seguimiento abiertos.</p>
+							}
+						</article>
+					</div>
+				</section>
 			}
 		</section>
 	</section>
+
+	@if (creatingSolicitudFor(); as student) {
+		<div class="drawer-backdrop" role="presentation" (click)="onCancelSolicitud()">
+			<section class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="student-request-drawer-title" (click)="$event.stopPropagation()">
+				<div class="drawer-heading">
+					<div>
+						<p class="module-kicker">Nueva atención</p>
+						<h3 id="student-request-drawer-title">Crear solicitud para {{ student.fullName }}</h3>
+					</div>
+					<button class="drawer-close" type="button" aria-label="Cerrar" (click)="onCancelSolicitud()">×</button>
+				</div>
+
+				<div class="form-grid">
+					<div class="form-group">
+						<label>Tipo de atención</label>
+						<select class="form-control" [value]="solicitudType()" (change)="onSolicitudTypeChange($any($event.target).value)">
+							@for (option of solicitudTypeOptions; track option) {
+								<option [value]="option">{{ option }}</option>
+							}
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Prioridad</label>
+						<select class="form-control" [value]="solicitudPriority()" (change)="onSolicitudPriorityChange($any($event.target).value)">
+							@for (option of priorityOptions; track option) {
+								<option [value]="option">{{ option }}</option>
+							}
+						</select>
+					</div>
+					<div class="form-group form-group--wide">
+						<label>Asunto</label>
+						<input class="form-control" [value]="solicitudSubject()" (input)="onSolicitudSubjectInput($any($event.target).value)" />
+					</div>
+					<div class="form-group form-group--wide">
+						<label>Detalle</label>
+						<textarea class="form-control" rows="4" [value]="solicitudDescription()" (input)="onSolicitudDescriptionInput($any($event.target).value)"></textarea>
+					</div>
+					<div class="form-group">
+						<label>Canal de contacto</label>
+						<select class="form-control" [value]="solicitudContactChannel()" (change)="onSolicitudContactChange($any($event.target).value)">
+							@for (option of contactOptions; track option) {
+								<option [value]="option">{{ option }}</option>
+							}
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Dato de contacto</label>
+						<input class="form-control" [value]="solicitudContactValue()" (input)="onSolicitudContactValueInput($any($event.target).value)" />
+					</div>
+					<div class="form-group form-group--wide">
+						<label>Disponibilidad</label>
+						<input class="form-control" [value]="solicitudAvailability()" (input)="onSolicitudAvailabilityInput($any($event.target).value)" />
+					</div>
+				</div>
+
+				@if (solicitudMessage()) {
+					<p class="inline-status">{{ solicitudMessage() }}</p>
+				}
+
+				<div class="form-actions">
+					<button class="btn btn-outline" type="button" (click)="onCancelSolicitud()">Cancelar</button>
+					<button class="btn btn-primary" type="button" [disabled]="!isSolicitudDraftValid()" (click)="onSaveSolicitud()">Guardar solicitud</button>
+				</div>
+			</section>
+		</div>
+	}
 
 	@if (draftStudent(); as draft) {
 		<div class="drawer-backdrop" role="presentation" (click)="onCancelEdit()">

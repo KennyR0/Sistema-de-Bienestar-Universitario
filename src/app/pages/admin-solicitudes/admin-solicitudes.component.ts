@@ -36,6 +36,7 @@ export class AdminSolicitudesComponent {
 	caseNote = signal('');
 	operationMessage = signal('');
 	noteText = signal('');
+	resolutionText = signal('');
 	appointmentDate = signal(new Date().toISOString().slice(0, 10));
 	appointmentTime = signal('09:00');
 
@@ -49,6 +50,7 @@ export class AdminSolicitudesComponent {
 	readonly statusOptions: Array<SolicitudEstado | typeof ALL_FILTER> = [
 		ALL_FILTER,
 		'Pendiente',
+		'En triage',
 		'Aprobada',
 		'En Proceso',
 		'Completada',
@@ -101,8 +103,8 @@ export class AdminSolicitudesComponent {
 		return {
 			pending: list.filter((item) => item.status === 'Pendiente').length,
 			high: list.filter((item) => item.priority === 'Alta').length,
-			process: list.filter((item) => item.status === 'En Proceso').length,
-			closed: list.filter((item) => item.status === 'Completada').length
+			process: list.filter((item) => item.status === 'En triage' || item.status === 'En Proceso').length,
+			closed: list.filter((item) => item.status === 'Completada' || item.status === 'Aprobada').length
 		};
 	});
 
@@ -132,6 +134,10 @@ export class AdminSolicitudesComponent {
 		this.noteText.set(value);
 	}
 
+	onResolutionInput(value: string) {
+		this.resolutionText.set(value);
+	}
+
 	onAppointmentDateChange(value: string) {
 		this.appointmentDate.set(value);
 	}
@@ -141,12 +147,38 @@ export class AdminSolicitudesComponent {
 	}
 
 	onSetStatus(item: Solicitud, status: SolicitudEstado) {
+		const nextAction = this.getNextActionForStatus(status);
 		this.solicitudesService.transitionSolicitud(
 			item,
 			status,
-			`La solicitud cambió a estado ${status}.`
+			`La solicitud cambió a estado ${status}.`,
+			'Equipo Bienestar',
+			nextAction
 		);
 		this.operationMessage.set(`Estado actualizado a ${status}.`);
+	}
+
+	onCloseWithResolution(item: Solicitud, status: 'Completada' | 'Rechazada') {
+		const resolution = this.resolutionText().trim();
+
+		if (!resolution) {
+			this.operationMessage.set('Escriba una respuesta o motivo antes de cerrar la solicitud.');
+			return;
+		}
+
+		this.solicitudesService.transitionSolicitud(
+			item,
+			status,
+			resolution,
+			'Equipo Bienestar',
+			status === 'Completada' ? 'Solicitud cerrada con respuesta registrada' : 'Solicitud rechazada con motivo registrado'
+		);
+		this.resolutionText.set('');
+		this.operationMessage.set(
+			status === 'Completada'
+				? 'Solicitud cerrada con respuesta para el estudiante.'
+				: 'Solicitud rechazada con motivo documentado.'
+		);
 	}
 
 	onAddNote(item: Solicitud) {
@@ -252,6 +284,23 @@ export class AdminSolicitudesComponent {
 		if (item.type === 'Académica') return 'Académico';
 		if (item.type === 'Médica') return 'Personal';
 		return 'Personal';
+	}
+
+	private getNextActionForStatus(status: SolicitudEstado): string {
+		switch (status) {
+			case 'En triage':
+				return 'Revisar prioridad, validar contacto y definir ruta de atención';
+			case 'En Proceso':
+				return 'Programar o ejecutar la acción de seguimiento acordada';
+			case 'Aprobada':
+				return 'Coordinar la atención aprobada con el estudiante';
+			case 'Completada':
+				return 'Solicitud cerrada';
+			case 'Rechazada':
+				return 'Revisar motivo de rechazo si el estudiante solicita aclaración';
+			default:
+				return 'Revisar información y definir ruta de atención';
+		}
 	}
 
 	private priorityRank(priority: SolicitudPrioridad) {

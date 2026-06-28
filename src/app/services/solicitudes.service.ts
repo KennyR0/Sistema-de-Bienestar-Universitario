@@ -182,11 +182,13 @@ export class SolicitudesService {
 		target: Solicitud,
 		status: SolicitudEstado,
 		detail: string,
-		author = 'Bienestar Universitario'
+		author = 'Bienestar Universitario',
+		nextAction?: string
 	) {
 		this.updateSolicitud(target, {
 			...target,
 			status,
+			nextAction: nextAction ?? target.nextAction,
 			history: [this.createHistory(`Estado: ${status}`, detail, author), ...target.history]
 		});
 	}

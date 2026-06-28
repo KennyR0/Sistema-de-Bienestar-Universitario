@@ -160,7 +160,11 @@ export class AdminCitasComponent {
 		}
 
 		if (original) {
-			this.citasService.updateCita(original, draft);
+			this.citasService.updateCita(original, {
+				...draft,
+				rescheduleRequested: false,
+				studentRequestNote: undefined
+			});
 		} else {
 			this.citasService.addCita(draft);
 		}

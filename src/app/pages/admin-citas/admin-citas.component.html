@@ -26,7 +26,11 @@
 					<div><span>Profesional</span><strong>{{ item.professionalName }}</strong></div>
 					<div><span>Fecha</span><strong>{{ item.date }} | {{ item.time }}</strong></div>
 					<div><span>Tipo</span><strong>{{ item.type }}</strong></div>
+					<div><span>Reagendamiento</span><strong>{{ item.rescheduleRequested ? 'Solicitado' : 'Sin solicitud' }}</strong></div>
 				</div>
+				@if (item.studentRequestNote) {
+					<p class="request-description">{{ item.studentRequestNote }}</p>
+				}
 				<div class="form-actions">
 					<button class="btn btn-primary" type="button" (click)="onEdit(item)">Editar</button>
 					<button class="btn btn-danger" type="button" (click)="onCancelCita(item)">Cancelar cita</button>

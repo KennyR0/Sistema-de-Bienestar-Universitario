@@ -33,6 +33,15 @@ Las plantillas originales se conservan en `legacy-static/` como referencia hist�
 - La nueva solicitud del estudiante crea un registro real y vuelve a “Mis Solicitudes”.
 - Se mantuvieron las rutas actuales y no se introdujo base de datos, API ni autenticación real.
 
+## Mejoras de flujo agregadas
+
+- La ficha de estudiantes ahora funciona como expediente integrado: muestra solicitudes, citas, casos, próxima cita, casos activos y último movimiento.
+- Desde el expediente del estudiante se puede crear una solicitud administrativa real, vinculada al código estudiantil y guardada en la misma bandeja de solicitudes.
+- La bandeja de solicitudes incorpora el estado `En triage` y un cierre con respuesta obligatoria para completar o rechazar con motivo documentado.
+- El portal estudiantil resalta la próxima acción de cada solicitud y reconoce el nuevo estado de triage en el progreso.
+- El estudiante puede solicitar reagendamiento de una cita programada; el aviso queda visible para administración y se limpia cuando la cita se edita.
+- La vista de becas estudiantiles incluye una salida directa para solicitar apoyo económico mediante una nueva solicitud de bienestar.
+
 ## Diseño visual aplicado
 
 La interfaz ahora sigue una línea de panel institucional profesional, con navegación clara por rol, tablas más legibles, formularios agrupados y estados visuales consistentes.

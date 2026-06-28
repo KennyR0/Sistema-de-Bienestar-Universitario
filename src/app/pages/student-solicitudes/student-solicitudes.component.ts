@@ -29,7 +29,7 @@ export class StudentSolicitudesComponent {
 		return {
 			total: list.length,
 			pending: list.filter((item) => item.status === 'Pendiente').length,
-			process: list.filter((item) => item.status === 'En Proceso').length,
+			process: list.filter((item) => item.status === 'En triage' || item.status === 'En Proceso').length,
 			closed: list.filter((item) => item.status === 'Completada' || item.status === 'Aprobada').length
 		};
 	});

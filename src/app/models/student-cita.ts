@@ -9,4 +9,6 @@ export interface StudentCita {
 	time: string;
 	type: string;
 	status: StudentCitaEstado;
+	rescheduleRequested?: boolean;
+	studentRequestNote?: string;
 }

@@ -6,7 +6,8 @@ import { CitasService } from './citas.service';
 @Injectable({ providedIn: 'root' })
 export class StudentCitasService {
 	private readonly authService = inject(AuthService);
-	private readonly citas = inject(CitasService).getCitas();
+	private readonly citasService = inject(CitasService);
+	private readonly citas = this.citasService.getCitas();
 	private readonly currentCitas = computed<StudentCita[]>(() => {
 		const user = this.authService.currentUser();
 
@@ -24,11 +25,28 @@ export class StudentCitasService {
 				date: item.date,
 				time: item.time,
 				type: item.type,
-				status: item.status
+				status: item.status,
+				rescheduleRequested: item.rescheduleRequested,
+				studentRequestNote: item.studentRequestNote
 			}));
 	});
 
 	getCitas() {
 		return this.currentCitas;
+	}
+
+	requestReschedule(citaId: string, note: string) {
+		const user = this.authService.currentUser();
+		const cita = this.citas().find((item) => item.id === citaId);
+
+		if (!user || user.role !== 'student' || !cita || cita.studentCode !== user.studentCode) {
+			return;
+		}
+
+		this.citasService.updateCita(cita, {
+			...cita,
+			rescheduleRequested: true,
+			studentRequestNote: note.trim() || 'El estudiante solicita revisar la fecha u hora asignada.'
+		});
 	}
 }

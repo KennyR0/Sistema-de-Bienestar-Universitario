@@ -172,4 +172,5 @@ type WritableTextField =
 	| 'contactValue'
 	| 'availability'
 	| 'subject'
-	| 'description';
+	| 'description'
+	| 'attachmentName';
